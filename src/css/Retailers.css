@@ -1,0 +1,46 @@
+#smile, #note {
+    color: #eda1aa;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+  
+.flex-container > a {
+    background-color: #f1f1f1;
+    width: 300px;
+    margin: 10px;
+    min-height: 100px;
+    text-align: center;
+    color: #444444;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.flex-container > a:hover {
+    background-color: #dcedff;
+    text-decoration: none;
+    color: #444444;
+}
+
+.flex-container > a > div {
+    justify-content: center;
+    align-self: center;
+}
+
+#important {
+    text-decoration: underline;
+}
+
+#update {
+    padding: 0px 100px;
+}
+
+#company-description {
+    font-size: 14px;
+    padding: 10px;
+}

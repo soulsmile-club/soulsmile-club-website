@@ -1,0 +1,12 @@
+.navbar {
+    height: 10vmin;
+    background-color: white;
+}
+
+.navbar #basic-navbar-nav>li>a {
+    color: #444444;
+}
+
+.logo {
+    font-weight: 500;
+}

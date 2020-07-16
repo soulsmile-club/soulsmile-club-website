@@ -1,0 +1,117 @@
+{
+	"Girlfriend Collective": {
+		"link": "https://girlfriend-store.myshopify.com/?rfsn=4298873.761fea",
+		"description": "Sustainable activewear", 
+		"soulsmile-featured": true
+	}, 
+	"Best Buy": {
+		"link": "https://bestbuy.7tiv.net/oYWxY",
+		"description": "Electronics",
+		"soulsmile-featured": false
+	}, 
+	"Pillow Guy": {
+		"link": "https://pillowguy.rvgu.net/2ZPoD",
+		"description": "Bedding",
+		"soulsmile-featured": false
+	}, 
+	"Macy's": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=777210.100453945&type=3&subid=0",
+		"description": "Fashion clothing",
+		"soulsmile-featured": false
+	},
+	"Champion": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=510326.10000015&type=3&subid=0",
+		"description": "Athletic & college apparel",
+		"soulsmile-featured": false
+	}, 
+	"Logitech": {
+		"link": "https://logitech.cfzu.net/yYDaD",
+		"description": "Computer peripherals & software",
+		"soulsmile-featured": false
+	}, 
+	"EarthHero": {
+		"link": "https://earthhero.com?ref=soulsmileclub",
+		"description": "Eco-friendly marketplace",
+		"soulsmile-featured": true
+	}, 
+	"The Honest Company": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=599875.535&type=3&subid=0",
+		"description": "Baby & beauty store",
+		"soulsmile-featured": true
+	}, 
+	"Earth Shoes": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=769017.12&type=3&subid=0",
+		"description": "Sustainable footwear",
+		"soulsmile-featured": true 
+	}, 
+	"Bella+Canvas": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=756738.19&type=3&subid=0",
+		"description": "Wholesale blank tees",
+		"soulsmile-featured": true
+	}, 
+	"Angelic Bakehouse": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=754077.6&type=3&subid=0",
+		"description": "Sprouted grained bread",
+		"soulsmile-featured": true
+	},
+	"Baked by Melissa": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=760083.8&type=3&subid=0",
+		"description": "Bite-size cupcakes",
+		"soulsmile-featured": true
+	},
+	"Maidenform": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=664600.10&type=3&subid=0",
+		"description": "Intimates & shapewear",
+		"soulsmile-featured": false
+	},
+	"Hint": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=650829.78&type=3&subid=0",
+		"description": "Fruit infused, flavored water",
+		"soulsmile-featured": false
+	},
+	"SkinCeuticals": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=645501.2&type=3&subid=0",
+		"description": "Skincare",
+		"soulsmile-featured": false
+	}, 
+	"Buxom Cosmetics": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=561992.44&type=3&subid=0",
+		"description": "Cosmetics",
+		"soulsmile-featured": false
+	},
+	"Splendid": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=513777.140&type=3&subid=0&LSNSUBSITE=LSNSUBSITE",
+		"description": "Clothing for women & kids",
+		"soulsmile-featured": true 
+	},
+	"Outdoor Voices": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=796668.88&type=3&subid=0",
+		"description": "Activewear",
+		"soulsmile-featured": false
+	},
+	"Keratase": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=662055.296&type=3&subid=0",
+		"description": "Hair care",
+		"soulsmile-featured": false
+	},
+	"e.l.f cosmetics": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=382587.779&type=3&subid=0",
+		"description": "Beauty & skincare",
+		"soulsmile-featured": true
+	},
+	"James Perse": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=668935.474&type=3&subid=0",
+		"description": "Apparel made in the U.S.",
+		"soulsmile-featured": true
+	},
+	"Molton Brown": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=388455.519&type=3&subid=0",
+		"description": "British fragrance & personal care",
+		"soulsmile-featured": false
+	},
+	"Benefit Cosmetics": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=250778.10001033&type=3&subid=0",
+		"description": "Beauty & skincare",
+		"soulsmile-featured": false
+	}
+}

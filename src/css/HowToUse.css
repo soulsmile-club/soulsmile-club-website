@@ -1,0 +1,14 @@
+.instruction {
+    padding: 10px calc(0.15*100vw);
+    font-weight: 400;
+    text-align: left;
+}
+
+.example {
+    width: 75%;
+    padding: 10px 0px;
+}
+
+.yay {
+    text-align: center;
+}
