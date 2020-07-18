@@ -5,7 +5,7 @@ function PrivacyPolicy() {
   return (
     <>
     <header className="App-header">
-        <p>Privacy Policy</p>
+        <span>Privacy Policy</span>
     </header>
     <hr/>
     <div className="privacy">

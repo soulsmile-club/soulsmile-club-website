@@ -13,7 +13,7 @@ function Team() {
     <header className="App-header">
         <p>Meet the girls.</p>
     </header>  
-    <h4 id="subtitle">We are a team of fresh graduates from University of Pennsylvania.</h4>
+    <h4 id="subtitle">We are a team of students and fresh graduates from University of Pennsylvania.</h4>
     <div className="flex-container-team">
       <div>
         <img id="team" src={Wenhan_Zhang}></img>

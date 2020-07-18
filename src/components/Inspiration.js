@@ -5,7 +5,7 @@ function Inspiration() {
   return (
     <>
     <header className="App-header">
-        <p>The world as we know it.</p>
+        <span>The world as we know it.</span>
     </header>
     <hr/>
     <p id="problem">

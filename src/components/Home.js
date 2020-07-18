@@ -27,10 +27,10 @@ function Home() {
             without spending extra. 
         </p>
         <p id="disclosure"><span id="bold">Disclosure: </span>
-        <br/>As an affiliate of the brands listed under Retailers, Soulsmile Club earns from qualifying purchases. 
-        <br/>However, instead of keeping these earnings, we donate all of it to causes listed below.</p>
+        <br/>As an affiliate of our partner brands, Soulsmile Club earns commission from qualifying purchases. 
+        <br/>However, instead of keeping these earnings, we donate all of it to organizations working on some of the most pressing humanitarian issues today.</p>
         <Button variant="outline-secondary btn-round" size="lg" href="/how-it-works">Interested in learning more?</Button>{' '}
-    </header>    
+    </header>
     </>
   );
 }

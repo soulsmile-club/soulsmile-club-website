@@ -12,3 +12,18 @@
 .yay {
     text-align: center;
 }
+
+.numberCircleLarge {
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    padding: 5px;
+    display: inline-flex;
+    background: #eda1aa;
+    border: 2px solid #eda1aa;
+    color: white;
+    text-align: center;
+    align-items: center;
+    font-weight: bolder;
+    justify-content: center;
+}

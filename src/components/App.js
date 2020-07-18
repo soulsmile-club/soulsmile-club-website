@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/App.css';
 import SoulsmileNavbar from './SoulsmileNavbar';
+import SoulsmileFooter from './SoulsmileFooter';
 import { Router } from 'react-router-dom';
 import history from '../services/history';
 import Routes from '../routes';
@@ -22,9 +23,12 @@ function App() {
     </style>
     <div className="App">
       <SoulsmileNavbar />
+      <div class="content">
       <Router history={history}>
         <Routes />
       </Router>
+      </div>
+      <SoulsmileFooter />
     </div>
     </>
   );

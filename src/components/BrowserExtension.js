@@ -27,7 +27,7 @@ function BrowserExtension() {
             <h1 className="browser">The Soul<span id="smile">smile</span> Club extension is here.</h1>
             <h5 className="browser">Donate to COVID-19 relief and BLM causes, without spending extra.</h5>
             <h5 className="browser">Our privacy policy can be found <a href="/privacy-policy">here</a>.</h5>
-            <Button variant="outline-secondary btn-round" size="lg" href="http://tiny.cc/soulsmile-extension" target="_blank" rel="noopener noreferrer">Get Extension.</Button>{' '}
+            <Button variant="outline-secondary btn-round" size="lg" href="http://tiny.cc/soulsmile-extension" target="_blank" rel="noopener noreferrer">Get Extension</Button>{' '}
         </div>
     </div>
     
