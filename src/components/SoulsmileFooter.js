@@ -28,7 +28,7 @@ function SoulsmileFooter() {
           <div class="col-xs-6 col-md-3">
             <h6>Quick Links</h6>
             <ul class="footer-links">
-              <li><a href="/who-we-are">About Us</a></li>
+              <li><a href="/vision">About Us</a></li>
               <li><a href="/team">Meet the Team</a></li>
               <li><a href="/faq">FAQs</a></li>
               <li><a href="privacy-policy">Privacy Policy</a></li>
@@ -47,9 +47,9 @@ function SoulsmileFooter() {
 
           <div class="col-md-4 col-sm-6 col-xs-12">
             <ul class="social-icons">
-              <li><a class="facebook" href="#"><FaFacebookF /></a></li>
-              <li><a class="instagram" href="#"><GrInstagram /></a></li>
-              <li><a class="linkedin" href="#"><FaLinkedin /></a></li>   
+              <li><a class="facebook" href="https://www.facebook.com/soulsmile.club"><FaFacebookF /></a></li>
+              <li><a class="instagram" href="https://www.instagram.com/soulsmile.club/"><GrInstagram /></a></li>
+              <li><a class="linkedin" href="https://www.linkedin.com/company/soulsmile-club"><FaLinkedin /></a></li>   
             </ul>
           </div>
         </div>

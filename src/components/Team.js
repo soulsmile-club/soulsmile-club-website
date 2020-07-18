@@ -43,7 +43,7 @@ function Team() {
         <h5 id="role">Tech Developer</h5>
         <h4 id="major">Computer Science, Cognitive Science</h4>
         <p id="description">Hi, I’m Sneha! As a graduate of Computer Science and Cognitive 
-        Science, I believe that human behavior at its core is driven by empathy, kindness, 
+        Science, I believe that human behavior is driven by empathy, kindness, 
         and altruism. With Soulsmile Club, we can combine these natural forces for good 
         with everyday consumerism to amplify our impact and make a real change in the world.</p>
         <p id="description">If I could give 30 soulsmiles every month, I would give them 

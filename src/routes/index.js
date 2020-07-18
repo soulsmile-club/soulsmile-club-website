@@ -3,8 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Home from '../components/Home';
 import HowItWorks from '../components/HowItWorks';
 import Retailers from '../components/Retailers';
-import Inspiration from '../components/Inspiration';
-import WhoWeAre from '../components/WhoWeAre';
+import Vision from '../components/Vision';
 import Causes from '../components/Causes';
 import BrowserExtension from '../components/BrowserExtension';
 import Team from '../components/Team';
@@ -21,8 +20,7 @@ export default function Routes() {
       <Route path="/how-it-works" exact component={HowItWorks} />
       <Route path="/how-to-use" exact component={HowToUse} />
       <Route path="/retailers" exact component={Retailers} />
-      <Route path="/inspiration" exact component={Inspiration} />
-      <Route path="/who-we-are" exact component={WhoWeAre} />
+      <Route path="/vision" exact component={Vision} />
       <Route path="/causes" exact component={Causes} />
       <Route path="/team" exact component={Team} />
       <Route path="/privacy-policy" exact component={PrivacyPolicy} />

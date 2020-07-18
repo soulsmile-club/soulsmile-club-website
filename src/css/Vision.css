@@ -1,0 +1,42 @@
+#smile, #note {
+    color: #eda1aa;
+}
+
+#problem {
+    font-size: 20px;
+    padding: 10px 100px;
+}
+
+#bold {
+    font-weight: 600;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.flex-container-who {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+  
+.flex-container-who > div {
+    width: 500px;
+    margin: 20px;
+    height: 450px;
+    text-align: center;
+    color: #444444;
+    font-size: 20px;
+}
+
+#title {
+    font-size: 35px;
+    align-items: center;
+    justify-content: center;
+}
+
+#subtitle {
+    padding-top: 30px;
+}
