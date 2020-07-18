@@ -16,7 +16,7 @@ function HowToUse() {
     </header>
     <hr />
     <div>
-        <h3 className="instruction"><span class="numberCircleLarge">1</span> Add the Soulsmile Club extension by clicking "Add to Chrome" <a href="https://tiny.cc/soulsmile-extension">here</a>.</h3>
+        <h3 className="instruction"><span class="numberCircleLarge">1</span> Add the Soulsmile Club extension by clicking "Add to Chrome" at <a href="https://tiny.cc/soulsmile-extension">tiny.cc/soulsmile-extension</a>.</h3>
         <img className="example" src={step1}></img>
         <h3 className="instruction"><span class="numberCircleLarge">2</span> Click "Add extension" to give your consent to download.</h3>
         <img className="instruction example" src={step2}></img>
@@ -44,7 +44,7 @@ function HowToUse() {
         <img className="instruction example" src={step7}></img>
         <h3 className="instruction yay">Thanks for using the Soul<span id="smile">smile</span> Club browser extension! If you like it, be sure to share it with your family and friends :)</h3>
         <img className="instruction example" src={share}></img>
-        <h4 className="instruction yay">Please send us your feedback <a href="https://tiny.cc/soulsmile-feedback" target="_blank" rel="noopener noreferrer">here</a> so that we can make your experience with Soulsmile Club the best it can be!</h4>
+        <h4 className="instruction yay">Please send us your feedback anytime at <a href="https://tiny.cc/soulsmile-feedback" target="_blank" rel="noopener noreferrer">tiny.cc/soulsmile-feedback</a> so that we can make your experience with Soulsmile Club the best it can be!</h4>
     </div>
     
     </>

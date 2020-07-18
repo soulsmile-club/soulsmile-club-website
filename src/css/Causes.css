@@ -21,11 +21,15 @@
 }
   
 .flex-container-cause > div {
-    border: 1px solid #d0cfcf;
+    border: 2px dotted #d0cfcf;
     width: 500px;
     margin: 20px;
     height: 300px;
     text-align: center;
     color: #444444;
     font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
