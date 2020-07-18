@@ -19,12 +19,14 @@
     color: #444444;
     font-size: 20px;
     padding: 10px;
+    transition: transform .3s;
 }
 
 .flex-container > a:hover {
     background-color: #dcedff;
     text-decoration: none;
     color: #444444;
+    transform: scale(1.1);
 }
 
 .flex-container > a > div {
