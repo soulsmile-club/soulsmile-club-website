@@ -7,11 +7,6 @@ hr {
     color: #eda1aa;
 }
 
-#problem {
-    font-size: 20px;
-    padding: 25px 100px;
-}
-
 #bold {
     font-weight: 600;
 }
@@ -22,7 +17,7 @@ hr {
 
 .privacy {
     text-align: left;
-    margin: 0px 100px;  
+    margin: 0px 10%;  
 }
 
 #bold-important {

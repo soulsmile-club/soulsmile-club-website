@@ -30,7 +30,7 @@ function BrowserExtension() {
             <Button variant="outline-secondary btn-round" size="lg" href="http://tiny.cc/soulsmile-extension" target="_blank" rel="noopener noreferrer">Get Extension</Button>{' '}
         </div>
     </div>
-    
+
     </>
   );
 }

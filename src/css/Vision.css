@@ -4,7 +4,7 @@
 
 #problem {
     font-size: 20px;
-    padding: 10px 100px;
+    padding: 1% 10%;
 }
 
 #bold {
@@ -17,18 +17,11 @@
 
 .flex-container-who {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-  
-.flex-container-who > div {
-    width: 500px;
-    margin: 20px;
-    height: 450px;
-    text-align: center;
-    color: #444444;
     font-size: 20px;
+    padding: 1% 10%;
 }
 
 #title {
@@ -39,4 +32,9 @@
 
 #subtitle {
     padding-top: 30px;
+}
+
+iframe {
+	max-width: 100%;
+	height: auto;
 }
