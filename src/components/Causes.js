@@ -26,7 +26,7 @@ function Causes() {
     return (
         <>
         <header className="App-header">
-            <p>Curating impactful work.</p>
+            Curating impactful work.
         </header>
         <hr />
         <h4 id="monthly">We will distribute <span className="underline">all the commission</span> we receive among the following causes.<br/>

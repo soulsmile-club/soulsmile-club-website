@@ -48,7 +48,7 @@ function Retailers() {
     return (
         <>
         <header className="App-header">
-            <p>Retailers to earn soul<span id="smile">smiles</span> with.</p>
+            <span>Retailers to earn soul<span id="smile">smiles</span> with.</span>
         </header>
         <hr/>
         <p id="update">*Soul<span id="note">smile</span> Club featured brands for sustainable and ethical practices.</p>

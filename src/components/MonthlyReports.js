@@ -6,7 +6,7 @@ function MonthlyReports() {
     return (
         <>
         <header className="App-header">
-            <p>Our Monthly Earnings Reports.</p>
+            Our Monthly Earnings Reports
         </header>  
         <hr />
         <h4 id="subtitle">Our earnings reports are posted <span className="underline">every month</span> for full transparency.</h4>

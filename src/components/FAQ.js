@@ -32,7 +32,7 @@ function FAQ() {
     return (
         <>
             <header className="App-header">
-                <p>FAQs</p>
+                FAQs
             </header>
             <hr />
             <div className="flex-container-faq">

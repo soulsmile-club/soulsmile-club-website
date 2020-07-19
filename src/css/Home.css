@@ -1,5 +1,5 @@
 .App-header-home {
-    padding: 25px 0px;
+    padding: 2.5% 0px;
     background-color: white;
     min-height: 100vh;
     display: flex;
@@ -17,7 +17,7 @@
 
 #disclosure {
     font-size: calc(1px + 2vmin);
-    margin: 20px 100px 20px 100px;
+    margin: 2% 10% 2% 10%;
 }
   
 #smile {
@@ -26,7 +26,6 @@
   
 #subtitle {
     font-style: italic;
-    /* padding-bottom: 25px; */
 }
 
 #slogan {

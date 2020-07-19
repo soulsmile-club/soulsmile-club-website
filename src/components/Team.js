@@ -11,7 +11,7 @@ function Team() {
   return (
     <>
     <header className="App-header">
-        <p>Meet the girls.</p>
+        Meet the girls.
     </header>  
     <h4 id="subtitle">We are a team of students and fresh graduates from University of Pennsylvania.</h4>
     <div className="flex-container-team">

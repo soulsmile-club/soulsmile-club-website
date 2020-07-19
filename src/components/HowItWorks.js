@@ -8,7 +8,7 @@ function HowItWorks() {
   return (
     <>
     <header className="App-header">
-        <p>How does it work?</p>
+        How does it work?
     </header>
     <hr />
     <div className="flex-container-how">
