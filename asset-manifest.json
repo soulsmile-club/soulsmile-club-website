@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/soulsmile-club-website/static/css/main.54db8c57.chunk.css",
+    "main.js": "/soulsmile-club-website/static/js/main.1c53d292.chunk.js",
+    "main.js.map": "/soulsmile-club-website/static/js/main.1c53d292.chunk.js.map",
+    "runtime-main.js": "/soulsmile-club-website/static/js/runtime-main.53eb6444.js",
+    "runtime-main.js.map": "/soulsmile-club-website/static/js/runtime-main.53eb6444.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/soulsmile-club-website/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.b475cd08.chunk.js": "/soulsmile-club-website/static/js/2.b475cd08.chunk.js",
+    "static/js/2.b475cd08.chunk.js.map": "/soulsmile-club-website/static/js/2.b475cd08.chunk.js.map",
+    "index.html": "/soulsmile-club-website/index.html",
+    "precache-manifest.5bbbfcf6b7ae32163ac19a2572b05405.js": "/soulsmile-club-website/precache-manifest.5bbbfcf6b7ae32163ac19a2572b05405.js",
+    "service-worker.js": "/soulsmile-club-website/service-worker.js",
+    "static/css/2.af3c1da9.chunk.css.map": "/soulsmile-club-website/static/css/2.af3c1da9.chunk.css.map",
+    "static/css/main.54db8c57.chunk.css.map": "/soulsmile-club-website/static/css/main.54db8c57.chunk.css.map",
+    "static/js/2.b475cd08.chunk.js.LICENSE.txt": "/soulsmile-club-website/static/js/2.b475cd08.chunk.js.LICENSE.txt",
+    "static/media/Hannah_Gonzalez.jpg": "/soulsmile-club-website/static/media/Hannah_Gonzalez.21f47613.jpg",
+    "static/media/June-2020-Earnings-Report.pdf": "/soulsmile-club-website/static/media/June-2020-Earnings-Report.978ecbb6.pdf",
+    "static/media/Nidhi_Reddy.jpeg": "/soulsmile-club-website/static/media/Nidhi_Reddy.071afa8e.jpeg",
+    "static/media/Sneha_Advani.jpg": "/soulsmile-club-website/static/media/Sneha_Advani.0fbe2f5e.jpg",
+    "static/media/Sneha_Rampalli.jpg": "/soulsmile-club-website/static/media/Sneha_Rampalli.6197895c.jpg",
+    "static/media/Wendy_Qian.jpg": "/soulsmile-club-website/static/media/Wendy_Qian.c6812f1c.jpg",
+    "static/media/Wenhan_Zhang.png": "/soulsmile-club-website/static/media/Wenhan_Zhang.2cce9681.png",
+    "static/media/extension.jpeg": "/soulsmile-club-website/static/media/extension.00eece91.jpeg",
+    "static/media/faqs.txt": "/soulsmile-club-website/static/media/faqs.d79cd041.txt",
+    "static/media/share.jpeg": "/soulsmile-club-website/static/media/share.597c9acc.jpeg",
+    "static/media/soulsmile-1024.png": "/soulsmile-club-website/static/media/soulsmile-1024.56fb4ca1.png",
+    "static/media/step-1.jpeg": "/soulsmile-club-website/static/media/step-1.b8692188.jpeg",
+    "static/media/step-2.jpeg": "/soulsmile-club-website/static/media/step-2.6cc74a44.jpeg",
+    "static/media/step-3.png": "/soulsmile-club-website/static/media/step-3.fd6fbb06.png",
+    "static/media/step-4.jpeg": "/soulsmile-club-website/static/media/step-4.36a3ea5b.jpeg",
+    "static/media/step-5.jpeg": "/soulsmile-club-website/static/media/step-5.399ede77.jpeg",
+    "static/media/step-7.jpeg": "/soulsmile-club-website/static/media/step-7.e1e34f60.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.53eb6444.js",
+    "static/css/2.af3c1da9.chunk.css",
+    "static/js/2.b475cd08.chunk.js",
+    "static/css/main.54db8c57.chunk.css",
+    "static/js/main.1c53d292.chunk.js"
+  ]
+}
