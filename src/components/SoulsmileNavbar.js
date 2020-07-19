@@ -4,7 +4,6 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import '../css/SoulsmileNavbar.css';
 import soulsmile from '../images/soulsmile-48.png';
-import Container from 'react-bootstrap/Container'
 
 function SoulsmileNavbar() {
   return (

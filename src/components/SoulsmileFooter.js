@@ -40,16 +40,16 @@ function SoulsmileFooter() {
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Questions? Contact us at <a href="mailto:hello@soulsmile.club" id="email">hello@soulsmile.club</a></p>
+            <p class="copyright-text">Questions? Contact us at <a href="mailto:hello@soulsmile.club" id="email">hello@soulsmile.club</a>.</p>
             <p class="copyright-text">Copyright &copy; 2020 Soulsmile Club, Inc.
             </p>
           </div>
 
           <div class="col-md-4 col-sm-6 col-xs-12">
             <ul class="social-icons">
-              <li><a class="facebook" href="https://www.facebook.com/soulsmile.club"><FaFacebookF /></a></li>
-              <li><a class="instagram" href="https://www.instagram.com/soulsmile.club/"><GrInstagram /></a></li>
-              <li><a class="linkedin" href="https://www.linkedin.com/company/soulsmile-club"><FaLinkedin /></a></li>   
+              <li><a class="facebook" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/soulsmile.club"><FaFacebookF /></a></li>
+              <li><a class="instagram" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/soulsmile.club/"><GrInstagram /></a></li>
+              <li><a class="linkedin" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/soulsmile-club"><FaLinkedin /></a></li>   
             </ul>
           </div>
         </div>

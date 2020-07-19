@@ -1,5 +1,5 @@
 .instruction {
-    padding: 10px calc(0.15*100vw);
+    padding: 10px 10%;
     font-weight: 400;
     text-align: left;
 }
