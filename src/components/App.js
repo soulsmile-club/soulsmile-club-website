@@ -5,6 +5,12 @@ import SoulsmileFooter from './SoulsmileFooter';
 import { Router } from 'react-router-dom';
 import history from '../services/history';
 import Routes from '../routes';
+import ReactGA from 'react-ga';
+
+history.listen(location => {
+  ReactGA.set({ page: location.pathname }); // Update the user's current page
+  ReactGA.pageview(location.pathname); // Record a pageview for the given page
+});
 
 function App() {
   return (

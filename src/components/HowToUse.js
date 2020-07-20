@@ -16,9 +16,9 @@ function HowToUse() {
     </header>
     <hr />
     <div>
-        <h3 className="instruction"><span class="numberCircleLarge">1</span> Add the Soulsmile Club extension by clicking "Add to Chrome" at <a href="https://tiny.cc/soulsmile-extension">tiny.cc/soulsmile-extension</a>.</h3>
+        <h3 className="instruction"><span className="numberCircleLarge">1</span> Add the Soulsmile Club extension by clicking "Add to Chrome" at <a href="https://tiny.cc/soulsmile-extension">tiny.cc/soulsmile-extension</a>.</h3>
         <img className="example" src={step1}></img>
-        <h3 className="instruction"><span class="numberCircleLarge">2</span> Click "Add extension" to give your consent to download.</h3>
+        <h3 className="instruction"><span className="numberCircleLarge">2</span> Click "Add extension" to give your consent to download.</h3>
         <img className="instruction example" src={step2}></img>
         <h3 className="instruction yay">You have successfully downloaded our extension!</h3>
         <h4 className="instruction yay">Make sure it's pinned to your toolbar if not already!</h4>
@@ -31,16 +31,16 @@ function HowToUse() {
     </div>
     <hr />
     <div>
-        <h3 className="instruction"><span class="numberCircleLarge">3</span> Once downloaded, you can shop with any of the retailers 
+        <h3 className="instruction"><span className="numberCircleLarge">3</span> Once downloaded, you can shop with any of the retailers 
         listed on <a href="/retailers">our website</a>.</h3>
         <img className="example" src={step3}></img>
-        <h3 className="instruction"><span class="numberCircleLarge">4</span> When you visit a qualifying retailer website (i.e. <a href="https://www.girlfriend.com/" target="_blank" rel="noopener noreferrer"></a>girlfriend.com), 
+        <h3 className="instruction"><span className="numberCircleLarge">4</span> When you visit a qualifying retailer website (i.e. <a href="https://www.girlfriend.com/" target="_blank" rel="noopener noreferrer"></a>girlfriend.com), 
         the following notification will appear.</h3>
         <img className="instruction example" src={step4}></img>
-        <h3 className="instruction"><span class="numberCircleLarge">5</span> If you click "Yes," you will see a confirmation message.</h3>
+        <h3 className="instruction"><span className="numberCircleLarge">5</span> If you click "Yes," you will see a confirmation message.</h3>
         <img className="instruction example" src={step5}></img>
-        <h3 className="instruction"><span class="numberCircleLarge">6</span> If you don't want to earn soulsmiles for this website, you can click "Remind me later."</h3>
-        <h3 className="instruction"><span class="numberCircleLarge">7</span> To confirm you are earning soulsmiles with a site, click the Soulsmile icon within your toolbar.</h3>
+        <h3 className="instruction"><span className="numberCircleLarge">6</span> If you don't want to earn soulsmiles for this website, you can click "Remind me later."</h3>
+        <h3 className="instruction"><span className="numberCircleLarge">7</span> To confirm you are earning soulsmiles with a site, click the Soulsmile icon within your toolbar.</h3>
         <img className="instruction example" src={step7}></img>
         <h3 className="instruction yay">Thanks for using the Soul<span id="smile">smile</span> Club browser extension! If you like it, be sure to share it with your family and friends :)</h3>
         <img className="instruction example" src={share}></img>

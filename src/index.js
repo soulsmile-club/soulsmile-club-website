@@ -4,6 +4,10 @@ import './index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ReactGA from 'react-ga';
+
+const trackingId = process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID; // Replace with your Google Analytics tracking ID
+ReactGA.initialize(trackingId);
 
 ReactDOM.render(
   <React.StrictMode>
