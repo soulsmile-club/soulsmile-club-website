@@ -39,36 +39,38 @@
 		"link": "https://earthhero.com?ref=soulsmileclub",
 		"description": "Eco-friendly marketplace",
 		"soulsmile-featured": true,
-		"category": "General"
+		"category": "General",
+		"promo_code": "SOULSMILE",
+		"promo": "Save 10%"
 	}, 
 	"The Honest Company": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=599875.535&type=3&subid=0",
 		"description": "Baby & beauty store",
-		"soulsmile-featured": true,
+		"soulsmile-featured": false,
 		"category": "Health & Beauty"
 	}, 
 	"Earth Shoes": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=769017.12&type=3&subid=0",
 		"description": "Sustainable footwear",
-		"soulsmile-featured": true,
+		"soulsmile-featured": false,
 		"category": "Shoes"
 	}, 
 	"Bella+Canvas": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=756738.19&type=3&subid=0",
 		"description": "Wholesale blank tees",
-		"soulsmile-featured": true,
+		"soulsmile-featured": false,
 		"category": "Clothing"
 	}, 
 	"Angelic Bakehouse": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=754077.6&type=3&subid=0",
 		"description": "Sprouted grained bread",
-		"soulsmile-featured": true,
+		"soulsmile-featured": false,
 		"category": "Food & Drink"
 	},
 	"Baked by Melissa": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=760083.8&type=3&subid=0",
 		"description": "Bite-size cupcakes",
-		"soulsmile-featured": true,
+		"soulsmile-featured": false,
 		"category": "Food & Drink"
 	},
 	"Maidenform": {
@@ -92,13 +94,13 @@
 	"Buxom Cosmetics": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=561992.44&type=3&subid=0",
 		"description": "Cosmetics",
-		"soulsmile-featured": false,
+		"soulsmile-featured": true,
 		"category": "Health & Beauty"
 	},
 	"Splendid": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=513777.140&type=3&subid=0&LSNSUBSITE=LSNSUBSITE",
 		"description": "Clothing for women & kids",
-		"soulsmile-featured": true,
+		"soulsmile-featured": false,
 		"category": "Clothing"
 	},
 	"Outdoor Voices": {
@@ -107,7 +109,7 @@
 		"soulsmile-featured": false,
 		"category": "Clothing"
 	},
-	"Keratase": {
+	"Kerastase": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=662055.296&type=3&subid=0",
 		"description": "Hair care",
 		"soulsmile-featured": false,
@@ -122,13 +124,13 @@
 	"James Perse": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=668935.474&type=3&subid=0",
 		"description": "Apparel made in the U.S.",
-		"soulsmile-featured": true,
+		"soulsmile-featured": false,
 		"category": "Clothing"
 	},
 	"Molton Brown": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=388455.519&type=3&subid=0",
 		"description": "British fragrance & personal care",
-		"soulsmile-featured": false,
+		"soulsmile-featured": true,
 		"category": "Health & Beauty"
 	},
 	"Benefit Cosmetics": {

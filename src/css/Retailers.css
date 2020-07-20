@@ -44,5 +44,11 @@
 
 #company-description {
     font-size: 14px;
-    padding: 10px;
+    padding: 10px 10px 10px 10px;
+}
+
+#promo-code {
+    font-size: 14px;
+    padding: 0 10px 10px 10px;
+    color: #eda1aa;
 }

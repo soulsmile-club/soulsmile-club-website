@@ -12,7 +12,7 @@ function SoulsmileFooter() {
         <div className="row">
           <div className="col-sm-12 col-md-6">
             <h6>About</h6>
-            <p className="text-justify">Soulsmile Club is a nonprofit that allows you to donate to causes you care about just from your everyday purchases, without spending any extra. By downloading our browser extension or shopping with the retailers on our website, customers automatically earn soulsmiles, which are donated by our retailers. Soulsmile Club donates 100% of the proceeds to organizations working on the most pressing humanitarian issues today.</p>
+            <p className="text-justify">Soulsmile Club is a non-profit that allows you to donate to causes you care about just from your everyday purchases, without spending any extra. By downloading our browser extension or shopping with the retailers on our website, customers automatically earn soulsmiles, which are donated by our retailers. Soulsmile Club donates 100% of the proceeds to organizations working on the most pressing humanitarian issues today.</p>
           </div>
 
           <div className="col-xs-6 col-md-3">

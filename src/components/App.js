@@ -29,7 +29,7 @@ function App() {
     </style>
     <div className="App">
       <SoulsmileNavbar />
-      <div class="content">
+      <div className="content">
       <Router history={history}>
         <Routes />
       </Router>
