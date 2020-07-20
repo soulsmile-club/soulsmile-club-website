@@ -7,17 +7,17 @@ import { GrInstagram } from 'react-icons/gr';
 function SoulsmileFooter() {
   return (
     <>
-    <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-6">
+    <footer className="site-footer">
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12 col-md-6">
             <h6>About</h6>
-            <p class="text-justify">Soulsmile Club is a nonprofit that allows you to donate to causes you care about just from your everyday purchases, without spending any extra. By downloading our browser extension or shopping with the retailers on our website, customers automatically earn soulsmiles, which are donated by our retailers. Soulsmile Club donates 100% of the proceeds to organizations working on the most pressing humanitarian issues today.</p>
+            <p className="text-justify">Soulsmile Club is a non-profit that allows you to donate to causes you care about just from your everyday purchases, without spending any extra. By downloading our browser extension or shopping with the retailers on our website, customers automatically earn soulsmiles, which are donated by our retailers. Soulsmile Club donates 100% of the proceeds to organizations working on the most pressing humanitarian issues today.</p>
           </div>
 
-          <div class="col-xs-6 col-md-3">
+          <div className="col-xs-6 col-md-3">
             <h6>Join Soulsmile Club</h6>
-            <ul class="footer-links">
+            <ul className="footer-links">
               <li><a href="https://tiny.cc/soulsmile-extension">Download Extension</a></li>
               <li><a href="/retailers">Shop with Retailers</a></li>
               <li><a href="/causes">View Causes</a></li>
@@ -25,9 +25,9 @@ function SoulsmileFooter() {
             </ul>
           </div>
 
-          <div class="col-xs-6 col-md-3">
+          <div className="col-xs-6 col-md-3">
             <h6>Quick Links</h6>
-            <ul class="footer-links">
+            <ul className="footer-links">
               <li><a href="/vision">About Us</a></li>
               <li><a href="/team">Meet the Team</a></li>
               <li><a href="/faq">FAQs</a></li>
@@ -37,19 +37,19 @@ function SoulsmileFooter() {
         </div>
         <hr></hr>
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Questions? Contact us at <a href="mailto:hello@soulsmile.club" id="email">hello@soulsmile.club</a>.</p>
-            <p class="copyright-text">Copyright &copy; 2020 Soulsmile Club, Inc.
+      <div className="container">
+        <div className="row">
+          <div className="col-md-8 col-sm-6 col-xs-12">
+            <p className="copyright-text">Questions? Contact us at <a href="mailto:hello@soulsmile.club" id="email">hello@soulsmile.club</a>.</p>
+            <p className="copyright-text">Copyright &copy; 2020 Soulsmile Club, Inc.
             </p>
           </div>
 
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <ul class="social-icons">
-              <li><a class="facebook" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/soulsmile.club"><FaFacebookF /></a></li>
-              <li><a class="instagram" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/soulsmile.club/"><GrInstagram /></a></li>
-              <li><a class="linkedin" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/soulsmile-club"><FaLinkedin /></a></li>   
+          <div className="col-md-4 col-sm-6 col-xs-12">
+            <ul className="social-icons">
+              <li><a className="facebook" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/soulsmile.club"><FaFacebookF /></a></li>
+              <li><a className="instagram" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/soulsmile.club/"><GrInstagram /></a></li>
+              <li><a className="linkedin" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/soulsmile-club"><FaLinkedin /></a></li>   
             </ul>
           </div>
         </div>

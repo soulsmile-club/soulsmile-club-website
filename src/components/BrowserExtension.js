@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/BrowserExtension.css';
-import extension from '../images/extension.jpeg';
+import ExtensionLaptop from '../images/Extension Laptop.png';
 import Button from 'react-bootstrap/Button';
 
 function BrowserExtension() {
@@ -21,7 +21,7 @@ function BrowserExtension() {
     <header className="App-header"></header>
     <div className="flex-container-browser">
         <div>
-            <img id="extension" src={extension}></img>
+            <img id="extension" src={ExtensionLaptop}></img>
         </div>
         <div>
             <h1 className="browser">The Soul<span id="smile">smile</span> Club extension is here.</h1>

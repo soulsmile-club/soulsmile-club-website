@@ -44,7 +44,7 @@
 	"The Honest Company": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=599875.535&type=3&subid=0",
 		"description": "Baby & beauty store",
-		"soulsmile-featured": true,
+		"soulsmile-featured": false,
 		"category": "Health & Beauty"
 	}, 
 	"Earth Shoes": {
@@ -56,7 +56,7 @@
 	"Bella+Canvas": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=756738.19&type=3&subid=0",
 		"description": "Wholesale blank tees",
-		"soulsmile-featured": true,
+		"soulsmile-featured": false,
 		"category": "Clothing"
 	}, 
 	"Angelic Bakehouse": {
@@ -92,13 +92,13 @@
 	"Buxom Cosmetics": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=561992.44&type=3&subid=0",
 		"description": "Cosmetics",
-		"soulsmile-featured": false,
+		"soulsmile-featured": true,
 		"category": "Health & Beauty"
 	},
 	"Splendid": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=513777.140&type=3&subid=0&LSNSUBSITE=LSNSUBSITE",
 		"description": "Clothing for women & kids",
-		"soulsmile-featured": true,
+		"soulsmile-featured": false,
 		"category": "Clothing"
 	},
 	"Outdoor Voices": {
@@ -107,7 +107,7 @@
 		"soulsmile-featured": false,
 		"category": "Clothing"
 	},
-	"Keratase": {
+	"Kerastase": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=662055.296&type=3&subid=0",
 		"description": "Hair care",
 		"soulsmile-featured": false,
@@ -122,13 +122,13 @@
 	"James Perse": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=668935.474&type=3&subid=0",
 		"description": "Apparel made in the U.S.",
-		"soulsmile-featured": true,
+		"soulsmile-featured": false,
 		"category": "Clothing"
 	},
 	"Molton Brown": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=388455.519&type=3&subid=0",
 		"description": "British fragrance & personal care",
-		"soulsmile-featured": false,
+		"soulsmile-featured": true,
 		"category": "Health & Beauty"
 	},
 	"Benefit Cosmetics": {

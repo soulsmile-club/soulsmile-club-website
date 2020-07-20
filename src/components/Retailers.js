@@ -51,7 +51,7 @@ function Retailers() {
             <span>Retailers to earn soul<span id="smile">smiles</span> with.</span>
         </header>
         <hr/>
-        <p id="update">*Soul<span id="note">smile</span> Club featured brands for sustainable and ethical practices.</p>
+        <p id="update">*Soul<span id="note">smile</span> Club featured brands for sustainable and ethical practices, vetted based on <a href="https://goodonyou.eco/" target="_blank" rel="noopener noreferrer">Good on You</a> and <a href="https://www.crueltyfreekitty.com/" target="_blank" rel="noopener noreferrer">Cruelty-Free Kitty</a> brand ratings.</p>
         <div className="flex-container">
             {categories.map((cat, catIndex) => {
                 return (
@@ -67,12 +67,18 @@ function Retailers() {
                 );
             })}
         </div>
-        <p id="update"><span id="important">Disclosure:</span> As an affiliate of the above retailers, Soulsmile Club earns commission from qualifying purchases. 
-        By clicking on any of the links above, you are giving us your consent to direct you to our affiliate link. 
-        However, instead of keeping any commission we receive, we donate all of it to the causes listed  <a href="/causes">here</a>.</p>
-        <p id="update"><span id="important">Note:</span> Early users of Soulsmile Club may notice that Amazon is no longer listed as a retailer. In order to better align with our mission to fuel social change through everyday consumerism,
-        Amazon has been replaced with a sustainable alternative marketplace, <a href="https://earthhero.com?ref=soulsmileclub" target="_blank" rel="noopener noreferrer">Earth Hero</a>, 
-        and we are working to add even more socially conscious retailers for you to choose from.</p>
+        <div className="row">
+            <div className="col">
+            <p id="update"><span id="important">Disclosure:</span> As an affiliate of the above retailers, Soulsmile Club earns commission from qualifying purchases. 
+            By clicking on any of the links above, you are giving us your consent to direct you to our affiliate link. 
+            However, instead of keeping any commission we receive, we donate all of it to the causes listed  <a href="/causes">here</a>.</p>
+            </div>
+            <div className="col">
+            <p id="update"><span id="important">Note:</span> Early users of Soulsmile Club may notice that Amazon is no longer listed as a retailer. In order to better align with our mission to fuel social change through everyday consumerism,
+            Amazon has been replaced with a sustainable alternative marketplace, <a href="https://earthhero.com?ref=soulsmileclub" target="_blank" rel="noopener noreferrer">Earth Hero</a>, 
+            and we are working to add even more socially conscious retailers for you to choose from.</p>
+            </div>
+        </div>
         </>
     );
 }
