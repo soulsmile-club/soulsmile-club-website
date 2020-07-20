@@ -50,7 +50,7 @@
 	"Earth Shoes": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=769017.12&type=3&subid=0",
 		"description": "Sustainable footwear",
-		"soulsmile-featured": true,
+		"soulsmile-featured": false,
 		"category": "Shoes"
 	}, 
 	"Bella+Canvas": {
@@ -62,13 +62,13 @@
 	"Angelic Bakehouse": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=754077.6&type=3&subid=0",
 		"description": "Sprouted grained bread",
-		"soulsmile-featured": true,
+		"soulsmile-featured": false,
 		"category": "Food & Drink"
 	},
 	"Baked by Melissa": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=760083.8&type=3&subid=0",
 		"description": "Bite-size cupcakes",
-		"soulsmile-featured": true,
+		"soulsmile-featured": false,
 		"category": "Food & Drink"
 	},
 	"Maidenform": {
