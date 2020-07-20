@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../css/App.css';
 import SoulsmileNavbar from './SoulsmileNavbar';
 import SoulsmileFooter from './SoulsmileFooter';
@@ -16,6 +16,11 @@ history.listen(location => {
 });
 
 function App() {
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname);
+  }, [])
+
   return (
     <>
     <style type="text/css">
