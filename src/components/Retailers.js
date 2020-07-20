@@ -21,24 +21,50 @@ function Retailers() {
             var description = data[key]["description"];
             var featured = data[key]["soulsmile-featured"];
             var category = data[key]["category"];
+            var promo = data[key]["promo"];
+            var promoCode = data[key]["promo_code"];
             if (featured) {
-                featuredCategoryRetailers[categories.indexOf(category)].push(
+                if (promo) {
+                    featuredCategoryRetailers[categories.indexOf(category)].push(
                     <a href={link} id="retailer" target="_blank" rel="noopener noreferrer">
                         <div>
-                            {company}*
-                            <p id="company-description">{description}</p>
+                            {company}<b id="smile">*</b>
+                            <div id="company-description">{description}</div>
+                            <div id="promo-code">{promo} with promo code {promoCode} &#128522;</div>
                         </div>
                     </a>
-                );
+                    );
+                } else {
+                    featuredCategoryRetailers[categories.indexOf(category)].push(
+                        <a href={link} id="retailer" target="_blank" rel="noopener noreferrer">
+                            <div>
+                                {company}<b id="smile">*</b>
+                                <p id="company-description">{description}</p>
+                            </div>
+                        </a>
+                    );
+                }
             } else {
-                categoryRetailers[categories.indexOf(category)].push(
+                if (promo) {
+                    categoryRetailers[categories.indexOf(category)].push(
                     <a href={link} id="retailer" target="_blank" rel="noopener noreferrer">
                         <div>
                             {company}
-                            <p id="company-description">{description}</p>
+                            <div id="company-description">{description}</div>
+                            <div id="promo-code">{promo} with promo code {promoCode} &#128522;</div>
                         </div>
                     </a>
-                );
+                    );
+                } else {
+                    categoryRetailers[categories.indexOf(category)].push(
+                        <a href={link} id="retailer" target="_blank" rel="noopener noreferrer">
+                            <div>
+                                {company}
+                                <p id="company-description">{description}</p>
+                            </div>
+                        </a>
+                    );
+                }
             }
         }     
         setFeaturedRetailers(featuredCategoryRetailers);
@@ -51,7 +77,7 @@ function Retailers() {
             <span>Retailers to earn soul<span id="smile">smiles</span> with.</span>
         </header>
         <hr/>
-        <p id="update">*Soul<span id="note">smile</span> Club featured brands for sustainable and ethical practices, vetted based on <a href="https://goodonyou.eco/" target="_blank" rel="noopener noreferrer">Good on You</a> and <a href="https://www.crueltyfreekitty.com/" target="_blank" rel="noopener noreferrer">Cruelty-Free Kitty</a> brand ratings.</p>
+        <p id="update"><b id="smile">*</b>Soul<span id="note">smile</span> Club featured brands for sustainable and ethical practices, vetted based on <a href="https://goodonyou.eco/" target="_blank" rel="noopener noreferrer">Good on You</a> and <a href="https://www.crueltyfreekitty.com/" target="_blank" rel="noopener noreferrer">Cruelty-Free Kitty</a> brand ratings.</p>
         <div className="flex-container">
             {categories.map((cat, catIndex) => {
                 return (

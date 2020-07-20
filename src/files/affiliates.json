@@ -39,7 +39,9 @@
 		"link": "https://earthhero.com?ref=soulsmileclub",
 		"description": "Eco-friendly marketplace",
 		"soulsmile-featured": true,
-		"category": "General"
+		"category": "General",
+		"promo_code": "SOULSMILE",
+		"promo": "Save 10%"
 	}, 
 	"The Honest Company": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=599875.535&type=3&subid=0",
