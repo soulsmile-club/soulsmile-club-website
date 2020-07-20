@@ -67,7 +67,7 @@ function Retailers() {
                 );
             })}
         </div>
-        <div className="row">
+        <div className="row" id="notes">
             <div className="col">
             <p id="update"><span id="important">Disclosure:</span> As an affiliate of the above retailers, Soulsmile Club earns commission from qualifying purchases. 
             By clicking on any of the links above, you are giving us your consent to direct you to our affiliate link. 
