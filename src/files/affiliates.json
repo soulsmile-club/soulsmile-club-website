@@ -136,6 +136,12 @@
 		"keyword": "skinceuticals",
 		"domain": "skinceuticals.com"
 	}, 
+	"Herbivore Botanicals": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=607200.6&subid=0&type=4",
+		"description": "Cruelty-free, natural skincare",
+		"soulsmile-featured": true,
+		"category": "Health & Beauty"
+	},
 	"Buxom Cosmetics": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=561992.44&type=3&subid=0",
 		"description": "Cosmetics",
@@ -207,5 +213,14 @@
 		"extensionAllowed": false,
 		"keyword": "benefitcosmetics",
 		"domain": "benefitcosmetics.com"
+	},
+	"7 for All Mankind": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=658839.10000719&type=3&subid=0",
+		"description": "American denim brand",
+		"soulsmile-featured": false,
+		"category": "Clothing",
+		"extensionAllowed": false,
+		"keyword": "7forallmankind",
+		"domain": "7forallmankind.com"
 	}
 }
