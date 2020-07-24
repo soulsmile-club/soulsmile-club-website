@@ -19,13 +19,22 @@ function RetailerPage(props) {
         </>
     );
 
+    var activateButton = (
+        <>
+        <button onClick={activateDonations} type='button' className='btn btn-secondary' id='activateButton'>Earn Soulsmiles</button>
+        <div id="disclosureMessage"><b>Disclosure:</b> As an affiliate of this retailer, Soulsmile Club earns commission from qualifying purchases. 
+        By clicking the button above, you are giving us your consent to direct you to our affiliate link. 
+        However, instead of keeping the commission, we donate all of it to the causes listed <a href="/causes" target="_blank" rel="noopener noreferrer">here</a>.</div>
+        </>
+    );
+
     return (
         <>
         <header className="App-header">
             <span>Start earning soul<span id="smile">smiles</span> with {props.retailerName}.</span>
         </header>
         <hr/>
-        {activated ? checkmark : <button onClick={activateDonations} type='button' className='btn btn-secondary' id='activateButton'>Earn Soulsmiles</button>}
+        {activated ? checkmark : activateButton}
         <div id="strippedUrl" hidden={true}>{props.retailerInfo["domain"]}</div>
         </>
     );

@@ -141,6 +141,7 @@
 		"description": "Cruelty-free, natural skincare",
 		"soulsmile-featured": true,
 		"category": "Health & Beauty",
+		"extensionAllowed": false,
 		"keyword": "herbivorebotanicals",
 		"domain": "herbivorebotanicals.com"
 	},
