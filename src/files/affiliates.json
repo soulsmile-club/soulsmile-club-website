@@ -3,37 +3,55 @@
 		"link": "https://girlfriend-store.myshopify.com/?rfsn=4298873.761fea",
 		"description": "Sustainable activewear", 
 		"soulsmile-featured": true,
-		"category": "Clothing"
+		"category": "Clothing",
+		"extensionAllowed": true,
+		"keyword": "girlfriend",
+		"domain": "girlfriend.com"
 	}, 
 	"Best Buy": {
 		"link": "https://bestbuy.7tiv.net/oYWxY",
 		"description": "Electronics",
 		"soulsmile-featured": false,
-		"category": "Electronics"
+		"category": "Electronics",
+		"extensionAllowed": true,
+		"keyword": "bestbuy",
+		"domain": "bestbuy.com"
 	}, 
 	"Pillow Guy": {
 		"link": "https://pillowguy.rvgu.net/2ZPoD",
 		"description": "Bedding",
 		"soulsmile-featured": false,
-		"category": "Home"
+		"category": "Home",
+		"extensionAllowed": true,
+		"keyword": "pillowguy",
+		"domain": "pillowguy.com"
 	}, 
 	"Macy's": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=777210.100453945&type=3&subid=0",
 		"description": "Fashion clothing",
 		"soulsmile-featured": false,
-		"category": "Clothing"
+		"category": "Clothing",
+		"extensionAllowed": false,
+		"keyword": "macys",
+		"domain": "macys.com"
 	},
 	"Champion": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=510326.10000015&type=3&subid=0",
 		"description": "Athletic & college apparel",
 		"soulsmile-featured": false,
-		"category": "Clothing"
+		"category": "Clothing",
+		"extensionAllowed": false,
+		"keyword": "champion",
+		"domain": "champion.com"
 	}, 
 	"Logitech": {
 		"link": "https://logitech.cfzu.net/yYDaD",
 		"description": "Computer peripherals & software",
 		"soulsmile-featured": false,
-		"category": "Electronics"
+		"category": "Electronics",
+		"extensionAllowed": true,
+		"keyword": "logitech",
+		"domain": "logitech.com"
 	}, 
 	"EarthHero": {
 		"link": "https://earthhero.com?ref=soulsmileclub",
@@ -41,102 +59,153 @@
 		"soulsmile-featured": true,
 		"category": "General",
 		"promo_code": "SOULSMILE",
-		"promo": "Save 10%"
+		"promo": "Save 10%",
+		"extensionAllowed": true,
+		"keyword": "earthhero",
+		"domain": "earthhero.com"
 	}, 
 	"The Honest Company": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=599875.535&type=3&subid=0",
 		"description": "Baby & beauty store",
 		"soulsmile-featured": false,
-		"category": "Health & Beauty"
+		"category": "Health & Beauty",
+		"extensionAllowed": false,
+		"keyword": "honestcompany",
+		"domain": "honest.com"
 	}, 
 	"Earth Shoes": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=769017.12&type=3&subid=0",
 		"description": "Sustainable footwear",
 		"soulsmile-featured": false,
-		"category": "Shoes"
+		"category": "Shoes",
+		"extensionAllowed": false,
+		"keyword": "earthshoes",
+		"domain": "earthshoes.com"
 	}, 
 	"Bella+Canvas": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=756738.19&type=3&subid=0",
 		"description": "Wholesale blank tees",
 		"soulsmile-featured": false,
-		"category": "Clothing"
+		"category": "Clothing",
+		"extensionAllowed": false,
+		"keyword": "bellacanvas",
+		"domain": "bellacanvas.com"
 	}, 
 	"Angelic Bakehouse": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=754077.6&type=3&subid=0",
 		"description": "Sprouted grained bread",
 		"soulsmile-featured": false,
-		"category": "Food & Drink"
+		"category": "Food & Drink",
+		"extensionAllowed": false,
+		"keyword": "angelicbakehouse",
+		"domain": "angelicbakehouse.com"
 	},
 	"Baked by Melissa": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=760083.8&type=3&subid=0",
 		"description": "Bite-size cupcakes",
 		"soulsmile-featured": false,
-		"category": "Food & Drink"
+		"category": "Food & Drink",
+		"extensionAllowed": false,
+		"keyword": "bakedbymelissa",
+		"domain": "bakedbymelissa.com"
 	},
 	"Maidenform": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=664600.10&type=3&subid=0",
 		"description": "Intimates & shapewear",
 		"soulsmile-featured": false,
-		"category": "Clothing"
+		"category": "Clothing",
+		"extensionAllowed": false,
+		"keyword": "maidenform",
+		"domain": "maidenform.com"
 	},
 	"Hint": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=650829.78&type=3&subid=0",
 		"description": "Fruit infused, flavored water",
 		"soulsmile-featured": false,
-		"category": "Food & Drink"
+		"category": "Food & Drink",
+		"extensionAllowed": false,
+		"keyword": "hint",
+		"domain": "drinkhint.com"
 	},
 	"SkinCeuticals": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=645501.2&type=3&subid=0",
 		"description": "Skincare",
 		"soulsmile-featured": false,
-		"category": "Health & Beauty"
+		"category": "Health & Beauty",
+		"extensionAllowed": false,
+		"keyword": "skinceuticals",
+		"domain": "skinceuticals.com"
 	}, 
 	"Buxom Cosmetics": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=561992.44&type=3&subid=0",
 		"description": "Cosmetics",
 		"soulsmile-featured": true,
-		"category": "Health & Beauty"
+		"category": "Health & Beauty",
+		"extensionAllowed": false,
+		"keyword": "buxomcosmetics",
+		"domain": "buxomcosmetics.com"
 	},
 	"Splendid": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=513777.140&type=3&subid=0&LSNSUBSITE=LSNSUBSITE",
 		"description": "Clothing for women & kids",
 		"soulsmile-featured": false,
-		"category": "Clothing"
+		"category": "Clothing",
+		"extensionAllowed": false,
+		"keyword": "splendid",
+		"domain": "splendid.com"
 	},
 	"Outdoor Voices": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=796668.88&type=3&subid=0",
 		"description": "Activewear",
 		"soulsmile-featured": false,
-		"category": "Clothing"
+		"category": "Clothing",
+		"extensionAllowed": false,
+		"keyword": "outdoorvoices",
+		"domain": "outdoorvoices.com"
 	},
 	"Kerastase": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=662055.296&type=3&subid=0",
 		"description": "Hair care",
 		"soulsmile-featured": false,
-		"category": "Health & Beauty"
+		"category": "Health & Beauty",
+		"extensionAllowed": false,
+		"keyword": "kerastase",
+		"domain": "kerastase-usa.com"
 	},
 	"e.l.f cosmetics": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=382587.779&type=3&subid=0",
 		"description": "Beauty & skincare",
 		"soulsmile-featured": true,
-		"category": "Health & Beauty"
+		"category": "Health & Beauty",
+		"extensionAllowed": false,
+		"keyword": "elfcosmetics",
+		"domain": "elfcosmetics.com"
 	},
 	"James Perse": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=668935.474&type=3&subid=0",
 		"description": "Apparel made in the U.S.",
 		"soulsmile-featured": false,
-		"category": "Clothing"
+		"category": "Clothing",
+		"extensionAllowed": false,
+		"keyword": "jamesperse",
+		"domain": "jamesperse.com"
 	},
 	"Molton Brown": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=388455.519&type=3&subid=0",
 		"description": "British fragrance & personal care",
 		"soulsmile-featured": true,
-		"category": "Health & Beauty"
+		"category": "Health & Beauty",
+		"extensionAllowed": false,
+		"keyword": "moltonbrown",
+		"domain": "moltonbrown.com"
 	},
 	"Benefit Cosmetics": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=250778.10001033&type=3&subid=0",
 		"description": "Beauty & skincare",
 		"soulsmile-featured": false,
-		"category": "Health & Beauty"
+		"category": "Health & Beauty",
+		"extensionAllowed": false,
+		"keyword": "benefitcosmetics",
+		"domain": "benefitcosmetics.com"
 	}
 }

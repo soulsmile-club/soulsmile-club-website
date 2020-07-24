@@ -11,8 +11,19 @@ import PrivacyPolicy from '../components/PrivacyPolicy';
 import MonthlyReports from '../components/MonthlyReports';
 import HowToUse from '../components/HowToUse';
 import FAQ from '../components/FAQ';
+import affiliatesData from '../files/affiliates.json';
+import RetailerPage from '../components/RetailerPage';
 
 export default function Routes() {
+  var data = JSON.parse(JSON.stringify(affiliatesData));
+
+  var retailerPaths = Object.keys(data).map(key => {
+    if (!data[key]["extensionAllowed"]) {
+      var urlName = "/retailers/" + data[key]["keyword"];
+      return <Route key={key} path={urlName} exact render={() => <RetailerPage retailerName={key} retailerInfo={data[key]} />} />
+    }
+  });
+
   return (
     <Switch>
       <Route path="/" exact component={Home} />
@@ -26,6 +37,7 @@ export default function Routes() {
       <Route path="/privacy-policy" exact component={PrivacyPolicy} />
       <Route path="/monthly-reports" exact component={MonthlyReports} />
       <Route path="/faq" exact component={FAQ} />
+      {retailerPaths}
       {/* <Route path="/register" component={SignUp} />
       <Route path="/dashboard" component={Dashboard} isPrivate /> */}
       {/* redirect user to SignIn page if route does not exist and user is not authenticated */}
