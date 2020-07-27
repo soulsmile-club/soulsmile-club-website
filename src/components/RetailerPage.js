@@ -21,7 +21,7 @@ function RetailerPage(props) {
 
     var activateButton = (
         <>
-        <button onClick={activateDonations} type='button' className='btn btn-secondary' id='activateButton'>Earn Soulsmiles</button>
+        <button onClick={activateDonations} type='button' className='btn' id='activateButton'>Click here to <br/> earn soul<span id="smile">smiles</span>!</button>
         <div id="disclosureMessage"><b>Disclosure:</b> As an affiliate of this retailer, Soulsmile Club earns commission from qualifying purchases. 
         By clicking the button above, you are giving us your consent to direct you to our affiliate link. 
         However, instead of keeping the commission, we donate all of it to the causes listed <a href="/causes" target="_blank" rel="noopener noreferrer">here</a>.</div>

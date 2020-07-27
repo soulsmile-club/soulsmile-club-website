@@ -4,13 +4,12 @@
 
 #activateButton {
 	border-radius: 50%;
-	height: 400px;
-	width: 400px;
-	text-transform: uppercase;
+	height: 300px;
+	width: 300px;
 	box-shadow: 0px 9px 3px -6px rgba(0,0,0,0.2), 0px 6px 6px 0px rgba(0,0,0,0.14), 0px 3px 15px 0px rgba(0,0,0,0.12);
-    background-color: #e0e0e0;
-    color: #444444;
-    font-size: 40px;
+  background-color: #e0e0e0;
+  color: #444444;
+  font-size: 30px;
 }
 
 #activateButton:hover {
@@ -30,8 +29,8 @@
 }
 
 .checkmark {
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   display: block;
   stroke-width: 2;
