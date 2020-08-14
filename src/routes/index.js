@@ -13,6 +13,7 @@ import HowToUse from '../components/HowToUse';
 import FAQ from '../components/FAQ';
 import affiliatesData from '../files/affiliates.json';
 import RetailerPage from '../components/RetailerPage';
+import Donate from '../components/Donate';
 
 export default function Routes() {
   var data = JSON.parse(JSON.stringify(affiliatesData));
@@ -37,6 +38,7 @@ export default function Routes() {
       <Route path="/privacy-policy" exact component={PrivacyPolicy} />
       <Route path="/monthly-reports" exact component={MonthlyReports} />
       <Route path="/faq" exact component={FAQ} />
+      <Route path="/donate" exact component={Donate} />
       {retailerPaths}
       {/* <Route path="/register" component={SignUp} />
       <Route path="/dashboard" component={Dashboard} isPrivate /> */}

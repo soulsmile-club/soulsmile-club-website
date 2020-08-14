@@ -18,6 +18,7 @@ function SoulsmileFooter() {
           <div className="col-xs-6 col-md-3">
             <h6>Join Soulsmile Club</h6>
             <ul className="footer-links">
+              <li><a href="/donate">Donate Now</a></li>
               <li><a href="https://tiny.cc/soulsmile-extension">Download Extension</a></li>
               <li><a href="/retailers">Shop with Retailers</a></li>
               <li><a href="/causes">View Causes</a></li>
