@@ -1,4 +1,22 @@
 {
+	"BN3TH": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=718559.13&type=3&subid=0",
+		"description": "Men's performance underwear", 
+		"soulsmile-featured": false,
+		"category": "Clothing",
+		"extensionAllowed": false,
+		"keyword": "bn3th",
+		"domain": "www.bn3th.com"
+	}, 
+	"Perricone MD": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=755235.75&type=3&subid=0",
+		"description": "Anti-aging skincare", 
+		"soulsmile-featured": true,
+		"category": "Health & Beauty",
+		"extensionAllowed": false,
+		"keyword": "perriconemd",
+		"domain": "perriconemd.com"
+	}, 
 	"Rocketbook": {
 		"link": "https://www.getrocketbook.com/?rfsn=4444419.f24694&amp;source=affiliate&amp;campaign=4444419",
 		"description": "Reusable smart notebook", 
@@ -82,11 +100,20 @@
 		"keyword": "honestcompany",
 		"domain": "honest.com"
 	}, 
+	"SmartBuyGlasses": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=498399.268&type=3&subid=0",
+		"description": "Designer sunglasses & glasses",
+		"soulsmile-featured": false,
+		"category": "Shoes & Accessories",
+		"extensionAllowed": false,
+		"keyword": "smartbuyglasses",
+		"domain": "smartbuyglasses.com"
+	}, 
 	"Earth Shoes": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=769017.12&type=3&subid=0",
 		"description": "Sustainable footwear",
 		"soulsmile-featured": false,
-		"category": "Shoes",
+		"category": "Shoes & Accessories",
 		"extensionAllowed": false,
 		"keyword": "earthshoes",
 		"domain": "earthshoes.com"
