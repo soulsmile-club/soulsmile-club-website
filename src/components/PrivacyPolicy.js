@@ -72,6 +72,13 @@ function PrivacyPolicy() {
         on behalf of Soulsmile Club.</p>
         <p id="info">User data is retained for a certain period of time, after 
         which it will be deleted and no longer accessible.</p>
+        <p id="bold-important">
+        Disclaimer:
+        This website uses Google Analytics to collect usage statistics to help improve user experience. 
+        Our extension also uses Google Analytics to collect extension usage statistics to help improve user experience. 
+        If you want to opt-out of Google Analytics tracking, please visit <a href="https://tools.google.com/dlpage/gaoptout">this link</a> to
+        opt-out, or you can set up a filter in Adblock Plus or similar ad blocker tools like AdBlock, uBlock or Adblock Pro.
+        To learn more about Google Analytics privacy policy, click <a href="https://policies.google.com/privacy?hl=en-US">here</a>.</p>
         <p id="bold-important">By downloading this extension, you are giving us your consent that 
         this Soulsmile Club extension may insert, append, or redirect the URL of the current 
         tab to one of our affiliate links. Soulsmile Club earns commission on qualifying 
