@@ -6,7 +6,6 @@ import Button from 'react-bootstrap/Button';
 function Home() {
   return (
     <>
-    <meta name="fo-verify" content="5d682b96-c26e-4eda-ab31-5dcb4892a432"></meta>
     <style type="text/css">
       {`
       .btn-round {
