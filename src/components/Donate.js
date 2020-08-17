@@ -127,6 +127,13 @@ function Donate() {
         <div className="profile">
         {photoURL ? <img id="photo" src={photoURL} alt={name}></img> : <></>}
         <h1>{name}</h1>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_donations" />
+        <input type="hidden" name="business" value="team@soulsmile.club" />
+        <input type="hidden" name="currency_code" value="USD" />
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+        <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+        </form>
         </div>
         <button onClick={signOut}>Log Out</button>
         </>
@@ -189,7 +196,7 @@ function Donate() {
         // Account exists with different credential. To recover both accounts
         // have to be linked but the user must prove ownership of the original
         // account.
-        if (errorCode == 'auth/account-exists-with-different-credential') {
+        if (errorCode === 'auth/account-exists-with-different-credential') {
             var existingEmail = error.email;
             var pendingCred = error.credential;
             // Lookup existing account’s provider ID.
@@ -201,12 +208,12 @@ function Donate() {
                     setIsConfirmAccount('password');
                     setExistingEmail(existingEmail);
                     setPendingCred(pendingCred);
-                } else if (methods[0] == firebase.auth.GoogleAuthProvider.PROVIDER_ID) {
+                } else if (methods[0] === firebase.auth.GoogleAuthProvider.PROVIDER_ID) {
                     // Sign in user to Google with same account.
                     setIsConfirmAccount('google');
                     setExistingEmail(existingEmail);
                     setPendingCred(pendingCred);
-                } else if (methods[0] == firebase.auth.FacebookAuthProvider.PROVIDER_ID) {
+                } else if (methods[0] === firebase.auth.FacebookAuthProvider.PROVIDER_ID) {
                     // Sign in user to Facebook with same account.
                     setIsConfirmAccount('facebook');
                     setExistingEmail(existingEmail);
@@ -269,11 +276,10 @@ function Donate() {
 
     return (
         <>
-          
-        
-        {isLoggedIn ? logoutButton : ((isConfirmAccount == 'password') ? confirmPassword :
-                                      (isConfirmAccount == 'google') ? continueGoogle :
-                                      (isConfirmAccount == 'facebook') ? continueFacebook :
+
+        {isLoggedIn ? logoutButton : ((isConfirmAccount === 'password') ? confirmPassword :
+                                      (isConfirmAccount === 'google') ? continueGoogle :
+                                      (isConfirmAccount === 'facebook') ? continueFacebook :
                                       (isLogin ? loginButtons : signupButtons)) }
         </>
     );
