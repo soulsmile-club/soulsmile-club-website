@@ -21,7 +21,7 @@ function BrowserExtension() {
     <header className="App-header"></header>
     <div className="flex-container-browser">
         <div>
-            <img id="extension" src={ExtensionLaptop}></img>
+            <img id="extension" alt="" src={ExtensionLaptop}></img>
         </div>
         <div>
             <h1 className="browser">The Soul<span id="smile">smile</span> Club extension is here.</h1>

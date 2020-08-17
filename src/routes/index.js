@@ -18,9 +18,12 @@ export default function Routes() {
   var data = JSON.parse(JSON.stringify(affiliatesData));
 
   var retailerPaths = Object.keys(data).map(key => {
+    var urlName = "/retailers/" + data[key]["keyword"];
     if (!data[key]["extensionAllowed"]) {
-      var urlName = "/retailers/" + data[key]["keyword"];
       return <Route key={key} path={urlName} exact render={() => <RetailerPage retailerName={key} retailerInfo={data[key]} />} />
+    } else {
+      console.log(data);
+      return <Route key={key} path={urlName} exact render={() => <></>} />
     }
   });
 

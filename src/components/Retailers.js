@@ -11,7 +11,7 @@ function Retailers() {
         var data = JSON.parse(JSON.stringify(affiliatesData));
         var categoryRetailers = [];
         var featuredCategoryRetailers = [];
-        for (var c in categories) {
+        for (var i = 0; i < categories.length; i++) {
             categoryRetailers.push([]);
             featuredCategoryRetailers.push([]);
         }

@@ -16,7 +16,7 @@ function Team() {
     <h4 id="subtitle">We are a team of students and fresh graduates from University of Pennsylvania.</h4>
     <div className="flex-container-team">
       <div>
-        <img id="team" src={Wenhan_Zhang}></img>
+        <img alt="" id="team" src={Wenhan_Zhang}></img>
         <h4 id="name">Wenhan Zhang (Han)</h4>
         <h5 id="role">Founder, CEO</h5>
         <h4 id="major">Philosophy, CS</h4>
@@ -27,7 +27,7 @@ function Team() {
         to <a href="https://www.charitywater.org/" target="_blank" rel="noopener noreferrer">Charity: Water</a> and <a href="http://philosophizethis.org/" target="_blank" rel="noopener noreferrer">Philosophize This</a>.</p>
       </div>
       <div>
-        <img id="team" src={Sneha_Rampalli}></img>
+        <img alt="" id="team" src={Sneha_Rampalli}></img>
         <h4 id="name">Sneha Rampalli</h4>
         <h5 id="role">Co-Founder, CTO</h5>
         <h4 id="major">Computer Science</h4>
@@ -38,7 +38,7 @@ function Team() {
         to <a href="https://aidindia.org/" target="_blank" rel="noopener noreferrer">Association for India's Development</a> and <a href="https://agapewebsite.org/" target="_blank" rel="noopener noreferrer">Agape International Missions</a>.</p>
       </div>
       <div>
-        <img id="team" src={Sneha_Advani}></img>
+        <img alt="" id="team" src={Sneha_Advani}></img>
         <h4 id="name">Sneha Advani</h4>
         <h5 id="role">Tech Developer</h5>
         <h4 id="major">Computer Science, Cognitive Science</h4>
@@ -50,7 +50,7 @@ function Team() {
         to <a href="https://www.nanhikali.org/" target="_blank" rel="noopener noreferrer">Project Nanhi Kali</a> and <a href="https://thelovelandfoundation.org/" target="_blank" rel="noopener noreferrer">The Loveland Foundation</a>.</p>
       </div>
       <div>
-        <img id="team" src={Hannah_Gonzalez}></img>
+        <img alt="" id="team" src={Hannah_Gonzalez}></img>
         <h4 id="name">Hannah Gonzalez</h4>
         <h5 id="role">Partner Outreach</h5>
         <h4 id="major">Computer Science</h4>
@@ -61,7 +61,7 @@ function Team() {
         to <a href="https://www.hsf.net/" target="_blank" rel="noopener noreferrer">Hispanic Scholarship Fund</a> and <a href="https://www.doctorswithoutborders.org/" target="_blank" rel="noopener noreferrer">Doctors Without Borders</a>.</p>
       </div>
       <div>
-        <img id="team" src={Nidhi_Reddy}></img>
+        <img alt="" id="team" src={Nidhi_Reddy}></img>
         <h4 id="name">Nidhi Reddy</h4>
         <h5 id="role">User Outreach</h5>
         <h4 id="major">Neuroscience, Healthcare Mgmt.</h4>
@@ -72,7 +72,7 @@ function Team() {
         to <a href="https://www.amnesty.org/" target="_blank" rel="noopener noreferrer">Amnesty International</a> and <a href="https://www.conservationfund.org/" target="_blank" rel="noopener noreferrer">The Conservation Fund</a>.</p>
       </div>
       <div>
-        <img id="team" src={Wendy_Qian}></img>
+        <img alt="" id="team" src={Wendy_Qian}></img>
         <h4 id="name">Wendy Qian</h4>
         <h5 id="role">Retailer Outreach</h5>
         <h4 id="major">Psychology, Fine Arts</h4>
