@@ -1,4 +1,112 @@
 {
+	"Gaiam": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=671990.10008639&type=3&subid=0",
+		"description": "Yoga mats & video streaming service", 
+		"soulsmile-featured": false,
+		"category": "Fitness",
+		"extensionAllowed": false,
+		"keyword": "gaiam",
+		"domain": "www.gaiam.com"
+	},
+	"Ultimate Ears": {
+		"link": "https://ultimate-ears.dubn.net/Xbara",
+		"description": "Portable & bluetooth speakers", 
+		"soulsmile-featured": false,
+		"category": "Electronics",
+		"extensionAllowed": true,
+		"keyword": "ultimateears",
+		"domain": "www.ultimateears.com"
+	},
+	"Blue Microphone": {
+		"link": "https://imp.i127288.net/10Ygd",
+		"description": "Premium microphones & headphones", 
+		"soulsmile-featured": false,
+		"category": "Electronics",
+		"extensionAllowed": true,
+		"keyword": "bluemic",
+		"domain": "www.bluemic.com"
+	},
+	"Astro Gaming": {
+		"link": "https://imp.i140643.net/GeyQk",
+		"description": "Gaming headsets, controllers, etc.", 
+		"soulsmile-featured": false,
+		"category": "Electronics",
+		"extensionAllowed": true,
+		"keyword": "astrogaming",
+		"domain": "www.astrogaming.com"
+	},
+	"Novica Marketplace": {
+		"link": "https://go.novica.com/vBKWd",
+		"description": "Artisan marketplace", 
+		"soulsmile-featured": false,
+		"category": "General",
+		"extensionAllowed": true,
+		"keyword": "novica",
+		"domain": "www.novica.com"
+	},
+	"Grubhub": {
+		"link": "https://grubhub.vdcy.net/3nKYK",
+		"description": "Food delivery (soulsmiles on first use!)", 
+		"soulsmile-featured": false,
+		"category": "Food & Drink",
+		"extensionAllowed": false,
+		"keyword": "grubhub",
+		"domain": "www.grubhub.com"
+	},
+	"La Roche-Posay": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=645495.22&type=3&subid=0",
+		"description": "Dermatologist recommended skincare", 
+		"soulsmile-featured": false,
+		"category": "Health & Beauty",
+		"extensionAllowed": false,
+		"keyword": "larocheposay",
+		"domain": "www.laroche-posay.us"
+	},
+	"Alibris": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=189673.10000273&type=3&subid=0",
+		"description": "Online bookstore", 
+		"soulsmile-featured": false,
+		"category": "Books",
+		"extensionAllowed": false,
+		"keyword": "alibris",
+		"domain": "www.alibris.com"
+	},
+	"Nordstrom": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=772822.10051039&type=3&subid=0",
+		"description": "Fashion clothing", 
+		"soulsmile-featured": false,
+		"category": "Clothing",
+		"extensionAllowed": false,
+		"keyword": "nordstrom",
+		"domain": "www.nordstrom.com"
+	},
+	"Wet n Wild": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=612664.494&type=3&subid=0&LSNSUBSITE=LSNSUBSITE",
+		"description": "Beauty & makeup products", 
+		"soulsmile-featured": false,
+		"category": "Health & Beauty",
+		"extensionAllowed": false,
+		"keyword": "wetnwild",
+		"domain": "www.wetnwildbeauty.com"
+	},
+	"Fresh Beauty": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=785823.23&type=3&subid=0",
+		"description": "Natural skin & body care", 
+		"soulsmile-featured": false,
+		"category": "Health & Beauty",
+		"extensionAllowed": false,
+		"keyword": "fresh",
+		"domain": "www.fresh.com"
+	},
+	"Biscolata": {
+		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=780908.6&type=3&subid=0",
+		"description": "Cookies filled with chocolate", 
+		"soulsmile-featured": false,
+		"category": "Food & Drink",
+		"extensionAllowed": false,
+		"keyword": "biscolata",
+		"domain": "www.biscolatausa.com"
+	}, 
 	"BN3TH": {
 		"link": "https://click.linksynergy.com/fs-bin/click?id=f/0sq70QSLU&offerid=718559.13&type=3&subid=0",
 		"description": "Men's performance underwear", 

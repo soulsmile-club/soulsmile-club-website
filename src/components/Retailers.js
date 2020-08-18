@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import '../css/Retailers.css';
 import affiliatesData from '../files/affiliates.json';
 
-var categories = ["General", "Clothing", "Health & Beauty", "Electronics", "Home", "Food & Drink", "Shoes & Accessories"]
+var categories = ["General", "Clothing", "Health & Beauty", "Electronics", "Home", "Food & Drink", "Shoes & Accessories", "Books", "Fitness"]
 
 function Retailers() {
     const [normalRetailers, setNormalRetailers] = React.useState([]);
