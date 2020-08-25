@@ -1,74 +1,79 @@
 import React, {useEffect} from 'react';
 import '../css/Retailers.css';
-import affiliatesData from '../files/affiliates.json';
 
 var categories = ["General", "Clothing & Apparel", "Health & Beauty", "Electronics", "Home", "Food & Drink", "Shoes & Accessories", "Books", "Fitness"]
+var REACT_APP_AIRTABLE_RETAILERS_DOC = process.env.REACT_APP_AIRTABLE_RETAILERS_DOC;
 
 function Retailers() {
     const [normalRetailers, setNormalRetailers] = React.useState([]);
     const [featuredRetailers, setFeaturedRetailers] = React.useState([]);
     useEffect(() => {
-        var data = JSON.parse(JSON.stringify(affiliatesData));
-        var categoryRetailers = [];
-        var featuredCategoryRetailers = [];
-        for (var i = 0; i < categories.length; i++) {
-            categoryRetailers.push([]);
-            featuredCategoryRetailers.push([]);
-        }
-        for (var key in data) {
-            var company = key;
-            var link = data[key]["link"];
-            var description = data[key]["description"];
-            var featured = data[key]["soulsmile-featured"];
-            var category = data[key]["category"];
-            var promo = data[key]["promo"];
-            var promoCode = data[key]["promo_code"];
-            if (featured) {
-                if (promo) {
-                    featuredCategoryRetailers[categories.indexOf(category)].push(
-                    <a href={link} id="retailer" target="_blank" rel="noopener noreferrer">
-                        <div>
-                            {company}<b id="smile">*</b>
-                            <div id="company-description">{description}</div>
-                            <div id="promo-code">{promo} with promo code {promoCode} &#128522;</div>
-                        </div>
-                    </a>
-                    );
-                } else {
-                    featuredCategoryRetailers[categories.indexOf(category)].push(
-                        <a href={link} id="retailer" target="_blank" rel="noopener noreferrer">
-                            <div>
-                                {company}<b id="smile">*</b>
-                                <p id="company-description">{description}</p>
-                            </div>
-                        </a>
-                    );
+        fetch(REACT_APP_AIRTABLE_RETAILERS_DOC)
+			.then(res => res.json())
+			.then(res => {
+                const data = res.records;
+				var categoryRetailers = [];
+                var featuredCategoryRetailers = [];
+                for (var i = 0; i < categories.length; i++) {
+                    categoryRetailers.push([]);
+                    featuredCategoryRetailers.push([]);
                 }
-            } else {
-                if (promo) {
-                    categoryRetailers[categories.indexOf(category)].push(
-                    <a href={link} id="retailer" target="_blank" rel="noopener noreferrer">
-                        <div>
-                            {company}
-                            <div id="company-description">{description}</div>
-                            <div id="promo-code">{promo} with promo code {promoCode} &#128522;</div>
-                        </div>
-                    </a>
-                    );
-                } else {
-                    categoryRetailers[categories.indexOf(category)].push(
-                        <a href={link} id="retailer" target="_blank" rel="noopener noreferrer">
-                            <div>
-                                {company}
-                                <p id="company-description">{description}</p>
-                            </div>
-                        </a>
-                    );
-                }
-            }
-        }     
-        setFeaturedRetailers(featuredCategoryRetailers);
-        setNormalRetailers(categoryRetailers);
+                for (var j = 0; j < data.length; j++) {
+                    const company = data[j]["fields"]["Name"];
+                    const link = data[j]["fields"]["Link"];
+                    const description = data[j]["fields"]["Description"];
+                    const featured = data[j]["fields"]["Soulsmile Featured"];
+                    const category = data[j]["fields"]["Category"];
+                    const promo = data[j]["fields"]["Promo"];
+                    const promoCode = data[j]["fields"]["Promo Code"];
+                    if (featured) {
+                        if (promo) {
+                            featuredCategoryRetailers[categories.indexOf(category)].push(
+                            <a href={link} id="retailer" target="_blank" rel="noopener noreferrer">
+                                <div>
+                                    {company}<b id="smile">*</b>
+                                    <div id="company-description">{description}</div>
+                                    <div id="promo-code">{promo} with promo code {promoCode} &#128522;</div>
+                                </div>
+                            </a>
+                            );
+                        } else {
+                            featuredCategoryRetailers[categories.indexOf(category)].push(
+                                <a href={link} id="retailer" target="_blank" rel="noopener noreferrer">
+                                    <div>
+                                        {company}<b id="smile">*</b>
+                                        <p id="company-description">{description}</p>
+                                    </div>
+                                </a>
+                            );
+                        }
+                    } else {
+                        if (promo) {
+                            categoryRetailers[categories.indexOf(category)].push(
+                            <a href={link} id="retailer" target="_blank" rel="noopener noreferrer">
+                                <div>
+                                    {company}
+                                    <div id="company-description">{description}</div>
+                                    <div id="promo-code">{promo} with promo code {promoCode} &#128522;</div>
+                                </div>
+                            </a>
+                            );
+                        } else {
+                            categoryRetailers[categories.indexOf(category)].push(
+                                <a href={link} id="retailer" target="_blank" rel="noopener noreferrer">
+                                    <div>
+                                        {company}
+                                        <p id="company-description">{description}</p>
+                                    </div>
+                                </a>
+                            );
+                        }
+                    }
+                }     
+                setFeaturedRetailers(featuredCategoryRetailers);
+                setNormalRetailers(categoryRetailers);
+			})
+			.catch(error => console.log(error));
     }, []);
 
     return (

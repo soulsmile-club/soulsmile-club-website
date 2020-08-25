@@ -4,12 +4,11 @@ import '../css/RetailerPage.css';
 function RetailerPage(props) {
 
     const [activated, setActivated] = React.useState(false);
-
     function activateDonations() {
         setActivated(true);
         setTimeout(function() {
             console.log("ended");
-            window.location.href=props.retailerInfo["link"];
+            window.location.href=props.retailerLink;
         }, 1100);
     }
 
@@ -35,7 +34,7 @@ function RetailerPage(props) {
         </header>
         <hr/>
         {activated ? checkmark : activateButton}
-        <div id="strippedUrl" hidden={true}>{props.retailerInfo["domain"]}</div>
+        <div id="strippedUrl" hidden={true}>{props.companyDomain}</div>
         </>
     );
 }
