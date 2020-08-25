@@ -27,7 +27,6 @@ function Causes() {
                         "Charity Navigator Rating": charityNavigator,
                         "GuideStar Rating": guideStar
                     }];
-                    
                 } else {
                     causes[cause].push({
                         "Organization": org,
