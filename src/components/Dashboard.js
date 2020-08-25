@@ -1,12 +1,22 @@
 import React, { useEffect } from 'react';
-import '../css/Donate.css';
+import '../css/Dashboard.css';
 import { FaFacebookSquare } from 'react-icons/fa';
 import { FaGoogle } from 'react-icons/fa';
 import * as firebase from "firebase/app";
+import { Button } from 'react-bootstrap';
+import Select from 'react-select';
 
 // Add the Firebase services that you want to use
 import "firebase/auth";
 import "firebase/firestore";
+
+const options =[
+    {value: 0, label: 'All Soulsmile Causes'},
+    {value: 1, label: 'Education'},
+    {value: 2, label: 'Global Health'},
+    {value: 3, label: 'Racial Justice'},
+    {value: 4, label: 'Humanitarian Aid'}
+]
 
 var firebaseConfig = {
     apiKey: process.env.REACT_APP_API_KEY,
@@ -20,7 +30,7 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-function Donate() {
+function Dashboard() {
 
     const [isLoggedIn, setIsLoggedIn] = React.useState(false);
     const [name, setName] = React.useState('');
@@ -33,6 +43,13 @@ function Donate() {
     const [errorMessage, setErrorMessage] = React.useState('');
     const [existingEmail, setExistingEmail] = React.useState('');
     const [pendingCred, setPendingCred] = React.useState({});
+
+    const [showOneTimeDonationButtons, setShowOneTimeDonationButtons] = React.useState(false);
+    const [showSubscriptionButtons, setShowSubscriptionButtons] = React.useState(false);
+    const [oneTimeAmount, setOneTimeAmount] = React.useState(5);
+    const [subscriptionAmount, setSubscriptionAmount] = React.useState(5);
+    const [oneTimeCause, setOneTimeCause] = React.useState(0);
+    const [subscriptionCause, setSubscriptionCause] = React.useState(0);
 
     useEffect(() => {
         console.log(isLogin);
@@ -54,6 +71,7 @@ function Donate() {
         });
     });
 
+    
     function handleUserLoggedIn (user) {
         setIsLoggedIn(true);
     }
@@ -122,20 +140,104 @@ function Donate() {
         setIsLogin(!isLogin);
     }
 
+    function handleAmountInputClicked () {
+        if (document.getElementById("amountInput").value) {
+            setOneTimeAmount(parseFloat(document.getElementById("amountInput").value).toFixed(2));
+        }
+    }
+
+    function handleSubscriptionAmountInputClicked () {
+        if (document.getElementById("subscriptionAmountInput").value) {
+            setSubscriptionAmount(parseFloat(document.getElementById("subscriptionAmountInput").value).toFixed(2));
+        }
+    }
+
+    var causeSelector = (
+        <>
+        <div>Which cause would you like to donate to?</div>
+        <div id="smile">**100% of your donation will go directly to Soulsmile Club's curated and heavily researched organizations that we believe are doing the best work in these areas!**</div>
+        <Select
+            className="causeSelector"
+            defaultValue={options[0]}
+            options={options}
+            onChange={(selected) => setOneTimeCause(selected.value)}
+        />
+        </>
+    );
+
     var logoutButton = (
         <>
         <div className="profile">
         {photoURL ? <img id="photo" src={photoURL} alt={name}></img> : <></>}
-        <h1>{name}</h1>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-        <input type="hidden" name="cmd" value="_donations" />
-        <input type="hidden" name="business" value="team@soulsmile.club" />
-        <input type="hidden" name="currency_code" value="USD" />
-        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-        <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-        </form>
-        </div>
+        <h1>{name}</h1></div>
+        <div className="donationButtonContainer">
+        <Button onClick={() => setShowOneTimeDonationButtons(!showOneTimeDonationButtons)} bsPrefix="donateButton">Donate once to a Smileage Cause</Button>
+        {showOneTimeDonationButtons ?
+            <>
+            <div>How much would you like to donate?</div>
+            <div id="smile">**If you donate $5 or more a month, you can become a Soulsmile Club Gold Member!**</div>
+            <div className="buttonGroup">
+                <Button bsPrefix="amountButton" active={oneTimeAmount === 3} onClick={() => setOneTimeAmount(3)}>
+                    $3
+                </Button>
+                <Button bsPrefix="amountButton" active={oneTimeAmount === 5} onClick={() => setOneTimeAmount(5)}>
+                    $5
+                </Button>
+                <Button bsPrefix="amountButton" active={oneTimeAmount === 10} onClick={() => setOneTimeAmount(10)}>
+                    $10
+                </Button>
+                    <input id="amountInput" onClick={handleAmountInputClicked} className="amountInput" type="number" min="0.01" step="0.01" placeholder="Custom Amount" onChange={e => {if (e.target.value && e.target.value >= 0.01) { setOneTimeAmount(parseFloat(e.target.value).toFixed(2))}}}></input>
+            </div>
+
+            <div>Which cause would you like to donate to?</div>
+            <div id="smile">**100% of your donation will go directly to Soulsmile Club's curated and heavily researched organizations that we believe are doing the best work in these areas!**</div>
+            <Select
+                className="causeSelector"
+                defaultValue={options[0]}
+                options={options}
+                onChange={(selected) => setOneTimeCause(selected.value)}
+            />
+
+            <a href={"/payment?type=single&amount=" + oneTimeAmount + "&cause=" + oneTimeCause}>
+                <Button bsPrefix="amount submit">Donate ${oneTimeAmount}</Button>
+            </a>
+            </>
+        : <></>}
+        <Button onClick={() => setShowSubscriptionButtons(!showSubscriptionButtons)} bsPrefix="donateButton">Create a Smileage Program monthly donation!</Button>
+        {showSubscriptionButtons ?
+            <>
+            <div>How much would you like to pledge each month?</div>
+            <div id="smile">**If you donate $5 or more a month, you will be considered a Soulsmile Club Gold Member! You can cancel or change this subscription at any time.**</div>
+            <div className="buttonGroup">
+                <Button bsPrefix="amountButton" active={subscriptionAmount === 3} onClick={() => setSubscriptionAmount(3)}>
+                    $3
+                </Button>
+                <Button bsPrefix="amountButton" active={subscriptionAmount === 5} onClick={() => setSubscriptionAmount(5)}>
+                    $5
+                </Button>
+                <Button bsPrefix="amountButton" active={subscriptionAmount === 10} onClick={() => setSubscriptionAmount(10)}>
+                    $10
+                </Button>
+                    <input id="subscriptionAmountInput" onClick={handleSubscriptionAmountInputClicked} className="amountInput" type="number" min="0.01" step="0.01" placeholder="Custom Amount" onChange={e => {if (e.target.value && e.target.value >= 0.01) { setSubscriptionAmount(parseFloat(e.target.value).toFixed(2))}}}></input>
+            </div>
+
+
+            <div>Which cause would you like to donate to?</div>
+            <div id="smile">**100% of your donation will go directly to Soulsmile Club's curated and heavily researched organizations that we believe are doing the best work in these areas!**</div>
+            <Select
+                className="causeSelector"
+                defaultValue={options[0]}
+                options={options}
+                onChange={(selected) => setSubscriptionCause(selected.value)}
+            />
+
+            <a href={"/payment?type=subscription&amount=" + subscriptionAmount + "&cause=" + subscriptionCause}>
+                <Button bsPrefix="amount submit">Pledge ${subscriptionAmount}/month</Button>
+            </a>
+            </>
+        : <></>}
         <button onClick={signOut}>Log Out</button>
+        </div>
         </>
     );
 
@@ -275,14 +377,13 @@ function Donate() {
     );
 
     return (
-        <>
-
+        <div className="Account">
         {isLoggedIn ? logoutButton : ((isConfirmAccount === 'password') ? confirmPassword :
                                       (isConfirmAccount === 'google') ? continueGoogle :
                                       (isConfirmAccount === 'facebook') ? continueFacebook :
                                       (isLogin ? loginButtons : signupButtons)) }
-        </>
+        </div>
     );
 }
 
-export default Donate;
+export default Dashboard;

@@ -1,0 +1,8 @@
+#cancelButton {
+	z-index: 2147483647;
+}
+
+#payPalButtons {
+	display: flex;
+	flex-direction: column;
+}
