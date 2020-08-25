@@ -94,6 +94,7 @@ button {
 
 .donateButton {
     width: 750px;
+    max-width: 100%;
     padding: 12px 20px;
     margin: 10px 0;
     border: 1px solid white;
@@ -153,9 +154,15 @@ button {
     flex-direction: row;
     align-items: center;
     margin: 10px 10px 40px 10px;
+    max-width: 100%;
 }
 
 .causeSelector {
     width: 700px;
+    max-width: 100%;
     margin: 20px;
+}
+
+#error {
+    color: red;
 }

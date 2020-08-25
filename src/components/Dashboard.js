@@ -2,13 +2,9 @@ import React, { useEffect } from 'react';
 import '../css/Dashboard.css';
 import { FaFacebookSquare } from 'react-icons/fa';
 import { FaGoogle } from 'react-icons/fa';
-import * as firebase from "firebase/app";
 import { Button } from 'react-bootstrap';
 import Select from 'react-select';
-
-// Add the Firebase services that you want to use
-import "firebase/auth";
-import "firebase/firestore";
+import firebase from './Firebase.js';
 
 const options =[
     {value: 0, label: 'All Soulsmile Causes'},
@@ -18,19 +14,9 @@ const options =[
     {value: 4, label: 'Humanitarian Aid'}
 ]
 
-var firebaseConfig = {
-    apiKey: process.env.REACT_APP_API_KEY,
-    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-    databaseURL: process.env.REACT_APP_DATABASE_URL,
-    projectId: process.env.REACT_APP_PROJECT_ID,
-    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-    appId: process.env.REACT_APP_ID
-};
-
-firebase.initializeApp(firebaseConfig);
-
 function Dashboard() {
+
+    var database = firebase.database();
 
     const [isLoggedIn, setIsLoggedIn] = React.useState(false);
     const [name, setName] = React.useState('');
@@ -64,6 +50,7 @@ function Dashboard() {
                     setPhotoURL(null);
                 }
                 handleUserLoggedIn(true);
+                writeNewUserData(user);
             } else {
                 console.log('no user found');
                 setIsLoggedIn(false);
@@ -71,6 +58,25 @@ function Dashboard() {
         });
     });
 
+    function writeNewUserData(user) {
+        console.log("write new user data");
+        firebase.database().ref('users/' + user.uid).once("value", snapshot => {
+            console.log(snapshot);
+            if (snapshot.exists()) {
+                console.log("user already exists in database");
+            } else {
+                console.log("create new db entry for " + user.uid);
+                firebase.database().ref('users/' + user.uid).set({
+                    name: user.displayName,
+                    email: user.email,
+                    profile_picture: user.photoURL,
+                    donations: {},
+                    activeSubscriptions: {},
+                    pastSubscriptions: {}
+                });
+            }
+        });
+    }
     
     function handleUserLoggedIn (user) {
         setIsLoggedIn(true);
@@ -186,7 +192,7 @@ function Dashboard() {
                 <Button bsPrefix="amountButton" active={oneTimeAmount === 10} onClick={() => setOneTimeAmount(10)}>
                     $10
                 </Button>
-                    <input id="amountInput" onClick={handleAmountInputClicked} className="amountInput" type="number" min="0.01" step="0.01" placeholder="Custom Amount" onChange={e => {if (e.target.value && e.target.value >= 0.01) { setOneTimeAmount(parseFloat(e.target.value).toFixed(2))}}}></input>
+                    <input id="amountInput" onClick={handleAmountInputClicked} className="amountInput" type="number" step="1" placeholder="Custom Amount" onChange={e => {if (e.target.value && e.target.value >= 0.01) { setOneTimeAmount(parseFloat(e.target.value).toFixed(2))}}}></input>
             </div>
 
             <div>Which cause would you like to donate to?</div>
@@ -245,14 +251,14 @@ function Dashboard() {
         <>
         <div id="message">You already have an existing Soulsmile Club account associated with this email address. Please enter the password below to complete login.</div>
         <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)}></input>
-        <button onClick={confirmPassword}>Login</button>
+        <button onClick={confirmPassword}>Log In</button>
         <div id="error" hidden={!errorMessage}>{errorMessage}</div>
         </>
     );
 
     var continueGoogle = (
         <>
-        <div id="message">You already have a Soulsmile Club account associated with this email address, created with Google authentication. Please login through Google to continue.</div>
+        <div id="message">You already have a Soulsmile Club account associated with this email address, created with Google authentication. Please log in through Google to continue.</div>
         <button onClick={continueWithGoogle}>Continue with Google</button>
         <div id="error" hidden={!errorMessage}>{errorMessage}</div>
         </>
@@ -260,7 +266,7 @@ function Dashboard() {
 
     var continueFacebook = (
         <>
-        <div id="message">You already have a Soulsmile Club account associated with this email address, created with Facebook authentication. Please login through Facebook to continue.</div>
+        <div id="message">You already have a Soulsmile Club account associated with this email address, created with Facebook authentication. Please log in through Facebook to continue.</div>
 
         <button onClick={continueWithFacebook}>Continue with Facebook</button>
         <div id="error" hidden={!errorMessage}>{errorMessage}</div>
@@ -339,17 +345,17 @@ function Dashboard() {
     var loginButtons = (
         <>
         <header className="App-header">
-            Login
+            Log In
         </header>
         <div className="loginForm">
-            <button onClick={googleLoginPopup} className="login"><FaGoogle size={25} className="icon" />Login with Google</button>
-            <button onClick={facebookLoginPopup} className="login"><FaFacebookSquare size={25} className="icon" />Login with Facebook</button>
+            <button onClick={googleLoginPopup} className="login"><FaGoogle size={25} className="icon" />Log in with Google</button>
+            <button onClick={facebookLoginPopup} className="login"><FaFacebookSquare size={25} className="icon" />Log in with Facebook</button>
         </div>
         <hr className="donate" />
         <div className="loginForm">
-            <input type="text" placeholder="Email" onChange={e => setEmail(e.target.value)} className="login"></input>
-            <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} className="login"></input>
-            <input type="submit" onClick={emailLoginPopup} value="Login to soulsmile club" className="login submit"></input>
+            <input type="text" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} className="login"></input>
+            <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} className="login"></input>
+            <input type="submit" onClick={emailLoginPopup} value="Log in to Soulsmile Club" className="login submit"></input>
             <div>Don't have an account? Sign up <a id="loginOrSignup" onClick={loginOrSignup}>here</a>.</div>
             <div id="error" hidden={!errorMessage}>{errorMessage}</div>
         </div>
@@ -359,17 +365,18 @@ function Dashboard() {
     var signupButtons = (
         <>
         <header className="App-header">
-            Signup
+            Sign Up
         </header>
         <div className="loginForm">
-            <button onClick={googleLoginPopup} className="login"><FaGoogle size={25} className="icon" />Signup with Google</button>
-            <button onClick={facebookLoginPopup} className="login"><FaFacebookSquare size={25} className="icon" />Signup with Facebook</button>
+            <button onClick={googleLoginPopup} className="login"><FaGoogle size={25} className="icon" />Sign up with Google</button>
+            <button onClick={facebookLoginPopup} className="login"><FaFacebookSquare size={25} className="icon" />Sign up with Facebook</button>
         </div>
         <hr className="donate" />
         <div className="loginForm">
-            <input type="text" placeholder="Email" onChange={e => setEmail(e.target.value)} className="login"></input>
-            <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} className="login"></input>
-            <input type="submit" onClick={emailSignupPopup} value="Signup to soulsmile club" className="login submit"></input>
+            <input type="text" placeholder="Name" value={name} onChange={e => setName(e.target.value)} className="login"></input>
+            <input type="text" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} className="login"></input>
+            <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} className="login"></input>
+            <input type="submit" onClick={emailSignupPopup} value="Sign up for Soulsmile Club" className="login submit"></input>
             <div>Have an account already? Log in <a id="loginOrSignup" onClick={loginOrSignup}>here</a>.</div>
             <div id="error" hidden={!errorMessage}>{errorMessage}</div>
         </div>
