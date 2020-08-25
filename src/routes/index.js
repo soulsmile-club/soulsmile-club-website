@@ -24,7 +24,6 @@ export default function Routes() {
       .then(res => {
         var paths = [];    
         for (var j = 0; j < res.records.length; j++) {
-          console.log(res.records[j]);    
           const retailerName = res.records[j]["fields"]["Name"];
           const retailerDomain = res.records[j]["fields"]["Domain"];
           const retailerLink = res.records[j]["fields"]["Link"];
