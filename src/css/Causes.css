@@ -5,6 +5,30 @@
     padding: 25px 10%;
 }
 
+th, td {
+    padding: 5px 15px;
+}
+
+.column {
+    width: 20%;
+}
+
+#causes {
+    text-align: left;
+    padding: 25px 10%;
+}
+
+#eachCause {
+    display: flex;
+    flex-direction: row;
+}
+
+#causeHeader {
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    padding: 0px 15px;
+}
+
 #cause {
     color: #eda1aa;
 }
@@ -24,7 +48,7 @@
     border: 2px dotted #d0cfcf;
     width: 500px;
     margin: 20px;
-    height: 300px;
+    min-height: 300px;
     text-align: center;
     color: #444444;
     font-size: 20px;
