@@ -41,7 +41,7 @@ export default function Routes() {
         setIsLoading(false);
       })
       .catch(error => console.log(error));
-  }, []);
+  });
   
   return (<>
     {!isLoading &&

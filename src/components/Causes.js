@@ -41,7 +41,6 @@ function Causes() {
             var finalCauses = [];
             for (const [cause, orgs] of Object.entries(causes)) {
                 var causesRender = [];
-                var missions = [];
                 for (const [org, info] of Object.entries(orgs)) {
                     var tableEntry = (
                     <tr>
@@ -77,7 +76,7 @@ function Causes() {
             }
             setAllCauses(finalCauses);
         })
-    }, []);
+    });
 
     return (
         <>
