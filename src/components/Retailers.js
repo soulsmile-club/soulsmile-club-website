@@ -84,7 +84,7 @@ function Retailers() {
         <hr/>
         <p id="update"><b id="smile">*</b>Soul<span id="note">smile</span> Club featured brands for sustainable and ethical practices, 
         vetted based on <br/>
-        <a href="https://goodonyou.eco/" target="_blank" rel="noopener noreferrer">Good on You</a>, <a href="https://www.crueltyfreekitty.com/" target="_blank" rel="noopener noreferrer">Cruelty-Free Kitty</a>, and <a href="https://www.thegoodtrade.com/" target="_blank" rel="noopener noreferrer">The Good Trade</a> brand ratings.</p>
+        <a href="https://goodonyou.eco/" target="_blank" rel="noopener noreferrer">Good on You</a>, <a href="https://www.crueltyfreekitty.com/" target="_blank" rel="noopener noreferrer">Cruelty-Free Kitty</a>, <a href="https://www.leapingbunny.org/" target="_blank" rel="noopener noreferrer">Leaping Bunny</a>,and <a href="https://www.thegoodtrade.com/" target="_blank" rel="noopener noreferrer">The Good Trade</a> brand ratings.</p>
         <div className="flex-container">
             {categories.map((cat, catIndex) => {
                 return (
