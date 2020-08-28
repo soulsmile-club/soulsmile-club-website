@@ -47,6 +47,7 @@
 .plus {
   position: absolute;
   margin-left: 10px;
+  margin-top: 4px;
   z-index: 5;
   font-size: 2em;
   line-height: 100%;
@@ -59,6 +60,7 @@
   -moz-transition: .3s ease;
   -o-transition: .3s ease;
   transition: .3s ease;
+  color: #eda1aa;
 }
 
 .questions:checked ~ .plus {
