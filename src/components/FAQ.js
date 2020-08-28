@@ -15,12 +15,15 @@ function FAQ() {
                         var question = sections[i].split("|")[0];
                         var answer = sections[i].split("|")[1];
                         fetchData.push(
-                            <div>
-                                <p>
-                                    <span className="question">{question}</span>
-                                    <br/>
-                                    <span className="answer">{answer}</span>
-                                </p>
+                            <div key={"question" + i}>
+                            <input type="checkbox" id={"question" + i} name="q" className="questions"></input>
+                              <div className="plus">+</div>
+                              <label htmlFor={"question" + i} className="question">
+                                {question}
+                              </label>
+                              <div className="answers">
+                                {answer}
+                              </div>
                             </div>
                         );
                     }     
