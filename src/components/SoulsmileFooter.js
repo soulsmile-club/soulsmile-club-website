@@ -3,6 +3,7 @@ import '../css/SoulsmileFooter.css';
 import { FaFacebookF } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
 import { GrInstagram } from 'react-icons/gr';
+import { GrTwitter } from 'react-icons/gr';
 
 function SoulsmileFooter() {
   return (
@@ -49,6 +50,7 @@ function SoulsmileFooter() {
             <ul className="social-icons">
               <li><a className="facebook" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/soulsmile.club"><FaFacebookF /></a></li>
               <li><a className="instagram" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/soulsmile.club/"><GrInstagram /></a></li>
+              <li><a className="twitter" target="_blank" rel="noopener noreferrer" href="https://twitter.com/SoulsmileClub"><GrTwitter /></a></li>
               <li><a className="linkedin" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/soulsmile-club"><FaLinkedin /></a></li>   
             </ul>
           </div>
