@@ -37,6 +37,8 @@ function Dashboard() {
     const [oneTimeCause, setOneTimeCause] = React.useState(0);
     const [subscriptionCause, setSubscriptionCause] = React.useState(0);
 
+    const [donationHistory, setDonationHistory] = React.useState({});
+
     useEffect(() => {
         console.log(isLogin);
         firebase.auth().onAuthStateChanged(function(user) {
@@ -51,17 +53,29 @@ function Dashboard() {
                 }
                 handleUserLoggedIn(true);
                 writeNewUserData(user);
+
+                firebase.database().ref('/users-donations/' + user.uid + '/donations').once('value').then(function(snapshot) {
+                  console.log(JSON.stringify(snapshot.val()));
+                  if (snapshot.exists()) {
+                    setDonationHistory(snapshot.val());
+                  } else {
+                    setDonationHistory({});
+                  }
+                  if (!snapshot.val()) {
+                    setDonationHistory({});
+                  }
+                });
+
             } else {
                 console.log('no user found');
                 setIsLoggedIn(false);
             }
         });
-    });
+    }, []);
 
     function writeNewUserData(user) {
         console.log("write new user data");
         firebase.database().ref('users/' + user.uid).once("value", snapshot => {
-            console.log(snapshot);
             if (snapshot.exists()) {
                 console.log("user already exists in database");
             } else {
@@ -242,6 +256,11 @@ function Dashboard() {
             </a>
             </>
         : <></>}
+        <p>Donations Made:</p>
+        <ul>
+            {Object.keys(donationHistory).map((donationKey) => <li>You ({donationHistory[donationKey].author}) gave ${donationHistory[donationKey].amount} to cause {donationHistory[donationKey].cause} on {new Date(donationHistory[donationKey].timestamp).toString()}.</li>
+            )}
+        </ul>
         <button onClick={signOut}>Log Out</button>
         </div>
         </>
@@ -337,6 +356,7 @@ function Dashboard() {
     function signOut() {
         firebase.auth().signOut().then(function() {
             console.log("Sign out was successful!");
+            setDonationHistory({});
         }).catch(function(error) {
             console.log(error);
         });
