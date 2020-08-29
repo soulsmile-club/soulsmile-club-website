@@ -8,7 +8,7 @@ function RetailerPage(props) {
         setActivated(true);
         setTimeout(function() {
             console.log("ended");
-            // window.location.href=props.retailerLink;
+            window.location.href=props.retailerLink;
         }, 1100);
     }
 
