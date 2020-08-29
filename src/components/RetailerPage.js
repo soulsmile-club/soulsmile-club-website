@@ -34,7 +34,7 @@ function RetailerPage(props) {
         </header>
         <hr/>
         {activated ? checkmark : activateButton}
-        <div id="strippedUrl" hidden={true}>{props.companyDomain}</div>
+        <div id="strippedUrl" hidden={true}>{props.retailerDomain}</div>
         </>
     );
 }
