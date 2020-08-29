@@ -67,6 +67,7 @@ function Payment() {
 
                     var updates = {};
                     updates['/users-donations/' + uid + '/donations/' + newDonationKey] = donationData;
+                    updates['/donations/' + newDonationKey] = donationData;
 
                     firebase.database().ref().update(updates, function (error) {
                         if (error) {
@@ -83,7 +84,53 @@ function Payment() {
             />
     );
 
-    var subscriptionButtons;
+    var subscriptionButtons = (
+        <PayPalButton
+            amount={query.get("amount")}
+            shippingPreference="NO_SHIPPING"
+            onApprove={(details, data) => {
+                var subscriptionData = {
+                    amount: parseFloat(query.get("amount")),
+                    cause: causes[query.get("cause")].label,
+                    startTimestamp: Date.now(),
+                    active: true,
+                    author: name,
+                    authorPic: profilePic,
+                    heartCount: 0,
+                    uid: uid
+                }
+
+                console.log("subscription data to log");
+                console.log(subscriptionData);
+
+                var newSubscriptionKey = firebase.database().ref().child('subscriptions').push().key;
+
+                var updates = {};
+                updates['/users-donations/' + uid + '/subscriptions/' + newSubscriptionKey] = subscriptionData;
+                updates['/subscriptions/' + newSubscriptionKey] = subscriptionData;
+
+                firebase.database().ref().update(updates, function (error) {
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        setPaymentDone(true);
+                        console.log('updated database');
+                    }
+                });
+            }}
+            createSubscription={(data, actions) => {
+                return actions.subscription.create({
+                    plan_id: 'P-36G54755XA9707334L5EZD5A',
+                    // start_time: "2020-09-01T00:00:00Z",
+                    // quantity: query.get("amount")
+                });
+            }}
+            options={{
+              clientId: "Abq0IUThpLiDGjVAJRqvvT5kzwvqqFfBRK8WzO8ivCdfVphhLgsYcAStVf14ouSmYiMQS377LY2kFJ0O",
+              vault: true
+            }}
+        />
+    );
 
     if (paymentDone) {
         return (

@@ -258,7 +258,7 @@ function Dashboard() {
         : <></>}
         <p>Donations Made:</p>
         <ul>
-            {Object.keys(donationHistory).map((donationKey) => <li>You ({donationHistory[donationKey].author}) gave ${donationHistory[donationKey].amount} to cause {donationHistory[donationKey].cause} on {new Date(donationHistory[donationKey].timestamp).toString()}.</li>
+            {Object.keys(donationHistory).map((donationKey) => <li key={donationKey}>You ({donationHistory[donationKey].author}) gave ${donationHistory[donationKey].amount} to cause {donationHistory[donationKey].cause} on {new Date(donationHistory[donationKey].timestamp).toString()}.</li>
             )}
         </ul>
         <button onClick={signOut}>Log Out</button>
