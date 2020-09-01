@@ -1,23 +1,22 @@
-.Login {
-	background-color: #444444;
-	color: white;
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
 .white {
 	color: white;
 }
 
 .loginBar {
-	min-height: 8vmin;
+	min-height: 8vh;
 	background-color: #444444;
 	color: white;
 	display: flex;
 	flex-direction: row;
-	position: fixed;
-	top: 0;
-	left: 0;
+	align-items: center;
+	justify-content: center;
+}
+
+.loginButtonsContainer {
+	background-color: #444444;
+	min-height: 92vh;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

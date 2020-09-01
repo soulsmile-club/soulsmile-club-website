@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import firebase from './Firebase.js';
+import ProfileCard from './ProfileCard.js';
 import Select from 'react-select';
 import { Button } from 'react-bootstrap';
 import '../css/Dashboard.css';
@@ -46,10 +47,10 @@ function Dashboard() {
                         return ((a.timestamp > b.timestamp) ? -1 : (a.timestamp < b.timestamp) ? 1 : 0);
                     }));
                   } else {
-                    setDonationHistory({});
+                    setDonationHistory([]);
                   }
                   if (!snapshot.val()) {
-                    setDonationHistory({});
+                    setDonationHistory([]);
                   }
                 });
 
@@ -59,10 +60,10 @@ function Dashboard() {
                             return ((a.timestamp > b.timestamp) ? -1 : (a.timestamp < b.timestamp) ? 1 : 0);
                         }));
                     } else {
-                        setGlobalDonationHistory({});
+                        setGlobalDonationHistory([]);
                     }
                     if (!snapshot.val()) {
-                        setGlobalDonationHistory({});
+                        setGlobalDonationHistory([]);
                     }
                 });
             } else {
@@ -118,9 +119,7 @@ function Dashboard() {
 
     return (
         <>
-        <div className="profile">
-        {photoURL ? <img id="photo" src={photoURL} alt={name}></img> : <></>}
-        <h1>{name}</h1></div>
+        <ProfileCard />
         <div className="donationButtonContainer">
         <Button onClick={() => setShowOneTimeDonationButtons(!showOneTimeDonationButtons)} bsPrefix="donateButton">Donate once to a Smileage Cause</Button>
         {showOneTimeDonationButtons ?

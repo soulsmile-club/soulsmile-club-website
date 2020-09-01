@@ -9,7 +9,7 @@
 
 .dashboardLogo {
 	align-self: center;
-	position: fixed;
+	position: absolute;
 	display: flex;
 	left: 10px;
 	align-items: center;
@@ -44,4 +44,12 @@ a.logoutButton {
 }
 a.logoutButton:hover {
 	color: white;
+}
+
+button:focus {
+	outline: none !important;
+}
+
+input:focus {
+	outline: none !important;
 }

@@ -223,7 +223,6 @@ function Dashboard() {
     );
 
     return (<>
-    <div className="Login">
         <div className="loginBar">
             <a href="/" className="dashboardLogo">
               <img
@@ -244,7 +243,6 @@ function Dashboard() {
                                       (isLogin ? loginButtons : signupButtons)) }
             </div>
         </div>
-    </div>
     </>
     );
 }

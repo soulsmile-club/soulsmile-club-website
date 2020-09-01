@@ -1,0 +1,97 @@
+.profilePhoto {
+    width: 170px;
+    min-height: 170px;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.noProfilePic {
+	border-width: 1px;
+    border-style: solid;
+    border-color: #eda1aa;
+}
+
+.profile {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#picAndDetailsContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 4px;
+	padding: 20px 20px;
+}
+
+#detailsContainer {
+	margin-left: 25px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+#profileName {
+	font-size: 28px;
+	text-align: left;
+	margin: 10px;
+	font-weight: 500;
+	padding-left: 15px;
+}
+
+#profileStats {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.statNum {
+	font-size: 24px;
+	font-weight: bold;
+	color: #eda1aa;
+}
+
+.statDesc {
+	max-width: 110px;
+	font-size: 14px;
+}
+
+.stat {
+	padding: 10px;
+}
+#giveButton {
+	align-self: center;
+	display: flex;
+	align-items: center;
+	margin: 10px;
+}
+.donateButton {
+    width: 370px;
+    max-width: 100%;
+    padding: 12px 20px;
+    margin: 10px 0;
+    border: 1px solid white;
+    border-radius: 4px;
+    height: 3rem;
+    text-align: center !important;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: #eda1aa;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.donateButton:hover {
+    background-color: #f5b0b8;
+}
+
+
+#giveIcon {
+	margin-left: 10px;
+}

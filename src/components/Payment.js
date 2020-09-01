@@ -16,7 +16,6 @@ const causes =[
 
 function Payment() {
     const [name, setName] = React.useState('');
-    const [username, setUsername] = React.useState('');
     const [profilePic, setProfilePic] = React.useState('');
     const [uid, setUid] = React.useState('');
     const [paymentDone, setPaymentDone] = React.useState(false);
@@ -26,7 +25,6 @@ function Payment() {
             console.log("auth state changed");
             if (user) {
                 setName(user.displayName);
-                setUsername(user.email);
                 setProfilePic(user.photoURL);
                 setUid(user.uid);
             } else {

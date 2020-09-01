@@ -92,25 +92,6 @@ button {
     border-radius: 4px;
 }
 
-.donateButton {
-    width: 750px;
-    max-width: 100%;
-    padding: 12px 20px;
-    margin: 10px 0;
-    border: 1px solid white;
-    border-radius: 4px;
-    height: 3rem;
-    text-align: center !important;
-    justify-content: center;
-    box-sizing: border-box;
-    background-color: #eda1aa;
-    color: white;
-}
-
-.donateButton:hover {
-    background-color: #f5b0b8;
-}
-
 .submit {
     background-color: #444444;
     text-align: center !important;
@@ -127,20 +108,6 @@ button {
   
 #loginOrSignup:hover {
     text-decoration: underline;
-}
-
-#photo {
-    width: 50px;
-    min-height: 50px;
-    margin: 10px;
-    border-radius: 50%
-}
-
-.profile {
-    align-items: center;
-    display: flex;
-    align-self: center;
-    justify-content: center;
 }
 
 .donationButtonContainer {

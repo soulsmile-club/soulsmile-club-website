@@ -69,9 +69,10 @@ function DashboardController() {
         <span className="dashboardSoulsmile">soul<span id="smile">smile</span> club</span>
       </a>
       <Tabs value={value} onChange={handleChange} centered classes={{indicator: classes.indicator}}>
-        <Tab label="Home" style={{fontFamily: 'Montserrat'}} />
-        <Tab label="Feed" style={{fontFamily: 'Montserrat'}} />
+        <Tab label="Me" style={{fontFamily: 'Montserrat'}} />
+        <Tab label="Community" style={{fontFamily: 'Montserrat'}} />
         <Tab label="Smileage" style={{fontFamily: 'Montserrat'}} />
+        <Tab label="Impact" style={{fontFamily: 'Montserrat'}} />
       </Tabs>
       <a href="#" className="logoutButton" onClick={signOut}>
         <RiLogoutBoxRLine size={25} />
@@ -85,10 +86,13 @@ function DashboardController() {
         <Dashboard />
       </div>
       <div>
-        Item Two
+        Community
       </div>
       <div>
-        Item Three
+        Smileage
+      </div>
+      <div>
+        Impact
       </div>
     </SwipeableViews>
     </>
