@@ -15,7 +15,6 @@ const causes =[
 ]
 
 function Payment() {
-    const [isLoggedIn, setIsLoggedIn] = React.useState(false);
     const [name, setName] = React.useState('');
     const [username, setUsername] = React.useState('');
     const [profilePic, setProfilePic] = React.useState('');
@@ -29,11 +28,10 @@ function Payment() {
                 setName(user.displayName);
                 setUsername(user.email);
                 setProfilePic(user.photoURL);
-                setIsLoggedIn(true);
                 setUid(user.uid);
             } else {
                 console.log('no user found');
-                setIsLoggedIn(false);
+                window.location.href = "/login";
             }
         });
     }, []);
@@ -145,8 +143,7 @@ function Payment() {
         return (
         <div className="paymentContent">
         <div>
-        {isLoggedIn ?
-            (query.has("type") && query.has("amount") && query.has("cause")) ?
+        {(query.has("type") && query.has("amount") && query.has("cause")) ?
                 <div id="payPalButtons">
                     {query.get("type") === "single" ?
                         <>
@@ -171,10 +168,7 @@ function Payment() {
                 <header className="WebApp-header"><span>Error</span></header>
                 <p>We're sorry! It seems we are missing some information for this page. Please click <a href="/dashboard">here</a> to try again, or <a href="mailto:hello@soulsmile.club">contact us</a> if you continue to face issues!</p>
             </>
-        : <>
-            <header className="WebApp-header"><span>Access Denied</span></header>
-            <p>Please log in <a href="/dashboard">here</a> to access this page.</p>
-        </>}
+        }
         </div>
         </div>
       );

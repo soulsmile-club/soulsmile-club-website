@@ -36,3 +36,12 @@ a.dashboardLogo:hover {
 .tabs {
 	max-width: 100vw;
 }
+
+a.logoutButton {
+	color: white;
+	position: fixed;
+	right: 10px;
+}
+a.logoutButton:hover {
+	color: white;
+}

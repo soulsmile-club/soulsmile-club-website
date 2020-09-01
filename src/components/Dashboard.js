@@ -91,15 +91,6 @@ function Dashboard() {
         });
     }
 
-    function signOut() {
-        firebase.auth().signOut().then(function() {
-            console.log("Sign out was successful!");
-            window.location.href="/login";
-        }).catch(function(error) {
-            console.log(error);
-        });
-    }
-
     function handleAmountInputClicked () {
         if (document.getElementById("amountInput").value) {
             setOneTimeAmount(parseFloat(document.getElementById("amountInput").value).toFixed(2));
@@ -206,7 +197,6 @@ function Dashboard() {
             {globalDonationHistory.map((donation) => <li key={donation.uid + "_" + donation.timestamp}>{donation.uid === uid ? "You" : donation.author} gave ${donation.amount} to cause {donation.cause} on {new Date(donation.timestamp).toString()}.</li>
             )}
         </ul>
-        <button onClick={signOut}>Log Out</button>
         </div>
         </>
     );
