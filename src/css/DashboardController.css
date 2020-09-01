@@ -39,7 +39,7 @@ a.dashboardLogo:hover {
 
 a.logoutButton {
 	color: white;
-	position: fixed;
+	position: absolute;
 	right: 10px;
 }
 a.logoutButton:hover {

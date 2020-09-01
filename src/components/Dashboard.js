@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import firebase from './Firebase.js';
 import ProfileCard from './ProfileCard.js';
+import Feed from './Feed.js';
 import Select from 'react-select';
 import { Button } from 'react-bootstrap';
 import '../css/Dashboard.css';
@@ -187,15 +188,7 @@ function Dashboard() {
             </>
         : <></>}
         <p>Donations Made:</p>
-        <ul>
-            {donationHistory.map((donation) => <li key={donation.uid + "_" + donation.timestamp}>You gave ${donation.amount} to cause {donation.cause} on {new Date(donation.timestamp).toString()}.</li>
-            )}
-        </ul>
-        <p>Global Donation Feed:</p>
-        <ul>
-            {globalDonationHistory.map((donation) => <li key={donation.uid + "_" + donation.timestamp}>{donation.uid === uid ? "You" : donation.author} gave ${donation.amount} to cause {donation.cause} on {new Date(donation.timestamp).toString()}.</li>
-            )}
-        </ul>
+        <Feed title={"Giving History"} />
         </div>
         </>
     );
