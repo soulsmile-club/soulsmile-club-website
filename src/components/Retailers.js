@@ -26,7 +26,7 @@ function Retailers() {
             if (featured) {
                 if (promo) {
                     featuredCategoryRetailers[categories.indexOf(category)].push(
-                    <a href={link} id="retailer" target="_blank" rel="noopener noreferrer">
+                    <a key={company} href={link} id="retailer" target="_blank" rel="noopener noreferrer">
                         <div>
                             {company}<b id="smile">*</b>
                             <div id="company-description">{description}</div>
@@ -36,7 +36,7 @@ function Retailers() {
                     );
                 } else {
                     featuredCategoryRetailers[categories.indexOf(category)].push(
-                        <a href={link} id="retailer" target="_blank" rel="noopener noreferrer">
+                        <a key={company} href={link} id="retailer" target="_blank" rel="noopener noreferrer">
                             <div>
                                 {company}<b id="smile">*</b>
                                 <p id="company-description">{description}</p>
@@ -47,7 +47,7 @@ function Retailers() {
             } else {
                 if (promo) {
                     categoryRetailers[categories.indexOf(category)].push(
-                    <a href={link} id="retailer" target="_blank" rel="noopener noreferrer">
+                    <a key={company} href={link} id="retailer" target="_blank" rel="noopener noreferrer">
                         <div>
                             {company}
                             <div id="company-description">{description}</div>
@@ -57,7 +57,7 @@ function Retailers() {
                     );
                 } else {
                     categoryRetailers[categories.indexOf(category)].push(
-                        <a href={link} id="retailer" target="_blank" rel="noopener noreferrer">
+                        <a key={company} href={link} id="retailer" target="_blank" rel="noopener noreferrer">
                             <div>
                                 {company}
                                 <p id="company-description">{description}</p>
@@ -81,15 +81,13 @@ function Retailers() {
         <div className="flex-container">
             {categories.map((cat, catIndex) => {
                 return (
-                    <>
-                    <div id="category">
-                    <h4>{cat}</h4>
-                    <div className="flex-container">
-                        {featuredRetailers[catIndex]}
-                        {normalRetailers[catIndex]}
+                    <div id="category" key={cat}>
+                        <h4>{cat}</h4>
+                        <div className="flex-container">
+                            {featuredRetailers[catIndex]}
+                            {normalRetailers[catIndex]}
+                        </div>
                     </div>
-                    </div>
-                    </>
                 );
             })}
         </div>

@@ -1,12 +1,13 @@
-.App {
+.WebApp {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   min-height: 100vh;
   position: relative;
+  background-color: #f1f1f1;
+  color: #444444;
 }
 
-.App-header {
-  background-color: white;
+.WebApp-header {
   min-height: 15vh;
   display: flex;
   flex-direction: column;
@@ -14,14 +15,4 @@
   justify-content: center;
   font-size: calc(20px + 2vmin);
   color: #444444;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.content {
-  padding: 1%;
-  padding-bottom: 40px;
 }

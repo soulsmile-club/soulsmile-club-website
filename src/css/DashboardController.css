@@ -1,0 +1,20 @@
+.dashboardBar {
+	background-color: #444444;
+	color: white;
+}
+
+.dashboardLogo {
+	align-self: center;
+	position: fixed;
+	left: 10px;
+	align-items: center;
+	justify-content: center;
+}
+
+.dashboardIcon {
+	margin-right: 8px;
+}
+
+.dashboardSoulsmile {
+	font-size: 20px;
+}

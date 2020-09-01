@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
-import { useLocation, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { PayPalButton } from "react-paypal-button-v2";
 import { Button } from 'react-bootstrap';
 import '../css/Payment.css';
 import firebase from './Firebase.js';
-import  { Redirect } from 'react-router-dom'
 
 
 const causes =[
@@ -37,7 +36,7 @@ function Payment() {
                 setIsLoggedIn(false);
             }
         });
-    });
+    }, []);
 
     function useQuery() {
       return new URLSearchParams(useLocation().search);
@@ -86,8 +85,6 @@ function Payment() {
 
     var subscriptionButtons = (
         <PayPalButton
-            amount={query.get("amount")}
-            shippingPreference="NO_SHIPPING"
             onApprove={(details, data) => {
                 var subscriptionData = {
                     amount: parseFloat(query.get("amount")),
@@ -122,7 +119,7 @@ function Payment() {
                 return actions.subscription.create({
                     plan_id: 'P-36G54755XA9707334L5EZD5A',
                     // start_time: "2020-09-01T00:00:00Z",
-                    // quantity: query.get("amount")
+                    quantity: query.get("amount")
                 });
             }}
             options={{
@@ -135,7 +132,7 @@ function Payment() {
     if (paymentDone) {
         return (
             <>
-            <header className="App-header">
+            <header className="WebApp-header">
                 <span>Payment Complete!</span>
             </header>
             <p>Thank you so much for your generous donation! We know it will go a long way to making the world a better place. :)</p>
@@ -146,20 +143,21 @@ function Payment() {
         );
     } else {
         return (
-        <>
+        <div className="paymentContent">
+        <div>
         {isLoggedIn ?
             (query.has("type") && query.has("amount") && query.has("cause")) ?
                 <div id="payPalButtons">
                     {query.get("type") === "single" ?
                         <>
-                        <header className="App-header">
+                        <header className="WebApp-header">
                             <span>Complete your ${query.get("amount")} donation for {causes[query.get("cause")].label}!</span>
                         </header>
                         {oneTimeDonationButtons}
                         </>
                     :
                         <>
-                        <header className="App-header">
+                        <header className="WebApp-header">
                             <span>Complete your ${query.get("amount")} monthly donation to {causes[query.get("cause")].label}!</span>
                         </header>
                         {subscriptionButtons}
@@ -170,14 +168,15 @@ function Payment() {
                     </a>
                 </div>
             : <>
-                <header className="App-header"><span>Error</span></header>
+                <header className="WebApp-header"><span>Error</span></header>
                 <p>We're sorry! It seems we are missing some information for this page. Please click <a href="/dashboard">here</a> to try again, or <a href="mailto:hello@soulsmile.club">contact us</a> if you continue to face issues!</p>
             </>
         : <>
-            <header className="App-header"><span>Access Denied</span></header>
+            <header className="WebApp-header"><span>Access Denied</span></header>
             <p>Please log in <a href="/dashboard">here</a> to access this page.</p>
         </>}
-        </>
+        </div>
+        </div>
       );
     }
   
