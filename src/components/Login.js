@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
-import '../css/Dashboard.css';
+import '../css/Login.css';
 import { FaFacebookSquare } from 'react-icons/fa';
 import { FaGoogle } from 'react-icons/fa';
 import firebase from './Firebase.js';
+import soulsmile from '../images/soulsmile-48.png';
 
 function Dashboard() {
     const [name, setName] = React.useState('');
@@ -182,7 +183,7 @@ function Dashboard() {
 
     var loginButtons = (
         <>
-        <header className="WebApp-header">
+        <header className="WebApp-header white">
             Log In
         </header>
         <div className="loginForm">
@@ -202,7 +203,7 @@ function Dashboard() {
 
     var signupButtons = (
         <>
-        <header className="WebApp-header">
+        <header className="WebApp-header white">
             Sign Up
         </header>
         <div className="loginForm">
@@ -221,13 +222,30 @@ function Dashboard() {
         </>
     );
 
-    return (
-        <div className="Account">
+    return (<>
+    <div className="Login">
+        <div className="loginBar">
+            <a href="/" className="dashboardLogo">
+              <img
+                  alt="?"
+                  src={soulsmile}
+                  width="25"
+                  height="25"
+                  className="dashboardIcon"
+                />
+                <span className="dashboardSoulsmile">soul<span id="smile">smile</span> club</span>
+            </a>
+        </div>
+        <div className="loginButtonsContainer">
+            <div>
             {((isConfirmAccount === 'password') ? confirmPassword :
                                       (isConfirmAccount === 'google') ? continueGoogle :
                                       (isConfirmAccount === 'facebook') ? continueFacebook :
                                       (isLogin ? loginButtons : signupButtons)) }
+            </div>
         </div>
+    </div>
+    </>
     );
 }
 

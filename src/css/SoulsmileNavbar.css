@@ -1,6 +1,6 @@
 .navbar {
     min-height: 10vmin;
-    /*background-color: white;*/
+    background-color: white;
 }
 
 .navbar #basic-navbar-nav>li>a {

@@ -1,14 +1,28 @@
 .dashboardBar {
 	background-color: #444444;
 	color: white;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 }
 
 .dashboardLogo {
 	align-self: center;
 	position: fixed;
+	display: flex;
 	left: 10px;
 	align-items: center;
 	justify-content: center;
+}
+
+a.dashboardLogo {
+	color: white;
+}
+
+a.dashboardLogo:hover {
+	color: white;
+	text-decoration: none;
 }
 
 .dashboardIcon {
@@ -17,4 +31,8 @@
 
 .dashboardSoulsmile {
 	font-size: 20px;
+}
+
+.tabs {
+	max-width: 100vw;
 }

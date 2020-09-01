@@ -33,8 +33,8 @@ function DashboardController() {
 
   return (
     <>
-    <div className="dashboardBar row">
-      <div className="dashboardLogo">
+    <div className="dashboardBar">
+      <a href="/" className="dashboardLogo">
       <img
           alt="?"
           src={soulsmile}
@@ -43,12 +43,14 @@ function DashboardController() {
           className="dashboardIcon"
         />
         <span className="dashboardSoulsmile">soul<span id="smile">smile</span> club</span>
-      </div>
+      </a>
+      <div className="tabs">
       <Tabs value={value} onChange={handleChange} centered classes={{indicator: classes.indicator}}>
         <Tab label="Home" style={{fontFamily: 'Montserrat'}} />
         <Tab label="Feed" style={{fontFamily: 'Montserrat'}} />
         <Tab label="Smileage" style={{fontFamily: 'Montserrat'}} />
       </Tabs>
+    </div>
     </div>
     <SwipeableViews
         index={value}
