@@ -1,3 +1,33 @@
+#dashboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.topButton {
+    border: 1px solid white;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-weight: 500;
+    margin: 20px;
+    background-color: #444444;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center !important;
+}
+
+.topButton:hover {
+    background-color: #696666;
+}
+
+#returnIcon {
+    margin-right: 10px;
+}
+
 .amountButton {
     background-color: #f1f1f1;
     width: 300px;

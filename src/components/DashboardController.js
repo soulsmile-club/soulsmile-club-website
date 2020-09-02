@@ -12,7 +12,9 @@ import '../css/DashboardController.css';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button } from 'react-bootstrap';
 import { RiLogoutBoxRLine } from 'react-icons/ri';
+import { FaArrowCircleUp } from 'react-icons/fa';
 import firebase from './Firebase.js';
+import Feed from './Feed.js';
 
 
 const useStyles = makeStyles({
@@ -53,6 +55,11 @@ function DashboardController() {
       });
   }
 
+  function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+
   const classes = useStyles();
 
   return (
@@ -86,7 +93,10 @@ function DashboardController() {
         <Dashboard />
       </div>
       <div>
-        Community
+        <div id="dashboard">
+          <Feed title="Global Soulsmile Club Community" />
+          <Button bsPrefix="topButton" onClick={topFunction}><FaArrowCircleUp id="returnIcon" /> Return to Top</Button>
+        </div>
       </div>
       <div>
         Smileage

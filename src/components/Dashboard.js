@@ -5,6 +5,7 @@ import Feed from './Feed.js';
 import Select from 'react-select';
 import { Button } from 'react-bootstrap';
 import '../css/Dashboard.css';
+import { FaArrowCircleUp } from 'react-icons/fa';
 
 const options =[
     {value: 0, label: 'All Soulsmile Causes'},
@@ -25,10 +26,6 @@ function Dashboard() {
     const [subscriptionAmount, setSubscriptionAmount] = React.useState(5);
     const [oneTimeCause, setOneTimeCause] = React.useState(0);
     const [subscriptionCause, setSubscriptionCause] = React.useState(0);
-
-    const [donationHistory, setDonationHistory] = React.useState([]);
-    const [globalDonationHistory, setGlobalDonationHistory] = React.useState([]);
-
     useEffect(() => {
         firebase.auth().onAuthStateChanged(function(user) {
             console.log("auth state changed");
@@ -41,32 +38,6 @@ function Dashboard() {
                     setPhotoURL(null);
                 }
                 writeNewUserData(user);
-
-                firebase.database().ref('/users-donations/' + user.uid + '/donations').once('value').then(function(snapshot) {
-                  if (snapshot.exists()) {
-                    setDonationHistory(Object.values(snapshot.val()).sort(function (a, b) {
-                        return ((a.timestamp > b.timestamp) ? -1 : (a.timestamp < b.timestamp) ? 1 : 0);
-                    }));
-                  } else {
-                    setDonationHistory([]);
-                  }
-                  if (!snapshot.val()) {
-                    setDonationHistory([]);
-                  }
-                });
-
-                firebase.database().ref('/donations').once('value').then(function (snapshot) {
-                    if (snapshot.exists()) {
-                        setGlobalDonationHistory(Object.values(snapshot.val()).sort(function (a, b) {
-                            return ((a.timestamp > b.timestamp) ? -1 : (a.timestamp < b.timestamp) ? 1 : 0);
-                        }));
-                    } else {
-                        setGlobalDonationHistory([]);
-                    }
-                    if (!snapshot.val()) {
-                        setGlobalDonationHistory([]);
-                    }
-                });
             } else {
                 console.log('no user found');
                 window.location.href = "/login";
@@ -86,8 +57,10 @@ function Dashboard() {
                     email: user.email,
                     profile_picture: user.photoURL,
                     donations: {},
-                    activeSubscriptions: {},
-                    pastSubscriptions: {}
+                    subscriptions: {},
+                    pastSubscriptions: {},
+                    soulsmilesGiven: 0,
+                    soulsmilesInWallet: 0
                 });
             }
         });
@@ -105,6 +78,11 @@ function Dashboard() {
         }
     }
 
+    function topFunction() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+
     var causeSelector = (
         <>
         <div>Which cause would you like to donate to?</div>
@@ -120,8 +98,13 @@ function Dashboard() {
 
     return (
         <>
-        <ProfileCard />
+        <div id="dashboard">
+            <ProfileCard />
+            <Feed title={"Giving History"} />
+            <Button bsPrefix="topButton" onClick={topFunction}><FaArrowCircleUp id="returnIcon" /> Return to Top</Button>
+        </div>
         <div className="donationButtonContainer">
+
         <Button onClick={() => setShowOneTimeDonationButtons(!showOneTimeDonationButtons)} bsPrefix="donateButton">Donate once to a Smileage Cause</Button>
         {showOneTimeDonationButtons ?
             <>
@@ -187,8 +170,6 @@ function Dashboard() {
             </a>
             </>
         : <></>}
-        <p>Donations Made:</p>
-        <Feed title={"Giving History"} />
         </div>
         </>
     );

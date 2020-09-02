@@ -1,37 +1,36 @@
 import React, { useEffect } from 'react';
 import firebase from './Firebase.js';
-import '../css/ProfileCard.css';
+import DonationPost from './DonationPost.js';
+import '../css/Feed.css';
 import InfiniteScroll from 'react-infinite-scroll-component';
+
+const numPostsAtOneTime = 2;
 
 function Feed(props) {
     const [posts, setPosts] = React.useState([]);
+    const [uid, setUid] = React.useState('');
     const [allPosts, setAllPosts] = React.useState([]);
     const [hasMore, setHasMore] = React.useState(false);
-    const [numPostsShowing, setNumPostsShowing] = React.useState(2);
+    const [numPostsShowing, setNumPostsShowing] = React.useState(numPostsAtOneTime);
 
     useEffect(() => {
-        if (props.title === "Giving History") {
-            firebase.auth().onAuthStateChanged(function(user) {
-                console.log("auth state changed");
-                if (user) {
-                    fetchAllPosts(user);
-                } else {
-                    console.log('no user found');
-                    window.location.href = "/login";
-                }
-            });
-        } else if (props.title === "Earning History") {
-
-        } else if (props.title === "Global Soulsmile Club Community") {
-
-        }
+        firebase.auth().onAuthStateChanged(function(user) {
+            console.log("auth state changed");
+            if (user) {
+                fetchAllPosts(user);
+                setUid(user.uid);
+            } else {
+                console.log('no user found');
+                window.location.href = "/login";
+            }
+        });
     }, []);
 
     useEffect(() => {
         if (allPosts.length > numPostsShowing) {
-            setPosts(allPosts.slice(numPostsShowing));
+            setPosts(allPosts.slice(0, numPostsShowing));
             setHasMore(true);
-            setNumPostsShowing(numPostsShowing + 2);
+            setNumPostsShowing(numPostsShowing + numPostsAtOneTime);
         } else {
             setPosts(allPosts);
         }
@@ -41,7 +40,16 @@ function Feed(props) {
         if (props.title === "Giving History") {
             firebase.database().ref('/users-donations/' + user.uid + '/donations').once('value').then(function(snapshot) {
                   if (snapshot.exists() && snapshot.val()) {
-                    console.log(snapshot.val());
+                    setAllPosts(Object.values(snapshot.val()).sort(function (a, b) {
+                        return ((a.timestamp > b.timestamp) ? -1 : (a.timestamp < b.timestamp) ? 1 : 0);
+                    }));
+                  }
+            });
+        } else if (props.title === "Earning History") {
+
+        } else if (props.title === "Global Soulsmile Club Community") {
+            firebase.database().ref('/donations').once('value').then(function(snapshot) {
+                  if (snapshot.exists() && snapshot.val()) {
                     setAllPosts(Object.values(snapshot.val()).sort(function (a, b) {
                         return ((a.timestamp > b.timestamp) ? -1 : (a.timestamp < b.timestamp) ? 1 : 0);
                     }));
@@ -51,14 +59,13 @@ function Feed(props) {
     }
 
     function fetchData () {
-        console.log(allPosts.length);
-        console.log(numPostsShowing);
-        console.log(hasMore);
         if (allPosts.length > numPostsShowing) {
-            setPosts(allPosts.slice(numPostsShowing));
+            console.log("show more!");
+            setPosts(allPosts.slice(0, numPostsShowing));
             setHasMore(true);
-            setNumPostsShowing(numPostsShowing + 2);
+            setNumPostsShowing(numPostsShowing + numPostsAtOneTime);
         } else {
+            console.log("show all");
             setPosts(allPosts);
             setHasMore(false);
         }
@@ -68,18 +75,17 @@ function Feed(props) {
         <div className="feed">
             <div className="feedTitle">{props.title}</div>
             <InfiniteScroll
+              className="scrollContainer"
               dataLength={posts.length}
               next={fetchData}
               hasMore={hasMore}
-              loader={<h4>Loading...</h4>}
+              loader={<h4>Loading more posts...</h4>}
               // height={40}
-              endMessage={
-                <p style={{textAlign: 'center'}}>
-                  <b>Yay! You have seen it all</b>
-                </p>
+              endMessage={<></>
               }>
-              {posts.map((donation, index) => (
-                <div style={{margin: "200px"}} key={index}>You gave ${donation.amount} to cause {donation.cause} on {new Date(donation.timestamp).toString()}.</div>
+              {posts.length === 0 ? "" : posts.map((donation, index) => (
+                (index === 0) ? <DonationPost key={index} currUid={uid} firstPost={true} uid={donation.uid} amount={donation.amount} cause={donation.cause} author={donation.author} authorPic={donation.authorPic} timestamp={donation.timestamp} heartCount={donation.heartCount} /> :
+                <DonationPost key={index} currUid={uid} firstPost={false} uid={donation.uid} amount={donation.amount} cause={donation.cause} author={donation.author} authorPic={donation.authorPic} timestamp={donation.timestamp} heartCount={donation.heartCount} />
               ))}
             </InfiniteScroll>
         </div>

@@ -68,8 +68,17 @@ function Payment() {
                         if (error) {
                             console.log(error);
                         } else {
-                            setPaymentDone(true);
-                            console.log('updated database');
+                            firebase.database().ref('/users/' + uid).transaction(function (userData) {
+                                if (userData) {
+                                    userData.soulsmilesGiven += parseFloat(query.get("amount"));
+                                } else {
+                                    console.log("no user found in database!");
+                                }
+                                return userData;
+                            }, function (error) {
+                                setPaymentDone(true);
+                                console.log('updated database');
+                            });
                         }
                     });
                 }}
