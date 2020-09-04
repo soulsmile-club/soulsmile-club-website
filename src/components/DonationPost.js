@@ -1,8 +1,20 @@
-import React, { useEffect } from 'react';
-import firebase from './Firebase.js';
+import React from 'react';
 import genericProfilePic from '../images/genericProfilePic.png';
 import '../css/DonationPost.css';
-import { HiOutlineHeart } from 'react-icons/hi';
+import { MdFavorite } from 'react-icons/md';
+import { MdFavoriteBorder } from 'react-icons/md';
+import Checkbox from '@material-ui/core/Checkbox';
+import { withStyles } from '@material-ui/core/styles';
+
+const PinkCheckbox = withStyles({
+  root: {
+    color: "#444444",
+    '&$checked': {
+      color: "#eda1aa",
+    },
+  },
+  checked: {},
+})((props) => <Checkbox color="default" {...props} />);
 
 function DonationPost(props) {
 
@@ -45,7 +57,7 @@ function DonationPost(props) {
                         <div className="donationTitle"><b>{(props.uid === props.currUid) ? "You" : props.author}</b> gave {(props.uid === props.currUid) ? props.amount + " " : ""}soulsmiles to <b>{props.cause}.</b></div>
                         <div className="donationPostTime">{timeSince(props.timestamp)}</div>
                         <div className="donationMessage">Sample message for donation</div>
-                        <div className="likesBar"><div id="heartWrapper"><HiOutlineHeart id="heartIcon" size={20}/></div><div>{props.heartCount}</div></div>
+                        <div className="likesBar"><PinkCheckbox icon={<MdFavoriteBorder size={18}/>} checkedIcon={<MdFavorite size={18} />} className="heart" /><div id="heartCount">{props.heartCount}</div></div>
                     </div>
                 </div>
         </div>

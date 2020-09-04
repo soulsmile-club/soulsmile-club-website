@@ -1,4 +1,4 @@
-#dashboard {
+.dashboard {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,66 +80,6 @@
     transform: scale(1.1);
 }
 
-.loginForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-button {
-    background-color: white;
-    color: #444444;
-}
-
-.icon {
-    margin: 0px 10px;
-    color: #eda1aa;
-}
-
-.donate {
-    margin: 0px 100px;
-    padding: 10px 0px;
-}
-
-.login {
-    width: 30rem;
-    padding: 12px 20px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    height: 3rem;
-    text-align: left;
-    justify-content: center;
-    align-items: flex-start;
-    box-sizing: border-box;
-}
-
-.amount {
-    width: 190px;
-    padding: 12px 20px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.submit {
-    background-color: #444444;
-    text-align: center !important;
-    color: white;
-}
-
-.submit:hover {
-    background-color: #262626;
-}
-
-#loginOrSignup {
-    color: #eda1aa;
-}
-  
-#loginOrSignup:hover {
-    text-decoration: underline;
-}
-
 .donationButtonContainer {
     display: flex;
     flex-direction: column;
@@ -154,12 +94,50 @@ button {
     max-width: 100%;
 }
 
-.causeSelector {
-    width: 700px;
-    max-width: 100%;
-    margin: 20px;
-}
-
 #error {
     color: red;
+}
+
+.overlay {
+  background-color: rgba(0,0,0,.2);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  display: none;
+}
+
+.fade-in {
+animation: fadeIn ease 0.5s;
+-webkit-animation: fadeIn ease 0.5s;
+-moz-animation: fadeIn ease 0.5s;
+-o-animation: fadeIn ease 0.5s;
+-ms-animation: fadeIn ease 0.5s;
+}
+
+@keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
 }

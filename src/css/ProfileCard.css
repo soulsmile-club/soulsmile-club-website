@@ -1,8 +1,14 @@
 .profilePhoto {
-    width: 170px;
-    min-height: 170px;
-    margin: 10px;
+    width: 15vw;
+    min-height: 15vw;
+    margin: 1%;
     border-radius: 50%;
+}
+
+.goldPic {
+	border-width: 4px;
+    border-style: solid;
+    border-color: #ffbf00;
 }
 
 .noProfilePic {
@@ -12,10 +18,11 @@
 }
 
 .profile {
-    margin-top: 25px;
+    margin-top: 2%;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 45vw;
 }
 
 #picAndDetailsContainer {
@@ -25,55 +32,65 @@
 	background-color: white;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 4px;
-	padding: 20px 20px;
+	padding: 3%;
+	width: 100%;
 }
 
 #detailsContainer {
-	margin-left: 25px;
+	padding-left: 6%;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 }
 
 #profileName {
-	font-size: 28px;
+	font-size: 3.7vmin;
 	text-align: left;
-	margin: 10px;
+	padding: 3% 3% 0 2%;
 	font-weight: 500;
-	padding-left: 15px;
+	/*padding-left: 2%;*/
+}
+
+#goldSoulsmiler {
+	font-size: 2.2vmin;
+	text-align: left;
+	padding: 0 0 0 2%;
+	font-weight: 500;
+	/*padding-left: 2%;*/
+	color: #ffbf00;
 }
 
 #profileStats {
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
+	padding-top: 2%;
 }
 
 .statNum {
-	font-size: 24px;
+	font-size: 3.5vmin;
 	font-weight: bold;
 	color: #eda1aa;
 }
 
 .statDesc {
 	max-width: 110px;
-	font-size: 14px;
+	font-size: 1.9vmin;
 }
 
 .stat {
-	padding: 10px;
+	padding: 1%;
 }
 #giveButton {
 	align-self: center;
 	display: flex;
 	align-items: center;
-	margin: 10px;
+	width: 100%;
 }
 .donateButton {
-    width: 370px;
-    max-width: 100%;
-    padding: 12px 20px;
-    margin: 10px 0;
+    width: 100%;
+    padding: 5% 10%;
+    margin: 6% 0 3% 0;
     border: 1px solid white;
     border-radius: 4px;
     height: 3rem;
@@ -85,6 +102,7 @@
     display: flex;
     align-items: center;
     font-weight: 500;
+    font-size: 2.5vmin;
 }
 
 .donateButton:hover {
@@ -93,5 +111,5 @@
 
 
 #giveIcon {
-	margin-left: 10px;
+	margin-left: 3%;
 }

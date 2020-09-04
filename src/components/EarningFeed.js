@@ -4,9 +4,9 @@ import DonationPost from './DonationPost.js';
 import '../css/Feed.css';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
-const numPostsAtOneTime = 2;
+const numPostsAtOneTime = 3;
 
-function Feed(props) {
+function EarningFeed() {
     const [posts, setPosts] = React.useState([]);
     const [uid, setUid] = React.useState('');
     const [allPosts, setAllPosts] = React.useState([]);
@@ -14,6 +14,7 @@ function Feed(props) {
     const [numPostsShowing, setNumPostsShowing] = React.useState(numPostsAtOneTime);
 
     useEffect(() => {
+        console.log("new feed");
         firebase.auth().onAuthStateChanged(function(user) {
             console.log("auth state changed");
             if (user) {
@@ -37,25 +38,13 @@ function Feed(props) {
     }, [allPosts]);
 
     function fetchAllPosts(user) {
-        if (props.title === "Giving History") {
-            firebase.database().ref('/users-donations/' + user.uid + '/donations').once('value').then(function(snapshot) {
-                  if (snapshot.exists() && snapshot.val()) {
-                    setAllPosts(Object.values(snapshot.val()).sort(function (a, b) {
-                        return ((a.timestamp > b.timestamp) ? -1 : (a.timestamp < b.timestamp) ? 1 : 0);
-                    }));
-                  }
-            });
-        } else if (props.title === "Earning History") {
-
-        } else if (props.title === "Global Soulsmile Club Community") {
-            firebase.database().ref('/donations').once('value').then(function(snapshot) {
-                  if (snapshot.exists() && snapshot.val()) {
-                    setAllPosts(Object.values(snapshot.val()).sort(function (a, b) {
-                        return ((a.timestamp > b.timestamp) ? -1 : (a.timestamp < b.timestamp) ? 1 : 0);
-                    }));
-                  }
-            });
-        }
+        firebase.database().ref('/users-earnings/' + user.uid).once('value').then(function(snapshot) {
+              if (snapshot.exists() && snapshot.val()) {
+                setAllPosts(Object.values(snapshot.val()).sort(function (a, b) {
+                    return ((a.timestamp > b.timestamp) ? -1 : (a.timestamp < b.timestamp) ? 1 : 0);
+                }));
+              }
+        });
     }
 
     function fetchData () {
@@ -73,24 +62,26 @@ function Feed(props) {
 
     return (
         <div className="feed">
-            <div className="feedTitle">{props.title}</div>
-            <InfiniteScroll
+            <div className="feedTitle">Earning History</div>
+            {allPosts.length === 0 ? 
+                <div id="noPostsMessage">You have not yet earned any soulsmiles! Shop on our <a href="http://tiny.cc/soulsmile-extension" target="_blank" rel="noopener noreferrer">Chrome extension</a> to see soulsmiles come in from your daily purchases.</div>
+            : <InfiniteScroll
               className="scrollContainer"
               dataLength={posts.length}
               next={fetchData}
               hasMore={hasMore}
               loader={<h4>Loading more posts...</h4>}
-              // height={40}
+              scrollThreshold={0.8}
               endMessage={<></>
               }>
               {posts.length === 0 ? "" : posts.map((donation, index) => (
                 (index === 0) ? <DonationPost key={index} currUid={uid} firstPost={true} uid={donation.uid} amount={donation.amount} cause={donation.cause} author={donation.author} authorPic={donation.authorPic} timestamp={donation.timestamp} heartCount={donation.heartCount} /> :
                 <DonationPost key={index} currUid={uid} firstPost={false} uid={donation.uid} amount={donation.amount} cause={donation.cause} author={donation.author} authorPic={donation.authorPic} timestamp={donation.timestamp} heartCount={donation.heartCount} />
               ))}
-            </InfiniteScroll>
+            </InfiniteScroll>}
         </div>
     );
   
 }
 
-export default Feed;
+export default EarningFeed;

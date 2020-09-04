@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'; 
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -14,7 +14,8 @@ import { Button } from 'react-bootstrap';
 import { RiLogoutBoxRLine } from 'react-icons/ri';
 import { FaArrowCircleUp } from 'react-icons/fa';
 import firebase from './Firebase.js';
-import Feed from './Feed.js';
+import GlobalFeed from './GlobalFeed.js';
+import EarningFeed from './EarningFeed.js';
 
 
 const useStyles = makeStyles({
@@ -78,33 +79,36 @@ function DashboardController() {
       <Tabs value={value} onChange={handleChange} centered classes={{indicator: classes.indicator}}>
         <Tab label="Me" style={{fontFamily: 'Montserrat'}} />
         <Tab label="Community" style={{fontFamily: 'Montserrat'}} />
+        <Tab label="Earnings" style={{fontFamily: 'Montserrat'}} />
         <Tab label="Smileage" style={{fontFamily: 'Montserrat'}} />
-        <Tab label="Impact" style={{fontFamily: 'Montserrat'}} />
       </Tabs>
       <a href="#" className="logoutButton" onClick={signOut}>
         <RiLogoutBoxRLine size={25} />
       </a>
     </div>
-    <SwipeableViews
-        index={value}
-        onChangeIndex={handleChangeIndex}
-    >
+    {value === 0 ?
       <div>
         <Dashboard />
       </div>
-      <div>
-        <div id="dashboard">
-          <Feed title="Global Soulsmile Club Community" />
+      : value === 1 ?
+      <div id="globalCommunity">
+        <div className="dashboard">
+          <GlobalFeed />
           <Button bsPrefix="topButton" onClick={topFunction}><FaArrowCircleUp id="returnIcon" /> Return to Top</Button>
         </div>
       </div>
+      : value === 2 ?
+      <div id="earningHistory">
+        <div className="dashboard">
+          <EarningFeed />
+          <Button bsPrefix="topButton" onClick={topFunction}><FaArrowCircleUp id="returnIcon" /> Return to Top</Button>
+        </div>
+      </div>
+      : value === 3 ?
       <div>
         Smileage
-      </div>
-      <div>
-        Impact
-      </div>
-    </SwipeableViews>
+      </div> :
+      ""}
     </>
   );
 }

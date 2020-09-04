@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import firebase from './Firebase.js';
 import ProfileCard from './ProfileCard.js';
-import Feed from './Feed.js';
+import ProfileFeed from './ProfileFeed.js';
 import Select from 'react-select';
 import { Button } from 'react-bootstrap';
 import '../css/Dashboard.css';
 import { FaArrowCircleUp } from 'react-icons/fa';
+import GiveSoulsmilesForm from './GiveSoulsmilesForm.js';
+import Collapse from '@material-ui/core/Collapse';
 
 const options =[
     {value: 0, label: 'All Soulsmile Causes'},
@@ -19,6 +21,8 @@ function Dashboard() {
     const [name, setName] = React.useState('');
     const [uid, setUid] = React.useState('');
     const [photoURL, setPhotoURL] = React.useState('');
+
+    const [giveButtonClicked, setGiveButtonClicked] = React.useState(false);
 
     const [showOneTimeDonationButtons, setShowOneTimeDonationButtons] = React.useState(false);
     const [showSubscriptionButtons, setShowSubscriptionButtons] = React.useState(false);
@@ -58,9 +62,9 @@ function Dashboard() {
                     profile_picture: user.photoURL,
                     donations: {},
                     subscriptions: {},
-                    pastSubscriptions: {},
                     soulsmilesGiven: 0,
-                    soulsmilesInWallet: 0
+                    soulsmilesInWallet: 0,
+                    isGoldSoulsmiler: false
                 });
             }
         });
@@ -83,6 +87,10 @@ function Dashboard() {
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
 
+    function giveButtonOnClick() {
+        setGiveButtonClicked(!giveButtonClicked);
+    }
+
     var causeSelector = (
         <>
         <div>Which cause would you like to donate to?</div>
@@ -96,13 +104,27 @@ function Dashboard() {
         </>
     );
 
+    function fadeInOverlay () {
+        document.getElementsByClassName("overlay")[0].style.setProperty('display', 'block');
+    }
+
+    function fadeOutOverlay () {
+        document.getElementsByClassName("overlay")[0].style.setProperty('display', 'none');
+    }
     return (
         <>
-        <div id="dashboard">
-            <ProfileCard />
-            <Feed title={"Giving History"} />
+        <div className="dashboard">
+            <div className="overlay fade-in" onClick={fadeOutOverlay} ></div>
+            <ProfileCard giveButtonOnClick={giveButtonOnClick}/>
+            <Collapse in={giveButtonClicked}>
+                <GiveSoulsmilesForm onTextClicked={fadeInOverlay} />
+            </Collapse>
+            <ProfileFeed />
             <Button bsPrefix="topButton" onClick={topFunction}><FaArrowCircleUp id="returnIcon" /> Return to Top</Button>
         </div>
+
+
+
         <div className="donationButtonContainer">
 
         <Button onClick={() => setShowOneTimeDonationButtons(!showOneTimeDonationButtons)} bsPrefix="donateButton">Donate once to a Smileage Cause</Button>

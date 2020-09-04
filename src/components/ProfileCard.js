@@ -7,7 +7,7 @@ import { Button } from 'react-bootstrap';
 import { BiSmile } from 'react-icons/bi';
 import genericProfilePic from '../images/genericProfilePic.png';
 
-function ProfileCard() {
+function ProfileCard(props) {
     const [name, setName] = React.useState('');
     const [profilePic, setProfilePic] = React.useState('');
     const [daysInSoulsmile, setDaysInSoulsmile] = React.useState(0);
@@ -40,9 +40,10 @@ function ProfileCard() {
     return (
         <div className="profile">
             <div id="picAndDetailsContainer">
-                {profilePic ? <img className="profilePhoto" src={profilePic} alt={name}></img> : <img className="profilePhoto noProfilePic" src={genericProfilePic} alt={name}></img> }
+                {profilePic ? <img className={isGoldSoulsmiler ? "profilePhoto goldPic" : "profilePhoto"} src={profilePic} alt={name}></img> : <img className={isGoldSoulsmiler ? "profilePhoto goldPic" : "profilePhoto noProfilePic"} src={genericProfilePic} alt={name}></img> }
                 <div id="detailsContainer">
                     <div id="profileName">{name}</div>
+                    {isGoldSoulsmiler ? <div id="goldSoulsmiler">Gold Soulsmiler</div> : ""}
                     <div id="profileStats">
                         <div className="stat">
                             <div className="statNum">{daysInSoulsmile}</div>
@@ -58,7 +59,7 @@ function ProfileCard() {
                         </div>
                     </div>
                     <div id="giveButton">
-                        <Button bsPrefix="donateButton">Give Soulsmiles <IoMdSend id="giveIcon" size={18} /></Button>
+                        <Button bsPrefix="donateButton" onClick={props.giveButtonOnClick}>Give Soulsmiles <IoMdSend id="giveIcon" size={18} /></Button>
                     </div>
                 </div>
             </div>
