@@ -8,6 +8,7 @@ import '../css/Dashboard.css';
 import { FaArrowCircleUp } from 'react-icons/fa';
 import GiveSoulsmilesForm from './GiveSoulsmilesForm.js';
 import Collapse from '@material-ui/core/Collapse';
+import SmileageCard from './SmileageCard.js';
 
 const options =[
     {value: 0, label: 'All Soulsmile Causes'},
@@ -17,7 +18,7 @@ const options =[
     {value: 4, label: 'Humanitarian Aid'}
 ]
 
-function Dashboard() {
+function Dashboard(props) {
     const [name, setName] = React.useState('');
     const [uid, setUid] = React.useState('');
     const [photoURL, setPhotoURL] = React.useState('');
@@ -90,20 +91,7 @@ function Dashboard() {
     function giveButtonOnClick() {
         setGiveButtonClicked(!giveButtonClicked);
     }
-
-    var causeSelector = (
-        <>
-        <div>Which cause would you like to donate to?</div>
-        <div id="smile">**100% of your donation will go directly to Soulsmile Club's curated and heavily researched organizations that we believe are doing the best work in these areas!**</div>
-        <Select
-            className="causeSelector"
-            defaultValue={options[0]}
-            options={options}
-            onChange={(selected) => setOneTimeCause(selected.value)}
-        />
-        </>
-    );
-
+    
     function fadeInOverlay () {
         document.getElementsByClassName("overlay")[0].style.setProperty('display', 'block');
     }
@@ -119,6 +107,7 @@ function Dashboard() {
             <Collapse in={giveButtonClicked}>
                 <GiveSoulsmilesForm onTextClicked={fadeInOverlay} />
             </Collapse>
+            <SmileageCard goToSmileage={props.goToSmileage}/>
             <ProfileFeed />
             <Button bsPrefix="topButton" onClick={topFunction}><FaArrowCircleUp id="returnIcon" /> Return to Top</Button>
         </div>

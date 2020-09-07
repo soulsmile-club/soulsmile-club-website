@@ -1,24 +1,12 @@
 import React, { useEffect } from 'react';
 import firebase from './Firebase.js';
 import '../css/GiveSoulsmilesForm.css';
-import Checkbox from '@material-ui/core/Checkbox';
-import { withStyles } from '@material-ui/core/styles';
 import { Button } from 'react-bootstrap';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import { makeStyles } from '@material-ui/core/styles';
 import { BiWorld } from 'react-icons/bi';
 import { FaLock } from 'react-icons/fa';
-
-const GreenCheckbox = withStyles({
-  root: {
-    color:"#70A36A",
-    '&$checked': {
-      color: "#70A36A",
-    },
-  },
-  checked: {},
-})((props) => <Checkbox color="default" {...props} />);
 
 const useStyles = makeStyles((theme) => ({
   selectEmpty: {

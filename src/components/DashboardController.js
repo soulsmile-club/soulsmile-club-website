@@ -16,7 +16,9 @@ import { FaArrowCircleUp } from 'react-icons/fa';
 import firebase from './Firebase.js';
 import GlobalFeed from './GlobalFeed.js';
 import EarningFeed from './EarningFeed.js';
-
+import SmileageCard from './SmileageCard.js';
+import SmileageForm from './SmileageForm.js';
+import Collapse from '@material-ui/core/Collapse';
 
 const useStyles = makeStyles({
     indicator: {
@@ -26,6 +28,8 @@ const useStyles = makeStyles({
 
 function DashboardController() {
   const [value, setValue] = React.useState(0);
+
+  const [addNewSmileageClicked, setAddNewSmileageClicked] = React.useState(false);
 
   useEffect(() => {
         firebase.auth().onAuthStateChanged(function(user) {
@@ -61,6 +65,11 @@ function DashboardController() {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
 
+  function goToSmileage() {
+    setValue(3);
+    setAddNewSmileageClicked(true);
+  }
+
   const classes = useStyles();
 
   return (
@@ -88,25 +97,24 @@ function DashboardController() {
     </div>
     {value === 0 ?
       <div>
-        <Dashboard />
+        <Dashboard goToSmileage={goToSmileage}/>
       </div>
       : value === 1 ?
-      <div id="globalCommunity">
         <div className="dashboard">
           <GlobalFeed />
           <Button bsPrefix="topButton" onClick={topFunction}><FaArrowCircleUp id="returnIcon" /> Return to Top</Button>
         </div>
-      </div>
       : value === 2 ?
-      <div id="earningHistory">
         <div className="dashboard">
           <EarningFeed />
           <Button bsPrefix="topButton" onClick={topFunction}><FaArrowCircleUp id="returnIcon" /> Return to Top</Button>
         </div>
-      </div>
       : value === 3 ?
-      <div>
-        Smileage
+      <div className="dashboard">
+        <SmileageCard goToSmileage={() => setAddNewSmileageClicked(!addNewSmileageClicked)} />
+        <Collapse in={addNewSmileageClicked}>
+          <SmileageForm />
+        </Collapse>
       </div> :
       ""}
     </>

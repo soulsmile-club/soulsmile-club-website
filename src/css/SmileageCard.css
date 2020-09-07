@@ -1,0 +1,42 @@
+.addNewSmileage {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 0 1%;
+	font-size: 18px;
+	border-radius: 100px;
+}
+
+.addNewSmileage:hover {
+	background-color: #f1f1f1;
+}
+
+a.addNewSmileage {
+	color: #444444;
+}
+
+a.addNewSmileage:hover {
+	color: #444444;
+	text-decoration: none;
+}
+
+.smileagePlus {
+	color: #eda1aa;
+	margin: 2%;
+}
+
+.gold {
+	color: #ffbf00;
+}
+
+.smileageDivider {
+	width: 90%;
+	margin: auto;
+	text-align: center;
+	padding: 1%;
+}
+
+#noSmileageMessage {
+	padding: 3% 0;
+	font-size: 22px;
+}

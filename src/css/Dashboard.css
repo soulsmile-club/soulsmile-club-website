@@ -30,9 +30,9 @@
 
 .amountButton {
     background-color: #f1f1f1;
-    width: 300px;
-    margin: 10px 20px;
-    min-height: 100px;
+    width: 350px;
+    margin: 10px 10px;
+    min-height: 75px;
     text-align: center;
     color: #444444;
     font-size: 20px;
@@ -56,12 +56,12 @@
 
 .amountInput {
     background-color: #f1f1f1;
-    width: 300px;
-    margin: 10px 20px;
-    min-height: 100px;
+    width: 150px;
+    margin: 10px 10px;
+    min-height: 75px;
     text-align: center;
     color: #444444;
-    font-size: 20px;
+    font-size: 15px;
     padding: 10px;
     transition: transform .3s;
 }

@@ -13,7 +13,7 @@ function ProfileCard(props) {
     const [daysInSoulsmile, setDaysInSoulsmile] = React.useState(0);
     const [soulsmilesGiven, setSoulsmilesGiven] = React.useState(0);
     const [soulsmilesInWallet, setSoulsmilesInWallet] = React.useState(0);
-    const [isGoldSoulsmiler, setIsGoldSoulsmiler] = React.useState(true);
+    const [isGoldSoulsmiler, setIsGoldSoulsmiler] = React.useState(false);
 
     useEffect(() => {
         firebase.auth().onAuthStateChanged(function(user) {
