@@ -10,7 +10,8 @@ function RetailerPage(props) {
 
     var checkmark = (<>
             <p id="updateNote"><b>Note:</b> If you are not automatically redirected to the {props.retailerName} website, then you are not yet earning soulsmiles properly!
-             Please make sure you have the most updated version of the Soulsmile Club chrome extension for this to work.</p>
+             Please make sure you have the most updated version of the Soulsmile Club chrome extension for this to work.
+             If you are already on the most updated version, please refresh the page and try clicking the button again, or contact us for support!</p>
         </>
     );
 
