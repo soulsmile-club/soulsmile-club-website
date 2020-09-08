@@ -9,9 +9,8 @@ function RetailerPage(props) {
     }
 
     var checkmark = (<>
-        <svg className="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle className="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path className="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
-        <div id="earningMessage">You will now start earning soul<span id="smile">smiles</span> for {props.retailerName}!</div>
-        <p><b>Note:</b> If you are not automatically redirected to the {props.retailerName} website, then you are not yet earning soulsmiles properly! Make sure you have the most updated version of the Soulsmile Club chrome extension for this to work.</p>
+            <p id="updateNote"><b>Note:</b> If you are not automatically redirected to the {props.retailerName} website, then you are not yet earning soulsmiles properly!
+             Please make sure you have the most updated version of the Soulsmile Club chrome extension for this to work.</p>
         </>
     );
 
@@ -30,7 +29,8 @@ function RetailerPage(props) {
             <span>Start earning soul<span id="smile">smiles</span> with {props.retailerName}.</span>
         </header>
         <hr/>
-        {activated ? checkmark : activateButton}
+        {activateButton}
+        {activated ? checkmark : <></>}
         <div id="strippedUrl" hidden={true}>{props.retailerDomain}</div>
         </>
     );
