@@ -6,15 +6,12 @@ function RetailerPage(props) {
     const [activated, setActivated] = React.useState(false);
     function activateDonations() {
         setActivated(true);
-        setTimeout(function() {
-            console.log("ended");
-            window.location.href=props.retailerLink;
-        }, 1100);
     }
 
     var checkmark = (<>
         <svg className="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle className="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path className="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
-        <div id="earningMessage">You are now earning soul<span id="smile">smiles</span> for {props.retailerName}!</div>
+        <div id="earningMessage">You will now start earning soul<span id="smile">smiles</span> for {props.retailerName}!</div>
+        <p><b>Note:</b> If you are not automatically redirected to the {props.retailerName} website, then you are not yet earning soulsmiles properly! Make sure you have the most updated version of the Soulsmile Club chrome extension for this to work.</p>
         </>
     );
 
