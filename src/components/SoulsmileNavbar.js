@@ -35,6 +35,7 @@ function SoulsmileNavbar() {
               <NavDropdown.Item href="/team">Team</NavDropdown.Item>
               <NavDropdown.Item href="/monthly-reports">Monthly Reports</NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link href="/join">Join</Nav.Link>
             <Nav.Link href="/faq">FAQs</Nav.Link>
           </Nav>
       </Navbar.Collapse>

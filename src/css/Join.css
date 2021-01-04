@@ -1,0 +1,21 @@
+.join-container-faq {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 0px 50px;
+}
+
+.join-header {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.join-role-header {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.join-body {
+    line-height: 28px;
+}

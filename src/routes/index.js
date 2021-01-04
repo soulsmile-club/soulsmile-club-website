@@ -12,6 +12,7 @@ import MonthlyReports from '../components/MonthlyReports';
 import HowToUse from '../components/HowToUse';
 import FAQ from '../components/FAQ';
 import RetailerPage from '../components/RetailerPage';
+import Join from '../components/Join';
 
 export default function Routes() {
   var REACT_APP_AIRTABLE_RETAILERS_DOC = process.env.REACT_APP_AIRTABLE_RETAILERS_DOC;
@@ -56,6 +57,7 @@ export default function Routes() {
       <Route path="/team" exact component={Team} />
       <Route path="/privacy-policy" exact component={PrivacyPolicy} />
       <Route path="/monthly-reports" exact component={MonthlyReports} />
+      <Route path="/join" exact component={Join} />
       <Route path="/faq" exact component={FAQ} />
       {retailerPaths}
       {/* <Route path="/register" component={SignUp} />
