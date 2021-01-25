@@ -45,7 +45,7 @@ function Join() {
                 <p className="join-body">Experience creating promotional material (i.e. Canva).</p>
                 <br/>
                 <p className="join-header">Apply</p>
-                <p className="join-body">Please apply at <a href="tiny.cc/soulsmile-intern-apply">tiny.cc/soulsmile-intern-apply</a>. Please email <a href="mailto:team@soulsmile.club">team@soulsmile.club</a> for any questions. </p>
+                <p className="join-body">Please apply <a href="https://tiny.cc/soulsmile-intern-apply">tiny.cc/soulsmile-intern-apply</a>. Please email <a href="mailto:team@soulsmile.club">team@soulsmile.club</a> for any questions. </p>
             </div>
         </>
     );
