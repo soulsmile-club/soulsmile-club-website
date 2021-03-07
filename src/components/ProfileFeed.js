@@ -6,7 +6,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 
 const numPostsAtOneTime = 3;
 
-function ProfileFeed() {
+function ProfileFeed(props) {
     const [posts, setPosts] = React.useState([]);
     const [uid, setUid] = React.useState('');
     const [allPosts, setAllPosts] = React.useState([]);
@@ -18,7 +18,7 @@ function ProfileFeed() {
         firebase.auth().onAuthStateChanged(function(user) {
             console.log("auth state changed");
             if (user) {
-                fetchAllPosts(user);
+                fetchAllPosts(user.uid);
                 setUid(user.uid);
             } else {
                 console.log('no user found');
@@ -37,8 +37,8 @@ function ProfileFeed() {
         }
     }, [allPosts]);
 
-    function fetchAllPosts(user) {
-        firebase.database().ref('/users-donations/' + user.uid + '/donations').once('value').then(function(snapshot) {
+    function fetchAllPosts(uid) {
+        firebase.database().ref('/users-donations/' + uid + '/donations').once('value').then(function(snapshot) {
               if (snapshot.exists() && snapshot.val()) {
                 setAllPosts(Object.values(snapshot.val()).sort(function (a, b) {
                     return ((a.timestamp > b.timestamp) ? -1 : (a.timestamp < b.timestamp) ? 1 : 0);

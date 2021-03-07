@@ -139,6 +139,8 @@ function GiveSoulsmilesForm(props) {
                 });
             }
         });
+        props.toggleGiveForm();
+        props.updateGivingFeed();
       } else {
         // otherwise, redirect to PayPal to complete payment
         window.location.href = "/payment?type=single&amount=" + giveAmount + "&cause=" + giveCause;

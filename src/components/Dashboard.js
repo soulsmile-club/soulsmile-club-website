@@ -31,6 +31,7 @@ function Dashboard(props) {
     const [subscriptionAmount, setSubscriptionAmount] = React.useState(5);
     const [oneTimeCause, setOneTimeCause] = React.useState(0);
     const [subscriptionCause, setSubscriptionCause] = React.useState(0);
+
     useEffect(() => {
         firebase.auth().onAuthStateChanged(function(user) {
             console.log("auth state changed");
@@ -99,13 +100,18 @@ function Dashboard(props) {
     function fadeOutOverlay () {
         document.getElementsByClassName("overlay")[0].style.setProperty('display', 'none');
     }
+
+    function updateGivingFeed() {
+        window.location.reload();
+    }
+
     return (
         <>
         <div className="dashboard">
             <div className="overlay fade-in" onClick={fadeOutOverlay} ></div>
             <ProfileCard giveButtonOnClick={giveButtonOnClick}/>
             <Collapse in={giveButtonClicked}>
-                <GiveSoulsmilesForm onTextClicked={fadeInOverlay} name={name} uid={uid} photoURL={photoURL} />
+                <GiveSoulsmilesForm onTextClicked={fadeInOverlay} toggleGiveForm={giveButtonOnClick} updateGivingFeed={updateGivingFeed} />
             </Collapse>
             {/* <SmileageCard goToSmileage={props.goToSmileage}/> */}
             <ProfileFeed />
