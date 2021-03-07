@@ -56,7 +56,7 @@ function DonationPost(props) {
                     <div className="donationContainer">
                         <div className="donationTitle"><b>{(props.uid === props.currUid) ? "You" : props.author}</b> gave {(props.uid === props.currUid) ? props.amount + " " : ""}soulsmiles to <b>{props.cause}.</b></div>
                         <div className="donationPostTime">{timeSince(props.timestamp)}</div>
-                        <div className="donationMessage">Sample message for donation</div>
+                        <div className="donationMessage">{props.message}</div>
                         <div className="likesBar"><PinkCheckbox icon={<MdFavoriteBorder size={18}/>} checkedIcon={<MdFavorite size={18} />} className="heart" /><div id="heartCount">{props.heartCount}</div></div>
                     </div>
                 </div>

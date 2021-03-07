@@ -113,7 +113,8 @@ function GiveSoulsmilesForm(props) {
           author: name,
           authorPic: profilePic,
           heartCount: 0,
-          uid: uid
+          uid: uid,
+          message:  document.getElementById("messageText").value
         }
 
         var newDonationKey = firebase.database().ref().child('donations').push().key;
@@ -166,7 +167,7 @@ function GiveSoulsmilesForm(props) {
                 </Select></div>
               </div>
               <hr className="giveBorder"/>
-              <textarea className="writeMessageText" onClick={props.onTextClicked} placeholder="What inspired you to give today?"></textarea>
+              <textarea className="writeMessageText" id="messageText" onClick={props.onTextClicked} placeholder="What inspired you to give today?"></textarea>
               <hr className="messageBorder"/>
               <div className="buttonRow">
                 <Select

@@ -75,8 +75,8 @@ function ProfileFeed(props) {
               endMessage={<></>
               }>
               {posts.length === 0 ? "" : posts.map((donation, index) => (
-                (index === 0) ? <DonationPost key={index} currUid={uid} firstPost={true} uid={donation.uid} amount={donation.amount} cause={donation.cause} author={donation.author} authorPic={donation.authorPic} timestamp={donation.timestamp} heartCount={donation.heartCount} /> :
-                <DonationPost key={index} currUid={uid} firstPost={false} uid={donation.uid} amount={donation.amount} cause={donation.cause} author={donation.author} authorPic={donation.authorPic} timestamp={donation.timestamp} heartCount={donation.heartCount} />
+                (index === 0) ? <DonationPost key={index} currUid={uid} firstPost={true} uid={donation.uid} amount={donation.amount} cause={donation.cause} author={donation.author} authorPic={donation.authorPic} timestamp={donation.timestamp} heartCount={donation.heartCount} message={donation.message} /> :
+                <DonationPost key={index} currUid={uid} firstPost={false} uid={donation.uid} amount={donation.amount} cause={donation.cause} author={donation.author} authorPic={donation.authorPic} timestamp={donation.timestamp} heartCount={donation.heartCount} message={donation.message}/>
               ))}
             </InfiniteScroll>}
         </div>
