@@ -89,7 +89,7 @@ function DashboardController() {
         <Tab label="Me" style={{fontFamily: 'Montserrat'}} />
         <Tab label="Community" style={{fontFamily: 'Montserrat'}} />
         <Tab label="Earnings" style={{fontFamily: 'Montserrat'}} />
-        <Tab label="Smileage" style={{fontFamily: 'Montserrat'}} />
+        {/* <Tab label="Smileage" style={{fontFamily: 'Montserrat'}} /> */}
       </Tabs>
       <a href="#" className="logoutButton" onClick={signOut}>
         <RiLogoutBoxRLine size={25} />

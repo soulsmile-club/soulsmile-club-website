@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const options =[
+const causes =[
     {value: 0, label: 'All Soulsmile Causes'},
     {value: 1, label: 'Education'},
     {value: 2, label: 'Global Health'},
@@ -42,9 +42,38 @@ const options =[
 function GiveSoulsmilesForm(props) {
     const classes = useStyles();
 
+    // give form data
     const [giveAmount, setGiveAmount] = React.useState(50);
     const [giveCause, setGiveCause] = React.useState(0);
     const [publicPost, setPublicPost] = React.useState(true);
+    const [giveMessage, setGiveMessage] = React.useState("");
+
+    // user data
+    const [name, setName] = React.useState('');
+    const [uid, setUid] = React.useState('');
+    const [profilePic, setProfilePic] = React.useState('');
+    const [soulsmilesInWallet, setSoulsmilesInWallet] = React.useState(0);
+
+    useEffect(() => {
+        firebase.auth().onAuthStateChanged(function(user) {
+            console.log("auth state changed");
+            if (user) {
+                setName(user.displayName);
+                setUid(user.uid);
+                setProfilePic(user.photoURL);
+                firebase.database().ref('users/' + user.uid).once("value", snapshot => {
+                    if (snapshot.exists()) {
+                        setSoulsmilesInWallet(snapshot.val().soulsmilesInWallet);
+                    } else {
+                        console.log("user is not in database!");
+                    }
+                });
+            } else {
+                console.log('no user found');
+                window.location.href = "/login";
+            }
+        });
+    }, []);
 
     function timeSince(date) {
 
@@ -74,6 +103,48 @@ function GiveSoulsmilesForm(props) {
       return Math.floor(seconds) + "s";
     }
 
+    function submitGiveForm() {
+      if (soulsmilesInWallet >= giveAmount) {
+        // if there are enough soulsmiles in wallet, create giving post in database and update profile stats
+        var donationData = {
+          amount: giveAmount,
+          cause: causes[giveCause].label,
+          timestamp: Date.now(),
+          author: name,
+          authorPic: profilePic,
+          heartCount: 0,
+          uid: uid
+        }
+
+        var newDonationKey = firebase.database().ref().child('donations').push().key;
+
+        var updates = {};
+        updates['/users-donations/' + uid + '/donations/' + newDonationKey] = donationData;
+        updates['/donations/' + newDonationKey] = donationData;
+
+        firebase.database().ref().update(updates, function (error) {
+            if (error) {
+                console.log(error);
+            } else {
+                firebase.database().ref('/users/' + uid).transaction(function (userData) {
+                    if (userData) {
+                        userData.soulsmilesGiven += giveAmount;
+                        userData.soulsmilesInWallet -= giveAmount;
+                    } else {
+                        console.log("no user found in database!");
+                    }
+                    return userData;
+                }, function (error) {
+                    console.log('updated database');
+                });
+            }
+        });
+      } else {
+        // otherwise, redirect to PayPal to complete payment
+        window.location.href = "/payment?type=single&amount=" + giveAmount + "&cause=" + giveCause;
+      }
+    }
+
     return (
         <div className="box arrow-top">                    
             <div className="giveSoulsmilesContainer">
@@ -87,7 +158,7 @@ function GiveSoulsmilesForm(props) {
                   className={classes.selectEmpty}
                   inputProps={{ 'aria-label': 'Without label' }}
                 >
-                  {options.map((cause, index) => (
+                  {causes.map((cause, index) => (
                     <MenuItem className={classes.menuItemStyle} key={cause.value} value={cause.value}>{cause.label}</MenuItem>
                   ))}
                 </Select></div>
@@ -107,7 +178,7 @@ function GiveSoulsmilesForm(props) {
                   <MenuItem className={classes.publicMenuItemStyle} value={true}><BiWorld/></MenuItem>
                   <MenuItem className={classes.publicMenuItemStyle} value={false}><FaLock/></MenuItem>
                 </Select>
-                <Button bsPrefix="giveFormButton">Give {giveAmount} soulsmiles</Button>
+                <Button bsPrefix="giveFormButton" onClick={submitGiveForm}>Give {giveAmount} soulsmiles</Button>
               </div>
             </div>
 

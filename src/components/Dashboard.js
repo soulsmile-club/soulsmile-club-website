@@ -105,16 +105,16 @@ function Dashboard(props) {
             <div className="overlay fade-in" onClick={fadeOutOverlay} ></div>
             <ProfileCard giveButtonOnClick={giveButtonOnClick}/>
             <Collapse in={giveButtonClicked}>
-                <GiveSoulsmilesForm onTextClicked={fadeInOverlay} />
+                <GiveSoulsmilesForm onTextClicked={fadeInOverlay} name={name} uid={uid} photoURL={photoURL} />
             </Collapse>
-            <SmileageCard goToSmileage={props.goToSmileage}/>
+            {/* <SmileageCard goToSmileage={props.goToSmileage}/> */}
             <ProfileFeed />
             <Button bsPrefix="topButton" onClick={topFunction}><FaArrowCircleUp id="returnIcon" /> Return to Top</Button>
         </div>
 
 
 
-        <div className="donationButtonContainer">
+        {/* <div className="donationButtonContainer">
 
         <Button onClick={() => setShowOneTimeDonationButtons(!showOneTimeDonationButtons)} bsPrefix="donateButton">Donate once to a Smileage Cause</Button>
         {showOneTimeDonationButtons ?
@@ -181,7 +181,7 @@ function Dashboard(props) {
             </a>
             </>
         : <></>}
-        </div>
+        </div> */}
         </>
     );
 

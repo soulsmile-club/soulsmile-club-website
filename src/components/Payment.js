@@ -39,14 +39,16 @@ function Payment() {
     }
 
     let query = useQuery();
+    var amountSoulsmiles = parseFloat(query.get("amount"));
+    var amountDollars = amountSoulsmiles / 10;
 
     var oneTimeDonationButtons = (
             <PayPalButton
-                amount={query.get("amount")}
+                amount={amountDollars}
                 shippingPreference="NO_SHIPPING"
                 onApprove={(details, data) => {
                     var donationData = {
-                        amount: parseFloat(query.get("amount")),
+                        amount: amountSoulsmiles,
                         cause: causes[query.get("cause")].label,
                         timestamp: Date.now(),
                         author: name,
@@ -70,7 +72,7 @@ function Payment() {
                         } else {
                             firebase.database().ref('/users/' + uid).transaction(function (userData) {
                                 if (userData) {
-                                    userData.soulsmilesGiven += parseFloat(query.get("amount"));
+                                    userData.soulsmilesGiven += amountSoulsmiles;
                                 } else {
                                     console.log("no user found in database!");
                                 }
@@ -92,7 +94,7 @@ function Payment() {
         <PayPalButton
             onApprove={(details, data) => {
                 var subscriptionData = {
-                    amount: parseFloat(query.get("amount")),
+                    amount: amountDollars,
                     cause: causes[query.get("cause")].label,
                     startTimestamp: Date.now(),
                     active: true,
@@ -124,7 +126,7 @@ function Payment() {
                 return actions.subscription.create({
                     plan_id: 'P-36G54755XA9707334L5EZD5A',
                     // start_time: "2020-09-01T00:00:00Z",
-                    quantity: query.get("amount")
+                    quantity: amountDollars
                 });
             }}
             options={{
@@ -155,14 +157,14 @@ function Payment() {
                     {query.get("type") === "single" ?
                         <>
                         <header className="WebApp-header">
-                            <span>Complete your ${query.get("amount")} donation for {causes[query.get("cause")].label}!</span>
+                            <span>Complete your donation of {amountSoulsmiles} soulsmiles for {causes[query.get("cause")].label}!</span>
                         </header>
                         {oneTimeDonationButtons}
                         </>
                     :
                         <>
                         <header className="WebApp-header">
-                            <span>Complete your ${query.get("amount")} monthly donation to {causes[query.get("cause")].label}!</span>
+                            <span>Complete your monthly donation of {amountSoulsmiles} to {causes[query.get("cause")].label}!</span>
                         </header>
                         {subscriptionButtons}
                         </>
