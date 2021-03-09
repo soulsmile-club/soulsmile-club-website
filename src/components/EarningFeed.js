@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import firebase from './Firebase.js';
-import DonationPost from './DonationPost.js';
+import EarningPost from './EarningPost.js';
 import '../css/Feed.css';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
@@ -75,8 +75,8 @@ function EarningFeed() {
               endMessage={<></>
               }>
               {posts.length === 0 ? "" : posts.map((donation, index) => (
-                (index === 0) ? <DonationPost key={index} currUid={uid} firstPost={true} uid={donation.uid} amount={donation.amount} cause={donation.cause} author={donation.retailer} authorPic={donation.authorPic} timestamp={donation.timestamp} heartCount={donation.heartCount} /> :
-                <DonationPost key={index} currUid={uid} firstPost={false} uid={donation.uid} amount={donation.amount} cause={donation.cause} author={donation.retailer} authorPic={donation.authorPic} timestamp={donation.timestamp} heartCount={donation.heartCount} />
+                (index === 0) ? <EarningPost key={index} currUid={uid} firstPost={true} uid={donation.uid} amount={donation.amount} cause={donation.cause} author={donation.retailer} authorPic="https://welltodocareers.com/wp-content/uploads/job-manager-uploads/company_logo/2020/07/Girlfriend-Collective-300x300.png" timestamp={donation.payment_timestamp} heartCount={donation.heartCount} /> :
+                <EarningPost key={index} currUid={uid} firstPost={false} uid={donation.uid} amount={donation.amount} cause={donation.cause} author={donation.retailer} authorPic="https://welltodocareers.com/wp-content/uploads/job-manager-uploads/company_logo/2020/07/Girlfriend-Collective-300x300.png" timestamp={donation.timestamp} heartCount={donation.heartCount} />
               ))}
             </InfiniteScroll>}
         </div>

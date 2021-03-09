@@ -54,7 +54,8 @@ function Payment() {
                         author: name,
                         authorPic: profilePic,
                         heartCount: 0,
-                        uid: uid
+                        uid: uid,
+                        public: true
                     }
 
                     console.log("donation data to log");

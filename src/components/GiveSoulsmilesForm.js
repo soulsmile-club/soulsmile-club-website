@@ -114,7 +114,8 @@ function GiveSoulsmilesForm(props) {
           authorPic: profilePic,
           heartCount: 0,
           uid: uid,
-          message:  document.getElementById("messageText").value
+          message:  document.getElementById("messageText").value,
+          public: publicPost
         }
 
         var newDonationKey = firebase.database().ref().child('donations').push().key;
