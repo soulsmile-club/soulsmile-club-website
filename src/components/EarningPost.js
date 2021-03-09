@@ -54,7 +54,7 @@ function EarningPost(props) {
                 <div className="picAndDonationContainer">
                     {props.authorPic ? <img className="authorPhoto" src={props.authorPic} alt={props.author}></img> : <img className="authorPhoto noProfilePic" src={genericProfilePic} alt={props.author}></img> }
                     <div className="donationContainer">
-                        <div className="donationTitle"><b>You</b> earned {props.amount} soulsmiles from <b>{props.author}.</b></div>
+                        <div className="donationTitle"><b>You</b> earned {props.amount * 10} soulsmiles from <b>{props.author}.</b></div>
                         <div className="donationPostTime">{timeSince(props.timestamp)}</div>
                         <div className="donationMessage">{props.message}</div>
                         <div className="likesBar"><PinkCheckbox icon={<MdFavoriteBorder size={18}/>} checkedIcon={<MdFavorite size={18} />} className="heart" /><div id="heartCount">{props.heartCount}</div></div>
