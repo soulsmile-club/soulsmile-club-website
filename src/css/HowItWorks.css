@@ -57,4 +57,5 @@ a:link, a:visited {
 
 a:hover, a:active {
     color: #444444;
+    text-decoration: none;
 }

@@ -1,0 +1,115 @@
+.profilePhoto {
+    width: 15vw;
+    min-height: 15vw;
+    margin: 1%;
+    border-radius: 50%;
+}
+
+.goldPic {
+	border-width: 4px;
+    border-style: solid;
+    border-color: #ffbf00;
+}
+
+.noProfilePic {
+	border-width: 1px;
+    border-style: solid;
+    border-color: #eda1aa;
+}
+
+.profile {
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45vw;
+}
+
+#picAndDetailsContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 4px;
+	padding: 3%;
+	width: 100%;
+}
+
+#detailsContainer {
+	padding-left: 6%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+#profileName {
+	font-size: 3.7vmin;
+	text-align: left;
+	padding: 3% 3% 0 2%;
+	font-weight: 500;
+	/*padding-left: 2%;*/
+}
+
+#goldSoulsmiler {
+	font-size: 2.2vmin;
+	text-align: left;
+	padding: 0 0 0 2%;
+	font-weight: 500;
+	/*padding-left: 2%;*/
+	color: #ffbf00;
+}
+
+#profileStats {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	padding-top: 2%;
+}
+
+.statNum {
+	font-size: 3.5vmin;
+	font-weight: bold;
+	color: #eda1aa;
+}
+
+.statDesc {
+	max-width: 120px;
+	font-size: 1.9vmin;
+}
+
+.stat {
+	padding: 1%;
+}
+#giveButton {
+	align-self: center;
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+.donateButton {
+    width: 100%;
+    padding: 5% 10%;
+    margin: 6% 0 3% 0;
+    border: 1px solid white;
+    border-radius: 4px;
+    height: 3rem;
+    text-align: center !important;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: #eda1aa;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 2.5vmin;
+}
+
+.donateButton:hover {
+    background-color: #f5b0b8;
+}
+
+
+#giveIcon {
+	margin-left: 3%;
+}

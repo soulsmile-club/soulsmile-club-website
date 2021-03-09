@@ -1,0 +1,49 @@
+.authorPhoto {
+	width: 9%;
+    min-height: 9%;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.picAndDonationContainer {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: row;
+	margin: 30px 25px;
+}
+
+.donationContainer {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+}
+
+.donationPostTime {
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+
+.donationPost {
+	text-align: left;
+	width: 100%;
+}
+
+.postDivider {
+	width: 85%;
+	margin: auto;
+	text-align: center;
+}
+
+.likesBar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 5px;
+	font-size: 18px;
+	margin-left: -11px;
+}
+
+#heartCount {
+	margin-left: -5px;
+}

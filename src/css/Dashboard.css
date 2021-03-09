@@ -1,0 +1,143 @@
+.dashboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.topButton {
+    border: 1px solid white;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-weight: 500;
+    margin: 20px;
+    background-color: #444444;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center !important;
+}
+
+.topButton:hover {
+    background-color: #696666;
+}
+
+#returnIcon {
+    margin-right: 10px;
+}
+
+.amountButton {
+    background-color: #f1f1f1;
+    width: 350px;
+    margin: 10px 10px;
+    min-height: 75px;
+    text-align: center;
+    color: #444444;
+    font-size: 20px;
+    padding: 10px;
+    transition: transform .3s;
+}
+
+.amountButton:hover {
+    background-color: #dcedff;
+    text-decoration: none;
+    color: #444444;
+    transform: scale(1.1);
+}
+
+.amountButton.active {
+    background-color: #dcedff;
+    text-decoration: none;
+    color: #444444;
+    transform: scale(1.1);
+}
+
+.amountInput {
+    background-color: #f1f1f1;
+    width: 150px;
+    margin: 10px 10px;
+    min-height: 75px;
+    text-align: center;
+    color: #444444;
+    font-size: 15px;
+    padding: 10px;
+    transition: transform .3s;
+}
+
+.amountInput:hover {
+    background-color: #dcedff;
+    text-decoration: none;
+    color: #444444;
+    transform: scale(1.1);
+}
+
+.amountInput:focus {
+    background-color: #dcedff;
+    text-decoration: none;
+    color: #444444;
+    transform: scale(1.1);
+}
+
+.donationButtonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttonGroup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 10px 40px 10px;
+    max-width: 100%;
+}
+
+#error {
+    color: red;
+}
+
+.overlay {
+  background-color: rgba(0,0,0,.2);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  display: none;
+}
+
+.fade-in {
+animation: fadeIn ease 0.5s;
+-webkit-animation: fadeIn ease 0.5s;
+-moz-animation: fadeIn ease 0.5s;
+-o-animation: fadeIn ease 0.5s;
+-ms-animation: fadeIn ease 0.5s;
+}
+
+@keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}

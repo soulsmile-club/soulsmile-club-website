@@ -92,15 +92,13 @@ function Retailers() {
         <div className="flex-container">
             {categories.map((cat, catIndex) => {
                 return (
-                    <>
-                    <div id="category">
-                    <h4>{cat}</h4>
-                    <div className="flex-container">
-                        {featuredRetailers[catIndex]}
-                        {normalRetailers[catIndex]}
+                    <div id="category" key={cat}>
+                        <h4>{cat}</h4>
+                        <div className="flex-container">
+                            {featuredRetailers[catIndex]}
+                            {normalRetailers[catIndex]}
+                        </div>
                     </div>
-                    </div>
-                    </>
                 );
             })}
         </div>

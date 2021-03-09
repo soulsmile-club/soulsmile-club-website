@@ -13,6 +13,11 @@ import HowToUse from '../components/HowToUse';
 import FAQ from '../components/FAQ';
 import RetailerPage from '../components/RetailerPage';
 import Join from '../components/Join';
+import DashboardController from '../components/DashboardController';
+import Payment from '../components/Payment';
+import Website from '../components/Website';
+import WebApp from '../components/WebApp';
+import Login from '../components/Login';
 
 export default function Routes() {
   var REACT_APP_AIRTABLE_RETAILERS_DOC = process.env.REACT_APP_AIRTABLE_RETAILERS_DOC;
@@ -47,23 +52,22 @@ export default function Routes() {
   return (<>
     {!isLoading &&
     <Switch>
-      <Route path="/" exact component={Home} />
-      <Route path="/browser-extension" exact component={BrowserExtension} />
-      <Route path="/how-it-works" exact component={HowItWorks} />
-      <Route path="/how-to-use" exact component={HowToUse} />
-      <Route path="/retailers" exact component={Retailers} />
-      <Route path="/vision" exact component={Vision} />
-      <Route path="/causes" exact component={Causes} />
-      <Route path="/team" exact component={Team} />
-      <Route path="/privacy-policy" exact component={PrivacyPolicy} />
-      <Route path="/monthly-reports" exact component={MonthlyReports} />
-      <Route path="/join" exact component={Join} />
-      <Route path="/faq" exact component={FAQ} />
+      <Route path="/" exact render={() => <Website component={<Home />} />} />
+      <Route path="/browser-extension" exact render={() => <Website component={<BrowserExtension />} />} />
+      <Route path="/how-it-works" exact render={() => <Website component={<HowItWorks />} />} />
+      <Route path="/how-to-use" exact render={() => <Website component={<HowToUse />} />} />
+      <Route path="/retailers" exact render={() => <Website component={<Retailers />} />} />
+      <Route path="/vision" exact render={() => <Website component={<Vision />} />} />
+      <Route path="/causes" exact render={() => <Website component={<Causes />} />} />
+      <Route path="/team" exact render={() => <Website component={<Team />} />} />
+      <Route path="/join" exact render={() => <Website component={<Join />} />} />
+      <Route path="/privacy-policy" exact render={() => <Website component={<PrivacyPolicy />} />} />
+      <Route path="/monthly-reports" exact render={() => <Website component={<MonthlyReports />} />} />
+      <Route path="/faq" exact render={() => <Website component={<FAQ />} />} />
+      <Route path="/login" exact render={() => <WebApp component={<Login />} />} />
+      <Route path="/dashboard" exact render={() => <WebApp component={<DashboardController />} />} />
+      <Route path="/payment" exact render={() => <WebApp component={<Payment />} />} />
       {retailerPaths}
-      {/* <Route path="/register" component={SignUp} />
-      <Route path="/dashboard" component={Dashboard} isPrivate /> */}
-      {/* redirect user to SignIn page if route does not exist and user is not authenticated */}
-      {/* <Route component={SignIn} /> */}
     </Switch>}
     </>);
 }

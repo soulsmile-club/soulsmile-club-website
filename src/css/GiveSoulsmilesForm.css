@@ -1,0 +1,124 @@
+.box {
+  width: 45vw;
+  background-color: white;
+  position: relative;
+  float: left;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  padding: 3% 2%;
+  z-index: 3;
+}
+
+.box.arrow-top {
+  margin-top: 4%;
+}
+
+.box.arrow-top:after {
+  content: " ";
+  position: absolute;
+  right: 20%;
+  top: -5%;
+  border-top: none;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-bottom: 15px solid white;
+}
+
+.writeMessageText {
+  resize: none;
+  width: 96%;
+  min-height: 120px;
+  padding: 1.8%;
+  margin: 2%;
+  font-size: 20px;
+  color: #eda1aa;
+}
+
+.writeMessageText::placeholder {
+  color: #f2c2c8;
+}
+
+.giveFormButton {
+    padding: 5px 10px;
+    margin: 0;
+    border: 1px solid white;
+    border-radius: 4px;
+    min-height: 2rem;
+    box-sizing: border-box;
+    background-color: #444444;
+    color: white;
+}
+
+.giveFormButton:hover {
+    background-color: #696666;
+}
+
+.giveAmountAndCause {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*font-weight: 500;*/
+  font-size: 20px;
+}
+
+#giveSoulsmiles {
+  left: 10px;
+}
+#toCause {
+  right: 10px;
+  position: absolute;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.giveAmount {
+  width: 60px;
+  margin: 0 5px;
+  border: none;
+  color: #444444;
+  text-align: center;
+  font-size: 22px;
+  color: #eda1aa;
+}
+
+.giveAmount::placeholder {
+  color: #f2c2c8;
+  /*opacity: 0.8;*/
+}
+
+.giveBorder {
+  width: 100%;
+  margin: 10px auto 5px auto;
+  padding: 0;
+}
+
+.messageBorder {
+  width: 100%;
+  margin: 5px auto 10px auto;
+  padding: 0;
+}
+
+.buttonRow {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.giveSoulsmilesContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 0 5px;
+}
