@@ -16,6 +16,7 @@ function Dashboard() {
     const [pendingCred, setPendingCred] = React.useState({});
 
     useEffect(() => {
+        console.log(process.env.REACT_APP_API_KEY);
         firebase.auth().onAuthStateChanged(function(user) {
             console.log("auth state changed");
             if (user) {
