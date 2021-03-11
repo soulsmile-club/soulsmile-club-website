@@ -4,7 +4,7 @@ import DonationPost from './DonationPost.js';
 import '../css/Feed.css';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
-const numPostsAtOneTime = 3;
+const numPostsAtOneTime = 10;
 
 function GlobalFeed() {
     const [posts, setPosts] = React.useState([]);
