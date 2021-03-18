@@ -41,7 +41,7 @@ function EarningFeed() {
         firebase.database().ref('/users-earnings/' + user.uid).once('value').then(function(snapshot) {
               if (snapshot.exists() && snapshot.val()) {
                 setAllPosts(Object.values(snapshot.val()).sort(function (a, b) {
-                    return ((a.timestamp > b.timestamp) ? -1 : (a.timestamp < b.timestamp) ? 1 : 0);
+                    return ((a.payment_timestamp > b.payment_timestamp) ? -1 : (a.payment_timestamp < b.payment_timestamp) ? 1 : 0);
                 }));
               }
         });
@@ -76,7 +76,7 @@ function EarningFeed() {
               }>
               {posts.length === 0 ? "" : posts.map((donation, index) => (
                 (index === 0) ? <EarningPost key={index} currUid={uid} firstPost={true} uid={donation.uid} amount={donation.amount} cause={donation.cause} author={donation.retailer} authorPic="https://welltodocareers.com/wp-content/uploads/job-manager-uploads/company_logo/2020/07/Girlfriend-Collective-300x300.png" timestamp={donation.payment_timestamp} heartCount={donation.heartCount} /> :
-                <EarningPost key={index} currUid={uid} firstPost={false} uid={donation.uid} amount={donation.amount} cause={donation.cause} author={donation.retailer} authorPic="https://welltodocareers.com/wp-content/uploads/job-manager-uploads/company_logo/2020/07/Girlfriend-Collective-300x300.png" timestamp={donation.timestamp} heartCount={donation.heartCount} />
+                <EarningPost key={index} currUid={uid} firstPost={false} uid={donation.uid} amount={donation.amount} cause={donation.cause} author={donation.retailer} authorPic="https://welltodocareers.com/wp-content/uploads/job-manager-uploads/company_logo/2020/07/Girlfriend-Collective-300x300.png" timestamp={donation.payment_timestamp} heartCount={donation.heartCount} />
               ))}
             </InfiniteScroll>}
         </div>

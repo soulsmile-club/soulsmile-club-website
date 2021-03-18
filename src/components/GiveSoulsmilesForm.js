@@ -6,7 +6,9 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import { makeStyles } from '@material-ui/core/styles';
 import { BiWorld } from 'react-icons/bi';
+import { PayPalButton } from "react-paypal-button-v2";
 import { FaLock } from 'react-icons/fa';
+import $ from 'jquery';
 
 const useStyles = makeStyles((theme) => ({
   selectEmpty: {
@@ -53,6 +55,9 @@ function GiveSoulsmilesForm(props) {
     const [uid, setUid] = React.useState('');
     const [profilePic, setProfilePic] = React.useState('');
     const [soulsmilesInWallet, setSoulsmilesInWallet] = React.useState(0);
+
+    // paypal
+    const [showPaypal, setShowPaypal] = React.useState();
 
     useEffect(() => {
         firebase.auth().onAuthStateChanged(function(user) {
@@ -106,7 +111,15 @@ function GiveSoulsmilesForm(props) {
     function submitGiveForm() {
       if (soulsmilesInWallet >= giveAmount) {
         // if there are enough soulsmiles in wallet, create giving post in database and update profile stats
-        var donationData = {
+        postDonationPostData();
+      } else {
+        // otherwise, redirect to PayPal to complete payment
+        setShowPaypal(true);
+      }
+    }
+
+    function postDonationPostData() {
+      var donationData = {
           amount: giveAmount,
           cause: causes[giveCause].label,
           timestamp: Date.now(),
@@ -114,7 +127,7 @@ function GiveSoulsmilesForm(props) {
           authorPic: profilePic,
           heartCount: 0,
           uid: uid,
-          message:  document.getElementById("messageText").value,
+          message: document.getElementById("messageText").value,
           public: publicPost
         }
 
@@ -122,7 +135,10 @@ function GiveSoulsmilesForm(props) {
 
         var updates = {};
         updates['/users-donations/' + uid + '/donations/' + newDonationKey] = donationData;
-        updates['/donations/' + newDonationKey] = donationData;
+
+        if (publicPost) {
+          updates['/donations/' + newDonationKey] = donationData;
+        }
 
         firebase.database().ref().update(updates, function (error) {
             if (error) {
@@ -143,15 +159,30 @@ function GiveSoulsmilesForm(props) {
         });
         props.toggleGiveForm();
         props.updateGivingFeed();
-      } else {
-        // otherwise, redirect to PayPal to complete payment
-        window.location.href = "/payment?type=single&amount=" + giveAmount + "&cause=" + giveCause;
-      }
     }
+
+    var payPalButtons = (
+            <>
+            <div className="paypalMessage">You have insufficient soulsmiles left in your wallet. Please pay with PayPal, Debit, or Credit to complete your donation!</div>
+            <PayPalButton
+                amount={giveAmount / 10}
+                shippingPreference="NO_SHIPPING"
+                onApprove={(details, data) => {
+                  postDonationPostData();
+                }}
+                options={{
+                  clientId: "Abq0IUThpLiDGjVAJRqvvT5kzwvqqFfBRK8WzO8ivCdfVphhLgsYcAStVf14ouSmYiMQS377LY2kFJ0O"
+                }}
+            />
+            <Button bsPrefix="giveFormButton" onClick={setShowPaypal(false)}>Cancel</Button>
+            </>
+    );
 
     return (
         <div className="box arrow-top">                    
             <div className="giveSoulsmilesContainer">
+              {showPaypal ? payPalButtons :
+              <>
               <div className="giveAmountAndCause">
                 <div id="giveSoulsmiles"><input className="giveAmount" type="number" min="0.1" step="0.1" placeholder="50" onChange={e => {if (e.target.value && e.target.value >= 0.01) { setGiveAmount(Math.round(parseFloat(e.target.value) * 10) / 10)} else if (!e.target.value) { setGiveAmount(50) } else { setGiveAmount(0)}}}></input>
                 soulsmiles</div><div id="toCause">
@@ -184,6 +215,8 @@ function GiveSoulsmilesForm(props) {
                 </Select>
                 <Button bsPrefix="giveFormButton" onClick={submitGiveForm}>Give {giveAmount} soulsmiles</Button>
               </div>
+              </>
+            }
             </div>
 
         </div>

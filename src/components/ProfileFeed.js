@@ -40,8 +40,8 @@ function ProfileFeed(props) {
     function fetchAllPosts(uid) {
         firebase.database().ref('/users-donations/' + uid + '/donations').once('value').then(function(snapshot) {
               if (snapshot.exists() && snapshot.val()) {
-                setAllPosts(Object.values(snapshot.val()).sort(function (a, b) {
-                    return ((a.timestamp > b.timestamp) ? -1 : (a.timestamp < b.timestamp) ? 1 : 0);
+                setAllPosts(Object.entries(snapshot.val()).sort(function (a, b) {
+                    return ((a[1].timestamp > b[1].timestamp) ? -1 : (a[1].timestamp < b[1].timestamp) ? 1 : 0);
                 }));
               }
         });
@@ -75,8 +75,8 @@ function ProfileFeed(props) {
               endMessage={<></>
               }>
               {posts.length === 0 ? "" : posts.map((donation, index) => (
-                (index === 0) ? <DonationPost key={index} currUid={uid} firstPost={true} uid={donation.uid} amount={donation.amount} cause={donation.cause} author={donation.author} authorPic={donation.authorPic} timestamp={donation.timestamp} heartCount={donation.heartCount} message={donation.message} /> :
-                <DonationPost key={index} currUid={uid} firstPost={false} uid={donation.uid} amount={donation.amount} cause={donation.cause} author={donation.author} authorPic={donation.authorPic} timestamp={donation.timestamp} heartCount={donation.heartCount} message={donation.message}/>
+                (index === 0) ? <DonationPost key={index} currUid={uid} firstPost={true} uid={donation[1].uid} amount={donation[1].amount} cause={donation[1].cause} author={donation[1].author} authorPic={donation[1].authorPic} timestamp={donation[1].timestamp} heartCount={donation[1].heartCount} message={donation[1].message} hearts={donation[1].hearts} donationId={donation[0]} /> :
+                <DonationPost key={index} currUid={uid} firstPost={false} uid={donation[1].uid} amount={donation[1].amount} cause={donation[1].cause} author={donation[1].author} authorPic={donation[1].authorPic} timestamp={donation[1].timestamp} heartCount={donation[1].heartCount} message={donation[1].message} hearts={donation[1].hearts} donationId={donation[0]} />
               ))}
             </InfiniteScroll>}
         </div>

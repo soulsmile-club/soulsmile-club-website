@@ -55,7 +55,7 @@ function Payment() {
                         authorPic: profilePic,
                         heartCount: 0,
                         uid: uid,
-                        public: true
+                        public: true // TODO: add custom public/private and message
                     }
 
                     console.log("donation data to log");
@@ -65,6 +65,7 @@ function Payment() {
 
                     var updates = {};
                     updates['/users-donations/' + uid + '/donations/' + newDonationKey] = donationData;
+                    // TODO: check if post is public before adding to donations
                     updates['/donations/' + newDonationKey] = donationData;
 
                     firebase.database().ref().update(updates, function (error) {
