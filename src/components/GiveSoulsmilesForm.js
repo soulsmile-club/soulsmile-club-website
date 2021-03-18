@@ -57,7 +57,7 @@ function GiveSoulsmilesForm(props) {
     const [soulsmilesInWallet, setSoulsmilesInWallet] = React.useState(0);
 
     // paypal
-    const [showPaypal, setShowPaypal] = React.useState();
+    const [showPaypal, setShowPaypal] = React.useState(false);
 
     useEffect(() => {
         firebase.auth().onAuthStateChanged(function(user) {
@@ -127,7 +127,7 @@ function GiveSoulsmilesForm(props) {
           authorPic: profilePic,
           heartCount: 0,
           uid: uid,
-          message: document.getElementById("messageText").value,
+          message: giveMessage,
           public: publicPost
         }
 
@@ -161,6 +161,10 @@ function GiveSoulsmilesForm(props) {
         props.updateGivingFeed();
     }
 
+    function goBack() {
+      setShowPaypal(false);
+    }
+
     var payPalButtons = (
             <>
             <div className="paypalMessage">You have insufficient soulsmiles left in your wallet. Please pay with PayPal, Debit, or Credit to complete your donation!</div>
@@ -169,12 +173,13 @@ function GiveSoulsmilesForm(props) {
                 shippingPreference="NO_SHIPPING"
                 onApprove={(details, data) => {
                   postDonationPostData();
+                  console.log("done");
                 }}
                 options={{
                   clientId: "Abq0IUThpLiDGjVAJRqvvT5kzwvqqFfBRK8WzO8ivCdfVphhLgsYcAStVf14ouSmYiMQS377LY2kFJ0O"
                 }}
             />
-            <Button bsPrefix="giveFormButton" onClick={setShowPaypal(false)}>Cancel</Button>
+            <Button bsPrefix="giveFormButton" onClick={goBack}>Cancel</Button>
             </>
     );
 
@@ -199,7 +204,7 @@ function GiveSoulsmilesForm(props) {
                 </Select></div>
               </div>
               <hr className="giveBorder"/>
-              <textarea className="writeMessageText" id="messageText" onClick={props.onTextClicked} placeholder="What inspired you to give today?"></textarea>
+              <textarea className="writeMessageText" id="messageText" onClick={props.onTextClicked} onChange={e => setGiveMessage(e.target.value)} placeholder="What inspired you to give today?"></textarea>
               <hr className="messageBorder"/>
               <div className="buttonRow">
                 <Select
