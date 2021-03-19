@@ -54,7 +54,7 @@ function DonationPost(props) {
       donationRef.on('value', (snapshot) => {
         const data = snapshot.val();
         setHeartCount(data.heartCount);
-        setLiked(data.hearts && data.hearts[props.uid]);
+        setLiked(data.hearts && data.hearts[props.currUid]);
       });
     }, []);
 
@@ -63,17 +63,17 @@ function DonationPost(props) {
       setLiked(!liked);
 
       // send like to database to persist
-      firebase.database().ref('/users-donations/' + props.uid + '/donations/' + props.donationId).transaction((post) => {
+      firebase.database().ref('/users-donations/' + props.currUid + '/donations/' + props.donationId).transaction((post) => {
         if (post) {
-          if (post.hearts && post.hearts[props.uid]) {
+          if (post.hearts && post.hearts[props.currUid]) {
             post.heartCount--;
-            post.hearts[props.uid] = null;
+            post.hearts[props.currUid] = null;
           } else {
             post.heartCount++;
             if (!post.hearts) {
               post.hearts = {};
             }
-            post.hearts[props.uid] = true;
+            post.hearts[props.currUid] = true;
           }
         }
         return post;
@@ -81,15 +81,15 @@ function DonationPost(props) {
 
       firebase.database().ref('/donations/' + props.donationId).transaction((post) => {
         if (post) {
-          if (post.hearts && post.hearts[props.uid]) {
+          if (post.hearts && post.hearts[props.currUid]) {
             post.heartCount--;
-            post.hearts[props.uid] = null;
+            post.hearts[props.currUid] = null;
           } else {
             post.heartCount++;
             if (!post.hearts) {
               post.hearts = {};
             }
-            post.hearts[props.uid] = true;
+            post.hearts[props.currUid] = true;
           }
         }
         return post;
