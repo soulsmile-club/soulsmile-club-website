@@ -33,14 +33,6 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const causes =[
-    {value: 0, label: 'All Soulsmile Causes'},
-    {value: 1, label: 'Education'},
-    {value: 2, label: 'Global Health'},
-    {value: 3, label: 'Racial Justice'},
-    {value: 4, label: 'Humanitarian Aid'}
-]
-
 function GiveSoulsmilesForm(props) {
     const classes = useStyles();
 
@@ -49,6 +41,7 @@ function GiveSoulsmilesForm(props) {
     const [giveCause, setGiveCause] = React.useState(0);
     const [publicPost, setPublicPost] = React.useState(true);
     const [giveMessage, setGiveMessage] = React.useState("");
+    const [causes, setCauses] = React.useState([]);
 
     // user data
     const [name, setName] = React.useState('');
@@ -56,10 +49,13 @@ function GiveSoulsmilesForm(props) {
     const [profilePic, setProfilePic] = React.useState('');
     const [soulsmilesInWallet, setSoulsmilesInWallet] = React.useState(0);
 
+    const REACT_APP_AIRTABLE_ORGS_DOC = process.env.REACT_APP_AIRTABLE_ORGS_DOC;
+
     // paypal
     const [showPaypal, setShowPaypal] = React.useState(false);
 
     useEffect(() => {
+
         firebase.auth().onAuthStateChanged(function(user) {
             console.log("auth state changed");
             if (user) {
@@ -78,6 +74,22 @@ function GiveSoulsmilesForm(props) {
                 window.location.href = "/login";
             }
         });
+
+        // fetch causes from airtable
+        fetch(REACT_APP_AIRTABLE_ORGS_DOC)
+        .then(res => res.json())
+        .then(res => {
+            const data = res.records;
+            var tempCauses = ["All Soulsmile Causes"];
+            for (var i = 0; i < data.length; i++) {
+                const cause = data[i]["fields"]["Cause"];
+                if (!tempCauses.includes(cause)) {
+                    tempCauses.push(cause);
+                }
+            }
+            setCauses(tempCauses);
+        });
+        console.log(causes);
     }, []);
 
     function timeSince(date) {
@@ -121,7 +133,7 @@ function GiveSoulsmilesForm(props) {
     function postDonationPostData() {
       var donationData = {
           amount: giveAmount,
-          cause: causes[giveCause].label,
+          cause: causes.indexOf(giveCause),
           timestamp: Date.now(),
           author: name,
           authorPic: profilePic,
@@ -199,7 +211,7 @@ function GiveSoulsmilesForm(props) {
                   inputProps={{ 'aria-label': 'Without label' }}
                 >
                   {causes.map((cause, index) => (
-                    <MenuItem className={classes.menuItemStyle} key={cause.value} value={cause.value}>{cause.label}</MenuItem>
+                    <MenuItem className={classes.menuItemStyle} key={index} value={index}>{cause}</MenuItem>
                   ))}
                 </Select></div>
               </div>
