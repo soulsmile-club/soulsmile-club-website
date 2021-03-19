@@ -35,7 +35,11 @@ export default function Routes() {
           const urlName = "/retailers/" + res.records[j]["fields"]["Keyword"];
           const extensionAllowed = res.records[j]["fields"]["Extension Allowed"];
           if (!extensionAllowed) {
-            paths.push(<Route key={retailerName} path={urlName} exact render={() => {console.log(retailerName); return <RetailerPage retailerName={retailerName} retailerLink={retailerLink} retailerDomain={retailerDomain} />} } />);
+            paths.push(<Route key={retailerName} path={urlName} exact render={() => {
+              return <Website component=
+                {<RetailerPage retailerName={retailerName} retailerLink={retailerLink} retailerDomain={retailerDomain} />}
+                />
+              }} />);
           } else {
             paths.push(<Route key={retailerName} path={urlName} exact render={() => <></>} />);
           }
