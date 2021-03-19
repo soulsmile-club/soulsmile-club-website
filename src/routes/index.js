@@ -14,7 +14,6 @@ import FAQ from '../components/FAQ';
 import RetailerPage from '../components/RetailerPage';
 import Join from '../components/Join';
 import DashboardController from '../components/DashboardController';
-import Payment from '../components/Payment';
 import Website from '../components/Website';
 import WebApp from '../components/WebApp';
 import Login from '../components/Login';
@@ -66,7 +65,6 @@ export default function Routes() {
       <Route path="/faq" exact render={() => <Website component={<FAQ />} />} />
       <Route path="/login" exact render={() => <WebApp component={<Login />} />} />
       <Route path="/dashboard" exact render={() => <WebApp component={<DashboardController />} />} />
-      <Route path="/payment" exact render={() => <WebApp component={<Payment />} />} />
       {retailerPaths}
     </Switch>}
     </>);

@@ -6,13 +6,16 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 
 const numPostsAtOneTime = 10;
 
+var REACT_APP_AIRTABLE_RETAILERS_DOC = process.env.REACT_APP_AIRTABLE_RETAILERS_DOC;
+
 function EarningFeed() {
     const [posts, setPosts] = React.useState([]);
     const [uid, setUid] = React.useState('');
     const [allPosts, setAllPosts] = React.useState([]);
     const [hasMore, setHasMore] = React.useState(false);
     const [numPostsShowing, setNumPostsShowing] = React.useState(numPostsAtOneTime);
-
+    const [retailerPics, setRetailerPics] = React.useState([]);
+    
     useEffect(() => {
         console.log("new feed");
         firebase.auth().onAuthStateChanged(function(user) {
@@ -25,6 +28,19 @@ function EarningFeed() {
                 window.location.href = "/login";
             }
         });
+
+        fetch(REACT_APP_AIRTABLE_RETAILERS_DOC)
+            .then(res => res.json())
+            .then(res => {
+                const data = res.records;
+                var tempRetailerPics = [];
+                for (var i = 0; i < data.length; i++) {
+                    const retailer = data[i]["fields"]["Name"];
+                    const imageURL = data[i]["fields"]["Image URL"];
+                    tempRetailerPics[retailer] = imageURL;
+                }
+                setRetailerPics(tempRetailerPics);
+            });
     }, []);
 
     useEffect(() => {
@@ -75,8 +91,8 @@ function EarningFeed() {
               endMessage={<></>
               }>
               {posts.length === 0 ? "" : posts.map((donation, index) => (
-                (index === 0) ? <EarningPost key={index} currUid={uid} firstPost={true} uid={donation.uid} amount={donation.amount} cause={donation.cause} author={donation.retailer} authorPic="https://welltodocareers.com/wp-content/uploads/job-manager-uploads/company_logo/2020/07/Girlfriend-Collective-300x300.png" timestamp={donation.payment_timestamp} heartCount={donation.heartCount} /> :
-                <EarningPost key={index} currUid={uid} firstPost={false} uid={donation.uid} amount={donation.amount} cause={donation.cause} author={donation.retailer} authorPic="https://welltodocareers.com/wp-content/uploads/job-manager-uploads/company_logo/2020/07/Girlfriend-Collective-300x300.png" timestamp={donation.payment_timestamp} heartCount={donation.heartCount} />
+                (index === 0) ? <EarningPost key={index} currUid={uid} firstPost={true} uid={donation.uid} amount={donation.amount} cause={donation.cause} author={donation.retailer} authorPic={retailerPics[donation.retailer]} timestamp={donation.payment_timestamp} heartCount={donation.heartCount} /> :
+                <EarningPost key={index} currUid={uid} firstPost={false} uid={donation.uid} amount={donation.amount} cause={donation.cause} author={donation.retailer} authorPic={retailerPics[donation.retailer]} timestamp={donation.payment_timestamp} heartCount={donation.heartCount} />
               ))}
             </InfiniteScroll>}
         </div>
