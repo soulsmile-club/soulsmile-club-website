@@ -17,11 +17,8 @@ function Dashboard() {
 
     useEffect(() => {
         firebase.auth().onAuthStateChanged(function(user) {
-            console.log("auth state changed");
             if (user) {
                 window.location.href="/dashboard"
-            } else {
-                console.log('no user found');
             }
         });
     }, []);
@@ -29,7 +26,6 @@ function Dashboard() {
     function confirmPassword() {
         firebase.auth().signInWithEmailAndPassword(existingEmail, password).then(function (result) {
             result.user.linkWithCredential(pendingCred).then(function(linkResult) {
-                console.log("linked");
                 setIsConfirmAccount('');
                 window.location.href = "/dashboard";
             });
@@ -44,7 +40,6 @@ function Dashboard() {
         googProvider.setCustomParameters({'login_hint': existingEmail});
         firebase.auth().signInWithPopup(googProvider).then(function(result) {
             result.user.linkWithCredential(pendingCred).then(function(linkResult) {
-                console.log("linked");
                 setIsConfirmAccount('');
                 window.location.href = "/dashboard";
             });
@@ -59,7 +54,6 @@ function Dashboard() {
         fbProvider.setCustomParameters({'login_hint': existingEmail});
         firebase.auth().signInWithPopup(fbProvider).then(function(result) {
             result.user.linkWithCredential(pendingCred).then(function(linkResult) {
-                console.log("linked");
                 setIsConfirmAccount('');
                 window.location.href = "/dashboard";
             });
@@ -83,7 +77,6 @@ function Dashboard() {
             }).then(function () {
                 // Hacky way to set the name - TODO: user reload
                 setName(user.displayName);
-                console.log('Email signup with popup');
             })
         }).catch(handleLoginSignupErrors);
     }

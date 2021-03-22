@@ -33,17 +33,13 @@ function DashboardController() {
 
   useEffect(() => {
         firebase.auth().onAuthStateChanged(function(user) {
-          if (user) {
-            console.log("user logged in");
-          } else {
-            console.log("no user logged in");
+          if (!user) {
             window.location.href="/login";
           }
         });
   }, []);
 
   function handleChange(event, val) {
-    console.log(val);
     setValue(val);
   }
 
@@ -53,7 +49,6 @@ function DashboardController() {
 
   function signOut() {
       firebase.auth().signOut().then(function() {
-          console.log("Sign out was successful!");
           window.location.href="/login";
       }).catch(function(error) {
           console.log(error);

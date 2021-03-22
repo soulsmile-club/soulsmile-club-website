@@ -50,7 +50,7 @@ function DonationPost(props) {
     }
 
     useEffect(() => {
-      var donationRef = firebase.database().ref('/donations/' + props.donationId);
+      var donationRef = firebase.database().ref('/users-donations/' + props.uid + '/donations/' + props.donationId);
       donationRef.on('value', (snapshot) => {
         const data = snapshot.val();
         setHeartCount(data.heartCount);

@@ -34,7 +34,6 @@ function Dashboard(props) {
 
     useEffect(() => {
         firebase.auth().onAuthStateChanged(function(user) {
-            console.log("auth state changed");
             if (user) {
                 setName(user.displayName);
                 setUid(user.uid);
@@ -45,19 +44,14 @@ function Dashboard(props) {
                 }
                 writeNewUserData(user);
             } else {
-                console.log('no user found');
                 window.location.href = "/login";
             }
         });
     }, []);
 
     function writeNewUserData(user) {
-        console.log("write new user data");
         firebase.database().ref('users/' + user.uid).once("value", snapshot => {
-            if (snapshot.exists()) {
-                console.log("user already exists in database");
-            } else {
-                console.log("create new db entry for " + user.uid);
+            if (!snapshot.exists()) {
                 firebase.database().ref('users/' + user.uid).set({
                     name: user.displayName,
                     email: user.email,

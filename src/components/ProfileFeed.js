@@ -14,14 +14,11 @@ function ProfileFeed(props) {
     const [numPostsShowing, setNumPostsShowing] = React.useState(numPostsAtOneTime);
 
     useEffect(() => {
-        console.log("new feed");
         firebase.auth().onAuthStateChanged(function(user) {
-            console.log("auth state changed");
             if (user) {
                 fetchAllPosts(user.uid);
                 setUid(user.uid);
             } else {
-                console.log('no user found');
                 window.location.href = "/login";
             }
         });
@@ -49,12 +46,10 @@ function ProfileFeed(props) {
 
     function fetchData () {
         if (allPosts.length > numPostsShowing) {
-            console.log("show more!");
             setPosts(allPosts.slice(0, numPostsShowing));
             setHasMore(true);
             setNumPostsShowing(numPostsShowing + numPostsAtOneTime);
         } else {
-            console.log("show all");
             setPosts(allPosts);
             setHasMore(false);
         }

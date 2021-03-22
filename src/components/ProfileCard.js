@@ -17,7 +17,6 @@ function ProfileCard(props) {
 
     useEffect(() => {
         firebase.auth().onAuthStateChanged(function(user) {
-            console.log("auth state changed");
             if (user) {
                 setName(user.displayName);
                 setProfilePic(user.photoURL);
@@ -26,12 +25,9 @@ function ProfileCard(props) {
                     if (snapshot.exists()) {
                         setSoulsmilesGiven(snapshot.val().soulsmilesGiven);
                         setSoulsmilesInWallet(snapshot.val().soulsmilesInWallet);
-                    } else {
-                        console.log("user is not in database!");
                     }
                 });
             } else {
-                console.log('no user found');
                 window.location.href = "/login";
             }
         });

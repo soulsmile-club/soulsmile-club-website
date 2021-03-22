@@ -57,7 +57,6 @@ function GiveSoulsmilesForm(props) {
     useEffect(() => {
 
         firebase.auth().onAuthStateChanged(function(user) {
-            console.log("auth state changed");
             if (user) {
                 setName(user.displayName);
                 setUid(user.uid);
@@ -65,12 +64,9 @@ function GiveSoulsmilesForm(props) {
                 firebase.database().ref('users/' + user.uid).once("value", snapshot => {
                     if (snapshot.exists()) {
                         setSoulsmilesInWallet(snapshot.val().soulsmilesInWallet);
-                    } else {
-                        console.log("user is not in database!");
                     }
                 });
             } else {
-                console.log('no user found');
                 window.location.href = "/login";
             }
         });
@@ -89,7 +85,6 @@ function GiveSoulsmilesForm(props) {
             }
             setCauses(tempCauses);
         });
-        console.log(causes);
     }, []);
 
     function timeSince(date) {
@@ -133,7 +128,7 @@ function GiveSoulsmilesForm(props) {
     function postDonationPostData() {
       var donationData = {
           amount: giveAmount,
-          cause: causes.indexOf(giveCause),
+          cause: causes[giveCause],
           timestamp: Date.now(),
           author: name,
           authorPic: profilePic,
@@ -160,17 +155,14 @@ function GiveSoulsmilesForm(props) {
                     if (userData) {
                         userData.soulsmilesGiven += giveAmount;
                         userData.soulsmilesInWallet -= giveAmount;
-                    } else {
-                        console.log("no user found in database!");
                     }
                     return userData;
                 }, function (error) {
-                    console.log('updated database');
+                    props.toggleGiveForm();
+                    props.updateGivingFeed();
                 });
             }
         });
-        props.toggleGiveForm();
-        props.updateGivingFeed();
     }
 
     function goBack() {
@@ -185,10 +177,9 @@ function GiveSoulsmilesForm(props) {
                 shippingPreference="NO_SHIPPING"
                 onApprove={(details, data) => {
                   postDonationPostData();
-                  console.log("done");
                 }}
                 options={{
-                  clientId: "Abq0IUThpLiDGjVAJRqvvT5kzwvqqFfBRK8WzO8ivCdfVphhLgsYcAStVf14ouSmYiMQS377LY2kFJ0O"
+                  clientId: "AWpBseKdcoukJGU8m8fM_rEaQiRv41P6mrNVI1ZOz7s-6uuYE4lszwgVkbww-Xe3VA7_wH9Pi88YCniY"
                 }}
             />
             <Button bsPrefix="giveFormButton" onClick={goBack}>Cancel</Button>
@@ -201,7 +192,7 @@ function GiveSoulsmilesForm(props) {
               {showPaypal ? payPalButtons :
               <>
               <div className="giveAmountAndCause">
-                <div id="giveSoulsmiles"><input className="giveAmount" type="number" min="0.1" step="0.1" placeholder="50" onChange={e => {if (e.target.value && e.target.value >= 0.01) { setGiveAmount(Math.round(parseFloat(e.target.value) * 10) / 10)} else if (!e.target.value) { setGiveAmount(50) } else { setGiveAmount(0)}}}></input>
+                <div id="giveSoulsmiles"><input className="giveAmount" type="number" min="0.1" step="0.1" placeholder="50" onChange={e => {if (e.target.value && e.target.value >= 0.1) { setGiveAmount(Math.round(parseFloat(e.target.value) * 10) / 10)} else if (!e.target.value) { setGiveAmount(50) } else { setGiveAmount(0.1)}}}></input>
                 soulsmiles</div><div id="toCause">
                 <Select
                   value={giveCause}

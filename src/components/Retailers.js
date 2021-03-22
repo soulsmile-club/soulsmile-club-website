@@ -12,7 +12,6 @@ function Retailers() {
 			.then(res => res.json())
 			.then(res => {
                 const data = res.records;
-                console.log(data);
                 data.sort(function (a, b) {
                     return ((a["fields"]["Name"] < b["fields"]["Name"]) ? -1 : (a["fields"]["Name"] > b["fields"]["Name"]) ? 1 : 0);
                 });

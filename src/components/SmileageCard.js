@@ -9,14 +9,11 @@ function SmileageCard(props) {
     const [uid, setUid] = React.useState('');
 
     useEffect(() => {
-        console.log("new feed");
         firebase.auth().onAuthStateChanged(function(user) {
-            console.log("auth state changed");
             if (user) {
                 fetchAllPosts(user);
                 setUid(user.uid);
             } else {
-                console.log('no user found');
                 window.location.href = "/login";
             }
         });
