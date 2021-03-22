@@ -1,14 +1,21 @@
 .App-header-home {
-    padding: 2.5% 0px;
+    padding: 3% 0px;
     background-color: white;
-    min-height: 100vh;
+    min-height: 60vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     font-size: calc(5px + 2vmin);
     color: #444444;
 }
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+    .App-header-home {
+      flex-direction: column;
+    }
+  }
 
 .App-logo {
     height: 50vmin;
@@ -24,10 +31,21 @@
     color: #eda1aa;
 }
   
-#subtitle {
+.subtitle-home {
+    padding: 20px 0px;
+    font-size: 4vmin;
+}
+
+#emphasize {
     font-style: italic;
 }
 
 #slogan {
-    padding-top: 5px;
+    padding: 0px 80px;
+    text-align: left;
+    font-size: 5vmin;
+}
+
+#home-story-header {
+    padding: 20px 0px;
 }
