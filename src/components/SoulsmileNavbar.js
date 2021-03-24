@@ -23,7 +23,6 @@ function SoulsmileNavbar() {
       <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
             <Nav.Link href="/vision">Vision</Nav.Link>
-            {/* <Nav.Link href="/how-it-works">How It Works</Nav.Link> */}
             <NavDropdown title="Browser Extension" id="basic-nav-dropdown">
               <NavDropdown.Item href="/browser-extension">Get Extension</NavDropdown.Item>
               <NavDropdown.Item href="/how-to-use">How to Use</NavDropdown.Item>

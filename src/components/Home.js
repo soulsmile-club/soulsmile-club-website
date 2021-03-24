@@ -50,7 +50,7 @@ function Home() {
         <div id="slogan">
           Support <span id="smile">Global Health</span>.<br/>
           Stand with <span id="smile">Racial Justice</span>.<br/>
-          Provide Water &amp; <span id="smile">Food Security</span>.<br/>
+          Provide <span id="smile">Water &amp; Food Security</span>.<br/>
           <div className="subtitle-home">Donate <span id="emphasize">without spending extra</span> when shopping online.</div>
           <Button variant="outline-secondary btn-round-header" size="lg" href="https://tiny.cc/soulsmile-extension">Add to chrome</Button>{' '}
         </div><br/>       
@@ -111,7 +111,7 @@ function Home() {
         </div>
         <div>
             <p className="stepHome"><span className="numberCircleSmallHome">3.</span><br/> For donation.</p>
-            <p className="explanation">Cashback will be added to your Soulsmile Wallet not as money for spending, but soulsmiles for donating. Choose which </p>
+            <p className="explanation">Cashback will be added to your Soulsmile Wallet not as money for spending, but soulsmiles for donating. Choose which charity to give soulsmiles to in the Soulsmile web app. </p>
         </div>
     </div>
     <div className="feel-impact">
@@ -130,7 +130,7 @@ function Home() {
       <img src={donationFeed}/>
     </div>
     <br/>
-    <Button variant="outline-secondary btn-round" size="lg" href="/how-it-works">Learn more about soul<span id="smile">smile</span> club</Button>{' '}
+    <Button variant="outline-secondary btn-round" size="lg" href="/vision">Learn more about soul<span id="smile">smile</span> club</Button>{' '}
     </>
   );
 }
