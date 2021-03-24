@@ -11,7 +11,8 @@ import oluMily from '../images/olu-mily.jpg';
 import oluSoulsmile from '../images/olu-soulsmile.png';
 import '../css/Home.css';
 import Button from 'react-bootstrap/Button';
-import Carousel from 'react-bootstrap/Carousel'
+import Carousel from 'react-bootstrap/Carousel';
+import TextLoop from "react-text-loop";
 
 function Home() {
   return (
@@ -48,9 +49,11 @@ function Home() {
     <header className="App-header-home">
         <img src={extension} className="App-logo" alt="logo" />
         <div id="slogan">
-          Support <span id="smile">Global Health</span>.<br/>
-          Stand with <span id="smile">Racial Justice</span>.<br/>
-          Provide <span id="smile">Water &amp; Food Security</span>.<br/>
+          <TextLoop>
+              <span>Support <span id="smile">Global Health</span></span>
+              <span>Stand with <span id="smile">Racial Justice</span></span>
+              <span>Provide <span id="smile">Water &amp; Food Security</span></span>
+          </TextLoop>{" "}
           <div className="subtitle-home">Donate <span id="emphasize">without spending extra</span> when shopping online.</div>
           <Button variant="outline-secondary btn-round-header" size="lg" href="https://tiny.cc/soulsmile-extension">Add to chrome</Button>{' '}
         </div><br/>       
