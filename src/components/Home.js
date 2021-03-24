@@ -53,6 +53,7 @@ function Home() {
               <span>Support <span id="smile">Global Health</span></span>
               <span>Stand with <span id="smile">Racial Justice</span></span>
               <span>Provide <span id="smile">Water &amp; Food Security</span></span>
+              <span>Empower <span id="smile">Women</span></span>
           </TextLoop>{" "}
           <div className="subtitle-home">Donate <span id="emphasize">without spending extra</span> when shopping online.</div>
           <Button variant="outline-secondary btn-round-header" size="lg" href="https://tiny.cc/soulsmile-extension">Add to chrome</Button>{' '}
