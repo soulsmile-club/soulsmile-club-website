@@ -1,17 +1,24 @@
 .App-header-home {
-    padding: 2.5% 0px;
+    padding: 3% 0px;
     background-color: white;
-    min-height: 100vh;
+    min-height: 75vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     font-size: calc(5px + 2vmin);
     color: #444444;
 }
 
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+    .App-header-home {
+      flex-direction: column;
+    }
+  }
+
 .App-logo {
-    height: 30vmin;
+    height: 50vmin;
     pointer-events: none;
 }
 
@@ -24,10 +31,131 @@
     color: #eda1aa;
 }
   
-#subtitle {
+.subtitle-home {
+    padding: 20px 0px;
+    font-size: 4vmin;
+}
+
+#emphasize {
     font-style: italic;
 }
 
 #slogan {
-    padding-top: 5px;
+    padding: 0px 80px;
+    text-align: left;
+    font-size: 5vmin;
 }
+
+#home-story-header {
+    padding: 20px 0px;
+}
+
+.explanation {
+    font-size: 14px;
+}
+
+.stepHome {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.flex-container-how-home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+    .flex-container-how-home {
+      flex-direction: column;
+    }
+  }
+  
+.flex-container-how-home > div {
+    background-color: #f1f1f1;
+    width: 300px;
+    margin: 20px;
+    height: 300px;
+    text-align: left;
+    color: #444444;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.numberCircleSmallHome {
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    text-align: center;
+    align-items: center;
+    font-weight: bolder;
+    justify-content: center;
+}
+
+.flex-container-how-home > div:nth-child(1) {
+    background: #eda1aa;
+    color: #444444;
+}
+
+.flex-container-how-home > div:nth-child(2) {
+    background: #dcedff;
+    color: #444444;
+}
+
+.flex-container-how-home > div:nth-child(3) {
+    background: #3A435E;
+    color: white;
+}
+
+.feel-impact {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding-top: 80px;
+}
+
+.feel-impact-description {
+    display: flex;
+    flex-direction: column;    
+    text-align: left;
+    padding-left: 100px;
+}
+
+.feel-impact-description > h3 {
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.feel-impact-description > h3 {
+    font-size: 32px;
+}
+
+.feel-impact > img {
+    padding-left: 100px;
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+    .feel-impact {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .feel-impact-description {
+        display: flex;
+        flex-direction: column;    
+        text-align: left;
+        padding-left: 25px;
+    }
+    
+    .feel-impact > img {
+        padding-left: 0px;
+    }
+  }
+

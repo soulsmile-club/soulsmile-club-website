@@ -1,13 +1,29 @@
 import React from 'react';
-import soulsmile from '../images/soulsmile-1024.png';
+import extension from '../images/home-laptop.png';
+import carouselOne from '../images/carousel-1.jpg';
+import carouselTwo from '../images/carousel-2.jpg';
+import circleSoulsmile from '../images/circle-soulsmile.jpg';
+import donationFeed from '../images/donation-feed.png';
+import feelImpact from '../images/feel-impact.png';
+import help from '../images/help.png';
+import helpOlu from '../images/help-olu.png';
+import oluMily from '../images/olu-mily.jpg';
+import oluSoulsmile from '../images/olu-soulsmile.png';
 import '../css/Home.css';
 import Button from 'react-bootstrap/Button';
+import Carousel from 'react-bootstrap/Carousel'
 
 function Home() {
   return (
     <>
     <style type="text/css">
       {`
+      .btn-round-header {
+        width: 100%;
+        border-radius: 50px;
+        margin: 10px;
+        color: #444444;
+      }
       .btn-round {
         border-radius: 50px;
         margin: 10px;
@@ -16,23 +32,108 @@ function Home() {
       .btn-round:hover {
         background-color: #444444;
       }
+      .carousel-image {
+        padding-bottom: 125px;
+      }
+      .carousel-caption {
+        color: white;
+        background-color: rgba(68, 68, 68, 0.5);
+      }
+      .carousel-control-next,
+      .carousel-control-prev {
+        filter: invert(100%);
+      }
       `}
     </style>
     <header className="App-header-home">
-        <h1>soul<span id="smile">smile</span> club</h1>
-        <h4 id="subtitle">Shop, Earn, Give.</h4>
-        <img src={soulsmile} className="App-logo" alt="logo" />
-        <p id="slogan">
-            Introducing a new way to donate <br/>
-            without spending extra. 
-        </p>
-        <p id="disclosure"><span id="bold">Disclosure: </span>
-        <br/>As an affiliate of our partner brands, Soulsmile Club earns commission from qualifying purchases. 
-        <br/>However, instead of keeping these earnings, we donate all of it to organizations working on some of the most pressing humanitarian issues today.</p>
-        <Button variant="outline-secondary btn-round" size="lg" href="/how-it-works">Interested in learning more?</Button>{' '}
+        <img src={extension} className="App-logo" alt="logo" />
+        <div id="slogan">
+          Support <span id="smile">Global Health</span>.<br/>
+          Stand with <span id="smile">Racial Justice</span>.<br/>
+          Provide Water &amp; <span id="smile">Food Security</span>.<br/>
+          <div className="subtitle-home">Donate <span id="emphasize">without spending extra</span> when shopping online.</div>
+          <Button variant="outline-secondary btn-round-header" size="lg" href="https://tiny.cc/soulsmile-extension">Add to chrome</Button>{' '}
+        </div><br/>       
     </header>
+    <h3 id="home-story-header"><b>Meet Olu and Mily</b></h3>
+    <Carousel>
+      <Carousel.Item>
+        <img width={400} height={150} alt="900x500" className="carousel-image" src={carouselOne}/>
+        <div className="carousel-caption">
+          <p>Hi, this is Olu.</p>
+        </div>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img width={400} height={150} alt="900x500" className="carousel-image" src={carouselTwo}/>
+        <div className="carousel-caption">
+          <p>Olu sometimes buys <span id="smile">jackets</span>, sometimes <span id="smile">notebooks</span>, <br/> and sometimes <span id="smile">gifts for friends</span>.</p>
+        </div>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img width={400} height={150} alt="900x500" className="carousel-image" src={help}/>
+        <div className="carousel-caption">
+          <p>Mily, living far away, is not doing well. <br/> Olu wants to help Mily, but is unsure how much they can do.</p>
+        </div>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img width={400} height={150} alt="900x500" className="carousel-image" src={helpOlu}/>
+        <div className="carousel-caption">
+          <p>On some days, Olu thinks, “Maybe it’s not my responsibility.” </p>
+        </div>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img width={400} height={150} alt="900x500" className="carousel-image" src={oluSoulsmile}/>
+        <div className="carousel-caption">
+          <p>One day, Olu downloads the Soulsmile extension. <br/> Olu continue to buy jackets, notebooks, keyboards and gifts for friends.</p>
+        </div>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img width={400} height={150} alt="900x500" className="carousel-image" src={oluMily}/>
+        <div className="carousel-caption">
+          <p>Each time, Olu is doing something for Mily. <br/>On some days, Olu thinks, “Maybe we are all the same inside.“ </p>
+        </div>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img width={400} height={150} alt="900x500" className="carousel-image" src={circleSoulsmile}/>
+        <div className="carousel-caption">
+          <p>And there are many more like them. </p>
+        </div>
+      </Carousel.Item>
+    </Carousel>
+    <div className="flex-container-how-home">
+        <div>
+            <p className="stepHome"><span className="numberCircleSmallHome">1.</span><br/> Add to Chrome.</p>
+            <p className="explanation">The Soulsmile extension is free, safe, open-source and respects your privacy.</p>
+        </div>
+        <div>
+            <p className="stepHome"><span className="numberCircleSmallHome">2.</span><br/> Earn cashback.</p>
+            <p className="explanation">When you shop, Soulsmile Club earns commission as a "thank you" from the retailer for directing you to their site.</p>
+        </div>
+        <div>
+            <p className="stepHome"><span className="numberCircleSmallHome">3.</span><br/> For donation.</p>
+            <p className="explanation">Cashback will be added to your Soulsmile Wallet not as money for spending, but soulsmiles for donating. Choose which </p>
+        </div>
+    </div>
+    <div className="feel-impact">
+      <img src={feelImpact}/>
+      <div className="feel-impact-description">
+        <h3>Feel your impact growing <br/>every single day<br/> as you shop online.</h3>
+        <p>Without spending extra, you can support impactful organizations around the world.</p>
+      </div>
+    </div>
+    <br/>
+    <div className="feel-impact">
+      <div className="feel-impact-description">
+        <h3>Donation feed, a social <br/>experience that centers<br/> around what you care about. </h3>
+        <p>You are not alone in being part of the change you want to see.</p>
+      </div>
+      <img src={donationFeed}/>
+    </div>
+    <br/>
+    <Button variant="outline-secondary btn-round" size="lg" href="/how-it-works">Learn more about soul<span id="smile">smile</span> club</Button>{' '}
     </>
   );
 }
 
 export default Home;
+
