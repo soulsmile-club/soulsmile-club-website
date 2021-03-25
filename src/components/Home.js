@@ -70,7 +70,7 @@ function Home() {
       <Carousel.Item>
         <img width={400} height={150} alt="900x500" className="carousel-image" src={carouselTwo}/>
         <div className="carousel-caption">
-          <p>Olu sometimes buys <span id="smile">jackets</span>, sometimes <span id="smile">notebooks</span>, <br/> and sometimes <span id="smile">gifts for friends</span>.</p>
+          <p>Olu sometimes buys jackets, sometimes notebooks, <br/> and sometimes gifts for friends.</p>
         </div>
       </Carousel.Item>
       <Carousel.Item>
@@ -88,7 +88,7 @@ function Home() {
       <Carousel.Item>
         <img width={400} height={150} alt="900x500" className="carousel-image" src={oluSoulsmile}/>
         <div className="carousel-caption">
-          <p>One day, Olu downloads the Soulsmile extension. <br/> Olu continue to buy jackets, notebooks, keyboards and gifts for friends.</p>
+          <p>One day, Olu downloads the Soulsmile extension. <br/> Olu continues to buy jackets, notebooks, keyboards and gifts for friends.</p>
         </div>
       </Carousel.Item>
       <Carousel.Item>
