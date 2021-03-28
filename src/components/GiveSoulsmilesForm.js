@@ -118,14 +118,14 @@ function GiveSoulsmilesForm(props) {
     function submitGiveForm() {
       if (soulsmilesInWallet >= giveAmount) {
         // if there are enough soulsmiles in wallet, create giving post in database and update profile stats
-        postDonationPostData();
+        postDonationPostData(false);
       } else {
         // otherwise, redirect to PayPal to complete payment
         setShowPaypal(true);
       }
     }
 
-    function postDonationPostData() {
+    function postDonationPostData(isPayPal) {
       var donationData = {
           amount: giveAmount,
           cause: causes[giveCause],
@@ -154,7 +154,9 @@ function GiveSoulsmilesForm(props) {
                 firebase.database().ref('/users/' + uid).transaction(function (userData) {
                     if (userData) {
                         userData.soulsmilesGiven += giveAmount;
-                        userData.soulsmilesInWallet -= giveAmount;
+                        if (!isPayPal) {
+                          userData.soulsmilesInWallet -= giveAmount;
+                        }
                     }
                     return userData;
                 }, function (error) {
@@ -176,7 +178,7 @@ function GiveSoulsmilesForm(props) {
                 amount={giveAmount / 10}
                 shippingPreference="NO_SHIPPING"
                 onApprove={(details, data) => {
-                  postDonationPostData();
+                  postDonationPostData(true);
                 }}
                 options={{
                   clientId: "AWpBseKdcoukJGU8m8fM_rEaQiRv41P6mrNVI1ZOz7s-6uuYE4lszwgVkbww-Xe3VA7_wH9Pi88YCniY"
