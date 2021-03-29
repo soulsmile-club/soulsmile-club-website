@@ -173,17 +173,7 @@ function GiveSoulsmilesForm(props) {
 
     var payPalButtons = (
             <>
-            <div className="paypalMessage">You have insufficient soulsmiles left in your wallet. Please pay with PayPal, Debit, or Credit to complete your donation!</div>
-            <PayPalButton
-                amount={giveAmount / 10}
-                shippingPreference="NO_SHIPPING"
-                onApprove={(details, data) => {
-                  postDonationPostData(true);
-                }}
-                options={{
-                  clientId: "AWpBseKdcoukJGU8m8fM_rEaQiRv41P6mrNVI1ZOz7s-6uuYE4lszwgVkbww-Xe3VA7_wH9Pi88YCniY"
-                }}
-            />
+            <div className="paypalMessage">You have insufficient soulsmiles left in your wallet for this transaction! Payment through PayPal, Debit, or Credit to complete your donation will be available soon.</div>
             <Button bsPrefix="giveFormButton" onClick={goBack}>Cancel</Button>
             </>
     );
