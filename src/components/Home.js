@@ -21,6 +21,7 @@ function Home() {
       {`
       .btn-round-header {
         width: 100%;
+        max-width: 400px;
         border-radius: 50px;
         margin: 10px;
         color: #444444;
@@ -32,6 +33,14 @@ function Home() {
       }
       .btn-round:hover {
         background-color: #444444;
+      }
+      .btn-middle-blue:hover {
+        color: #444444;
+        background-color: #DCEDFF;
+      }
+      .btn-middle-pink:hover {
+        color: #444444;
+        background-color: #F1DEDE;
       }
       .carousel-image {
         padding-bottom: 125px;
@@ -95,7 +104,7 @@ function Home() {
         <Carousel.Item>
           <img width={400} height={150} alt="900x500" className="carousel-image" src={oluMily}/>
           <div className="carousel-caption">
-            <p>Each time, Olu is doing something for Mily. <br/>On some days, Olu thinks, “Maybe we are all the same inside.“ </p>
+            <p>Each time Olu shops in Soulsmile Club, Olu is doing something for Mily. <br/>On some days, Olu thinks, “Maybe we are all the same inside.“ </p>
           </div>
         </Carousel.Item>
         <Carousel.Item>
@@ -124,6 +133,7 @@ function Home() {
         <div className="feel-impact-description">
           <h3>Feel your impact growing <br/>every single day<br/> as you shop online.</h3>
           <p>Without spending extra, you can support impactful organizations around the world.</p>
+          <Button variant="outline-secondary btn-round btn-middle-blue" size="lg" href="/login">Start Your Journey</Button>{' '}
         </div>
       </div>
       <br/>
@@ -131,6 +141,7 @@ function Home() {
         <div className="feel-impact-description">
           <h3>Donation feed, a social <br/>experience that centers<br/> around what you care about. </h3>
           <p>You are not alone in being part of the change you want to see.</p>
+          <Button variant="outline-secondary btn-round btn-middle-pink" size="lg" href="/login">Join the Community</Button>{' '}
         </div>
         <img src={donationFeed}/>
       </div>
