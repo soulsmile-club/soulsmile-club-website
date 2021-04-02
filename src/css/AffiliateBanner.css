@@ -1,0 +1,16 @@
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#smile {
+    color: #eda1aa;
+}
+
+#affImg {
+    max-height: 50%;
+}
+
+#affButton {
+    padding-top: 30px;
+}

@@ -13,6 +13,7 @@ import '../css/Home.css';
 import Button from 'react-bootstrap/Button';
 import Carousel from 'react-bootstrap/Carousel';
 import TextLoop from "react-text-loop";
+import AffiliateBanner from './AffiliateBanner';
 
 function Home() {
   return (
@@ -46,6 +47,9 @@ function Home() {
       }
       `}
     </style>
+    <div>
+      <AffiliateBanner />
+    </div><br/>
     <header className="App-header-home">
         <img src={extension} className="App-logo" alt="logo" />
         <div id="slogan">
