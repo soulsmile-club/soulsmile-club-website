@@ -55,7 +55,12 @@ export default function Routes() {
   return (<>
     {!isLoading &&
     <Switch>
-      <Route path="/" exact render={() => <Website component={<Home />} />} />
+      {/* Issue: b/c route, optional url param will make other routes useless */}
+      {/* <Route path="/:affiliate?" exact render={() => <Website component={<Home />} />} /> */}
+      {/* Issue: couldn't get query params to work */}
+      {/* <Route path="/collab?affiliate=:affiliate?" exact render={() => <Website component={<Home />} />} /> */}
+      <Route path="/" exact render={() => <Website component={<Home collab={false}/>} />} />
+      <Route path="/collab/girlfriend" exact render={() => <Website component={<Home collab={'Girlfriend Collective'}/>} />} />
       <Route path="/browser-extension" exact render={() => <Website component={<BrowserExtension />} />} />
       <Route path="/how-it-works" exact render={() => <Website component={<HowItWorks />} />} />
       <Route path="/how-to-use" exact render={() => <Website component={<HowToUse />} />} />
