@@ -1,4 +1,5 @@
 import React from 'react';
+// import { useParams, useLocation, } from "@reach/router";
 import extension from '../images/home-laptop.png';
 import carouselOne from '../images/carousel-1.jpg';
 import carouselTwo from '../images/carousel-2.jpg';
@@ -15,7 +16,31 @@ import Carousel from 'react-bootstrap/Carousel';
 import TextLoop from "react-text-loop";
 import AffiliateBanner from './AffiliateBanner';
 
-function Home() {
+function Home(props) {
+  //Method 1 for Optional URL param:
+  //cannot use this b/c leads to "Error: useLocation hook was used but a LocationContext.Provider was not found in the parent tree. Make sure this is used in a component that is a child of Router"
+  //^error because of line 50 in index.js
+  // const { param } = useParams();
+
+  //Method 2 for Optional URL param:
+  //^cannot use because this leads to error from match being undefined
+  // { match }
+  // if (match.params == undefined) {
+  //   console.log("undefined");
+  // }
+  // else {
+  //   const {affiliate = null} = match.params;
+  // }
+
+  //Method 3 tried query params:
+  //^couldn't work for same reason as method 1
+  // let search = useLocation()
+  // console.log(search)
+
+  //Method 4: just using props:
+  const { collab } = props;
+
+
   return (
     <>
     <style type="text/css">
@@ -47,9 +72,9 @@ function Home() {
       }
       `}
     </style>
-    <div>
-      <AffiliateBanner />
-    </div><br/>
+
+    {collab ? <div><AffiliateBanner collab={collab}/></div> : null }
+
     <header className="App-header-home">
         <img src={extension} className="App-logo" alt="logo" />
         <div id="slogan">

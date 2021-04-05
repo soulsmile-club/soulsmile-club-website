@@ -5,12 +5,13 @@ import Button from 'react-bootstrap/Button';
 
 var REACT_APP_AIRTABLE_RETAILERS_DOC = process.env.REACT_APP_AIRTABLE_RETAILERS_DOC;
 
-function AffiliateBanner() {
+function AffiliateBanner(props) {
 
-    // const [normalRetailers, setNormalRetailers] = React.useState([]);
-    // const [featuredRetailers, setFeaturedRetailers] = React.useState([]);
+    const { collab } = props;
+
     const [adRetailer, setAdRetailer] = React.useState([]);
-
+    
+    
     useEffect(() => {
         fetch(REACT_APP_AIRTABLE_RETAILERS_DOC)
 			.then(res => res.json())
@@ -23,11 +24,10 @@ function AffiliateBanner() {
                 var currentAdRetailer = [];
                 for (var j = 0; j < data.length; j++) {
                     const company = data[j]["fields"]["Name"];
-                    const link = data[j]["fields"]["Link"];
+                    const link = data[j]["fields"]["Link"] + "?fromTab=true";
                     // const banner = data[j]["fields"]["Banner"];
 
-                    //TEMP TEST VALUE
-                    if (company === "Girlfriend Collective") {
+                    if (company === collab) {
                         // currentAdRetailer = [company, link, banner];
                         currentAdRetailer = [company, link];
                     }
@@ -53,8 +53,7 @@ function AffiliateBanner() {
         }
         `}
     </style>
-    <header className="App-header"></header>
-    <div>
+    <div id="affHeader">
         <div>
             <img id="affImg" alt="" src={ExtensionTemp}></img>
         </div>
