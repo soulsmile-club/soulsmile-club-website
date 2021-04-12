@@ -4,8 +4,9 @@ import Sneha_Rampalli from '../images/team/Sneha_Rampalli.jpg';
 import Wenhan_Zhang from '../images/team/Wenhan_Zhang.png';
 import Sneha_Advani from '../images/team/Sneha_Advani.jpg';
 import Hannah_Gonzalez from '../images/team/Hannah_Gonzalez.jpg';
-import Wendy_Qian from '../images/team/Wendy_Qian.jpg';
-import Nidhi_Reddy from '../images/team/Nidhi_Reddy.jpeg';
+import Shuke_Zeng from '../images/team/Shuke_Zeng.jpg';
+import Regina_Oda from '../images/team/Regina_Oda.png';
+import Brittany_Cho from '../images/team/Brittany_Cho.jpg';
 
 function Team() {
   return (
@@ -61,25 +62,31 @@ function Team() {
         to <a href="https://www.hsf.net/" target="_blank" rel="noopener noreferrer">Hispanic Scholarship Fund</a> and <a href="https://www.doctorswithoutborders.org/" target="_blank" rel="noopener noreferrer">Doctors Without Borders</a>.</p>
       </div>
       <div>
-        <img alt="" id="team" src={Nidhi_Reddy}></img>
-        <h4 id="name">Nidhi Reddy</h4>
-        <h5 id="role">User Outreach</h5>
-        <h4 id="major">Neuroscience, Healthcare Mgmt.</h4>
-        <p id="description">Hi, I’m Nidhi! As a graduate of Neuroscience and Behavior, 
-        I believe that Soulsmile Club can transform society by making activism a habit 
-        and integrating it into our daily lives.</p>
+        <img alt="" id="team" src={Shuke_Zeng}></img>
+        <h4 id="name">Shuke Zeng</h4>
+        <h5 id="role">Designer</h5>
+        <h4 id="major">Computer Science, English Literature, Business</h4>
+        <p id="description">Hi, I’m Shuke! I am passionate about non-profit work personally, and I believe in achieving happiness through helping others.</p>
         <p id="description">If I could give 30 soulsmiles every month, I would give them 
-        to <a href="https://www.amnesty.org/" target="_blank" rel="noopener noreferrer">Amnesty International</a> and <a href="https://www.conservationfund.org/" target="_blank" rel="noopener noreferrer">The Conservation Fund</a>.</p>
+        to <a href="https://www.rescue.org" target="_blank" rel="noopener noreferrer">International Rescue Committee</a> and <a href="https://www.equalitynow.org" target="_blank" rel="noopener noreferrer">Equality Now</a>.</p>
       </div>
       <div>
-        <img alt="" id="team" src={Wendy_Qian}></img>
-        <h4 id="name">Wendy Qian</h4>
-        <h5 id="role">Retailer Outreach</h5>
-        <h4 id="major">Psychology, Fine Arts</h4>
-        <p id="description">Hi! I’m Wendy. I believe in Soulsmile Club because it allows 
-        us to disrupt traditional consumerism one soulsmile at a time.</p>        
+        <img alt="" id="team" src={Regina_Oda}></img>
+        <h4 id="name">Regina Oda</h4>
+        <h5 id="role">Tech Developer</h5>
+        <h4 id="major">Computer Science, English Literature, Business</h4>
+        <p id="description">Hi, I’m Regina! I believe that understanding, generosity, and goodwill can truly make a gigantic difference in our society, no matter how big or small. Helping even just one person can make the world a better place.</p>
         <p id="description">If I could give 30 soulsmiles every month, I would give them 
-        to <a href="https://www.nokidhungry.org/" target="_blank" rel="noopener noreferrer">No Kid Hungry</a> and <a href="https://inliquid.org/" target="_blank" rel="noopener noreferrer">InLiquid</a>.</p>
+        to <a href="https://naacp.org" target="_blank" rel="noopener noreferrer">National Association for the Advancement of Colored People</a> and <a href="https://www.nokidhungry.org" target="_blank" rel="noopener noreferrer">No Kid Hungry</a>.</p>
+      </div>
+      <div>
+        <img alt="" id="team" src={Brittany_Cho}></img>
+        <h4 id="name">Brittany Cho</h4>
+        <h5 id="role">Tech Developer</h5>
+        <h4 id="major">Computer Science</h4>
+        <p id="description">Hi, I’m Brittany! I believe in Soulsmile because I see an enormous potential to positively impact society through collective action when integrating social good with everyday purchases.</p>
+        <p id="description">If I could give 30 soulsmiles every month, I would give them 
+        to <a href="https://www.equalitynow.org" target="_blank" rel="noopener noreferrer">Equality Now</a> and <a href="https://www.conservation.org" target="_blank" rel="noopener noreferrer">Conservation International</a>.</p>
       </div>
     </div>
     </>

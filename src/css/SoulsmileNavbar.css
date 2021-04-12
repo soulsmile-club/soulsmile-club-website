@@ -10,3 +10,11 @@
 .logo {
     font-weight: 500;
 }
+
+#login-button {
+	color: #eda1aa;
+}
+
+#login-button:hover {
+	color: #444444;
+}

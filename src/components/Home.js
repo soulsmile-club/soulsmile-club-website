@@ -81,6 +81,7 @@ function Home(props) {
       `}
     </style>
     <div class="home-body">
+
       {/* TFAC Ternary Operator 1 */}
       {collab ? <div><AffiliateBanner collab={collab}/></div> : null }
 
@@ -132,6 +133,7 @@ function Home(props) {
           </div>
         </Carousel.Item>
       </Carousel>
+
       </div>
       :
       <header className="App-header-home">
@@ -213,6 +215,7 @@ function Home(props) {
         </Carousel>
       </div>
       } {/* TFAC Ternary Operator 3 End*/} 
+
       <div className="flex-container-how-home">
           <div>
               <p className="stepHome"><span className="numberCircleSmallHome">1.</span><br/> Add to Chrome.</p>
