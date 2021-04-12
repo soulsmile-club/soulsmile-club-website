@@ -1,5 +1,5 @@
 .App-header-home {
-    padding: 3% 0px;
+    padding: 3% 100px;
     background-color: white;
     min-height: 75vh;
     display: flex;
@@ -11,14 +11,16 @@
 }
 
 /* Responsive layout - makes a one column layout instead of a two-column layout */
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     .App-header-home {
       flex-direction: column;
+      min-height: 50vh;
+      padding: 0px;
     }
   }
 
-.App-logo {
-    height: 50vmin;
+.App-logo-home {
+    height: 40vmin;
     pointer-events: none;
 }
 
@@ -158,4 +160,3 @@
         padding-left: 0px;
     }
   }
-
