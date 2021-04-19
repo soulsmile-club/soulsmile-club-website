@@ -61,10 +61,14 @@ function AffiliateBanner(props) {
                 var currentAdRetailer = [];
                 for (var j = 0; j < data.length; j++) {
                     const company = data[j]["fields"]["Name"];
-                    const link = data[j]["fields"]["Link"] + "?fromTab=true";
+                    const link = data[j]["fields"]["Link"];
+                    if (company && link) {
+                        var url = new URL(link);
+                        url.searchParams.append("fromTab", "true");
 
-                    if (company === collab) {
-                        currentAdRetailer = [company, link, product_img];
+                        if (company === collab) {
+                            currentAdRetailer = [company, url.toString(), product_img];
+                        }
                     }
                 }
 
