@@ -1,0 +1,80 @@
+.aff-flex-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.explanation {
+    font-size: 14px;
+}
+
+.mainText {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+img {
+    max-width: 50%;
+    height: auto;
+}
+
+#smile {
+    color: #eda1aa;
+}
+
+#affImg {
+    width: 450px;
+    height: 250px;
+}
+
+#logoImg {
+    max-width: 25%;
+    height: auto;
+    margin: 10px;
+    margin-left: 35px;
+    margin-top: 0px;
+}
+
+#computerImg {
+    max-width: 45%;
+    height: auto;
+    margin: 10px;
+    margin-left: 50px;
+    margin-top: 5px;
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+    .aff-flex-header{
+      flex-direction: column;
+    }
+  }
+  
+  .aff-flex-header > div {
+    background-color: #f1f1f1;
+    width: 450px;
+    margin: 30px;
+    height: 400px;
+    text-align: left;
+    color: #444444;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.aff-flex-header > div:nth-child(1) {
+    background: #dcedff;;
+    color: #444444;
+}
+
+.aff-flex-header > div:nth-child(2) {
+    background: #ffffff;
+    color: #444444;
+}
+
+.card-flex-content {
+    width: 85%;
+    margin: auto;
+}
