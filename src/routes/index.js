@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+// import { useLocation } from "@reach/router"; //tried this here for issue in Home.js related to URLSearchParams (Error: useLocation hook was used but a LocationContext.Provider was not found in the parent tree.)
 import { Switch, Route } from 'react-router-dom';
 import Home from '../components/Home';
 import HowItWorks from '../components/HowItWorks';
@@ -51,11 +52,12 @@ export default function Routes() {
       })
       .catch(error => console.log(error));
   }, []);
+
   
   return (<>
     {!isLoading &&
     <Switch>
-      <Route path="/" exact render={() => <Website component={<Home />} />} />
+      <Route path="/" exact render={() => <Website component={<Home collab={false}/>} />} />
       <Route path="/browser-extension" exact render={() => <Website component={<BrowserExtension />} />} />
       <Route path="/how-it-works" exact render={() => <Website component={<HowItWorks />} />} />
       <Route path="/how-to-use" exact render={() => <Website component={<HowToUse />} />} />
@@ -69,6 +71,13 @@ export default function Routes() {
       <Route path="/faq" exact render={() => <Website component={<FAQ />} />} />
       <Route path="/login" exact render={() => <WebApp component={<Login />} />} />
       <Route path="/dashboard" exact render={() => <WebApp component={<DashboardController />} />} />
+      {/* Tab for a Cause Routes */}
+      {/* Tried below with URLSearchParams, could not get it to work */}
+      {/* <Route path="/tab" exact render={() => <Website component={<Home collab={'true'}/>} />} /> */}
+      <Route path="/tab/girlfriend" exact render={() => <Website component={<Home collab={'Girlfriend Collective'}/>} />} />
+      <Route path="/tab/byhumankind" exact render={() => <Website component={<Home collab={'by Humankind'}/>} />} />
+      <Route path="/tab/cicada" exact render={() => <Website component={<Home collab={'Cicada'}/>} />} />
+      <Route path="/tab/rocketbook" exact render={() => <Website component={<Home collab={'Rocketbook'}/>} />} />
       {retailerPaths}
     </Switch>}
     </>);

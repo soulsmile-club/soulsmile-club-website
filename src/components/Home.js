@@ -13,8 +13,42 @@ import '../css/Home.css';
 import Button from 'react-bootstrap/Button';
 import Carousel from 'react-bootstrap/Carousel';
 import TextLoop from "react-text-loop";
+// import { useLocation } from "@reach/router";
+import AffiliateBanner from './AffiliateBanner';
 
-function Home() {
+function Home(props) {
+
+  const { collab } = props;
+
+  //Method:URLSearchParams
+  //Tested with url: 'soulsmile.club/tab/?affiliate=girlfriend'
+
+
+  //Attempt 1 - issue: Error: useLocation hook was used but a LocationContext.Provider was not found in the parent tree. Make sure this is used in a component that is a child of Router
+  // function useQuery() {
+  //     return new URLSearchParams(useLocation().search);
+  // }
+
+  // let query = useQuery();
+  // var affiliate = parseFloat(query.get("affiliate"));
+
+  // if(affiliate == 'girlfriend') {
+  //     collab = 'Girlfriend Collective';
+  // }
+
+  //Attempt 2 - issue: cannot get page to render with this method - just a blank white page
+  // //change above: function Home({ location }, props) 
+  // function useQuery() {
+  //     return new URLSearchParams(location.search);
+  // }
+
+  // let query = useQuery();
+  // var affiliate = parseFloat(query.get("affiliate"));
+
+  // if(affiliate == 'girlfriend') {
+  //     collab = 'Girlfriend Collective';
+  // }
+  
   return (
     <>
     <style type="text/css">
@@ -56,20 +90,14 @@ function Home() {
       `}
     </style>
     <div class="home-body">
-      <header className="App-header-home">
-          <img src={extension} className="App-logo-home" alt="logo" />
-          <div id="slogan">
-            <TextLoop>
-                <span>Support <span id="smile">Global Health</span></span>
-                <span>Stand with <span id="smile">Racial Justice</span></span>
-                <span>Provide <span id="smile">Water &amp; Food Security</span></span>
-                <span>Empower <span id="smile">Women</span></span>
-            </TextLoop>{" "}
-            <div className="subtitle-home">Donate <span id="emphasize">without spending extra</span> when shopping online.</div>
-            <Button variant="outline-secondary btn-round-header" size="lg" href="https://tiny.cc/soulsmile-extension">Add to chrome</Button>{' '}
-          </div><br/>       
-      </header>
-      <h3 id="home-story-header"><b>Meet Olu and Mily</b></h3>
+
+      {/* TFAC Ternary Operator 1 */}
+      {collab ? <div><AffiliateBanner collab={collab}/></div> : null }
+
+      {/* TFAC Ternary Operator 2 */}
+      {collab ?
+      <div>
+        <h3 id="home-story-header"><b>Meet Olu and Mily</b></h3>
       <Carousel>
         <Carousel.Item>
           <img width={400} height={150} alt="900x500" className="carousel-image" src={carouselOne}/>
@@ -114,6 +142,89 @@ function Home() {
           </div>
         </Carousel.Item>
       </Carousel>
+
+      </div>
+      :
+      <header className="App-header-home">
+          <img src={extension} className="App-logo-home" alt="logo" />
+          <div id="slogan">
+            <TextLoop>
+                <span>Support <span id="smile">Global Health</span></span>
+                <span>Stand with <span id="smile">Racial Justice</span></span>
+                <span>Provide <span id="smile">Water &amp; Food Security</span></span>
+                <span>Empower <span id="smile">Women</span></span>
+            </TextLoop>{" "}
+            <div className="subtitle-home">Donate <span id="emphasize">without spending extra</span> when shopping online.</div>
+            <Button variant="outline-secondary btn-round-header" size="lg" href="https://tiny.cc/soulsmile-extension">Add to chrome</Button>{' '}
+          </div><br/>       
+      </header>
+      } {/* TFAC Ternary Operator 2 End*/}
+
+      {/* TFAC Ternary Operator 3 Start*/}
+      {collab ?
+      <header className="App-header-home">
+          <img src={extension} className="App-logo-home" alt="logo" />
+          <div id="slogan">
+            <TextLoop>
+                <span>Support <span id="smile">Global Health</span></span>
+                <span>Stand with <span id="smile">Racial Justice</span></span>
+                <span>Provide <span id="smile">Water &amp; Food Security</span></span>
+                <span>Empower <span id="smile">Women</span></span>
+            </TextLoop>{" "}
+            <div className="subtitle-home">Donate <span id="emphasize">without spending extra</span> when shopping online.</div>
+            <Button variant="outline-secondary btn-round-header" size="lg" href="https://tiny.cc/soulsmile-extension">Add to chrome</Button>{' '}
+          </div><br/>       
+      </header>
+      :
+      <div>
+        <h3 id="home-story-header"><b>Meet Olu and Mily</b></h3>
+        <Carousel>
+          <Carousel.Item>
+            <img width={400} height={150} alt="900x500" className="carousel-image" src={carouselOne}/>
+            <div className="carousel-caption">
+              <p>Hi, this is Olu.</p>
+            </div>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img width={400} height={150} alt="900x500" className="carousel-image" src={carouselTwo}/>
+            <div className="carousel-caption">
+              <p>Olu sometimes buys jackets, sometimes notebooks, <br/> and sometimes gifts for friends.</p>
+            </div>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img width={400} height={150} alt="900x500" className="carousel-image" src={help}/>
+            <div className="carousel-caption">
+              <p>Mily, living far away, is not doing well. <br/> Olu wants to help Mily, but is unsure how much they can do.</p>
+            </div>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img width={400} height={150} alt="900x500" className="carousel-image" src={helpOlu}/>
+            <div className="carousel-caption">
+              <p>On some days, Olu thinks, “Maybe it’s not my responsibility.” </p>
+            </div>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img width={400} height={150} alt="900x500" className="carousel-image" src={oluSoulsmile}/>
+            <div className="carousel-caption">
+              <p>One day, Olu downloads the Soulsmile extension. <br/> Olu continues to buy jackets, notebooks, keyboards and gifts for friends.</p>
+            </div>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img width={400} height={150} alt="900x500" className="carousel-image" src={oluMily}/>
+            <div className="carousel-caption">
+              <p>Each time, Olu is doing something for Mily. <br/>On some days, Olu thinks, “Maybe we are all the same inside.“ </p>
+            </div>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img width={400} height={150} alt="900x500" className="carousel-image" src={circleSoulsmile}/>
+            <div className="carousel-caption">
+              <p>And there are many more like them. </p>
+            </div>
+          </Carousel.Item>
+        </Carousel>
+      </div>
+      } {/* TFAC Ternary Operator 3 End*/} 
+
       <div className="flex-container-how-home">
           <div>
               <p className="stepHome"><span className="numberCircleSmallHome">1.</span><br/> Add to Chrome.</p>
@@ -153,4 +264,3 @@ function Home() {
 }
 
 export default Home;
-
