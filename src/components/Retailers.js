@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import '../css/Retailers.css';
 
-var categories = ["General", "Clothing & Apparel", "Health & Beauty", "Electronics", "Home", "Food & Drink", "Shoes", "Accessories", "Books", "Fitness", "Baby Products", "Gifts"]
+var categories = ["General", "Clothing & Apparel", "Health & Beauty", "Electronics", "Home", "Food & Drink", "Shoes", "Accessories", "Books", "Fitness & Outdoors", "Baby Products", "Gifts"]
 var REACT_APP_AIRTABLE_RETAILERS_DOC = process.env.REACT_APP_AIRTABLE_RETAILERS_DOC;
 
 function Retailers() {
