@@ -62,9 +62,26 @@ function AffiliateBanner(props) {
                 for (var j = 0; j < data.length; j++) {
                     const company = data[j]["fields"]["Name"];
                     const link = data[j]["fields"]["Link"];
-                    if (company && link) {
+                    const affiliateNetwork = data[j]["fields"]["Affiliate Network"];
+                    if (company && link && affiliateNetwork) {
                         var url = new URL(link);
-                        url.searchParams.append("fromTab", "true");
+                        if (affiliateNetwork == "Refersion") {
+                            url = new URL(link);
+                            url.searchParams.append("subid", "fromTab");
+                        } else if (affiliateNetwork == "Tapfiliate") {
+                            url = new URL(link);
+                            url.searchParams.append("tm_uid", "fromTab");
+                        } else if (affiliateNetwork == "Impact") {
+                            url = new URL(link);
+                            url.searchParams.append("subid1", "fromTab");
+                        } else if (affiliateNetwork == "Rakuten") {
+                            var fullLink = link.split("murl=");
+                            var firstHalfLink = fullLink[0];
+                            var secondHalfLink = fullLink[1];
+                            url = new URL(firstHalfLink);
+                            url.searchParams.append("u1", "fromTab");
+                            url.searchParams.append("murl", decodeURIComponent(secondHalfLink));
+                        }
 
                         if (company === collab) {
                             currentAdRetailer = [company, url.toString(), product_img];
