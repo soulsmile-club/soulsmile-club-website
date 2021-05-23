@@ -28,16 +28,16 @@ function AffiliateBanner(props) {
     // }
 
     const [adRetailer, setAdRetailer] = React.useState([]);
-    
+
+    // const [retailerCompany, setRetailerCompany] = React.useState([]);
+    // const [retailerLink, setRetailerLink] = React.useState([]);
+    // const [retailerImg, setRetailerImg] = React.useState([]);    
     
     useEffect(() => {
         fetch(REACT_APP_AIRTABLE_RETAILERS_DOC)
 			.then(res => res.json())
 			.then(res => {
                 const data = res.records;
-                data.sort(function (a, b) {
-                    return ((a["fields"]["Name"] < b["fields"]["Name"]) ? -1 : (a["fields"]["Name"] > b["fields"]["Name"]) ? 1 : 0);
-                });
 
                 //Set product_img
                 var product_img;
@@ -65,10 +65,18 @@ function AffiliateBanner(props) {
 
                     if (company === collab) {
                         currentAdRetailer = [company, link, product_img];
+
+                        var currRetailerCompany = company;
+                        var currRetailerLink = link;
+                        var currRetailerImg = product_img;
                     }
                 }
 
-                setAdRetailer(currentAdRetailer);      
+                setAdRetailer(currentAdRetailer); 
+
+                // setRetailerCompany(currRetailerCompany);
+                // setRetailerLink(currRetailerLink);
+                // setRetailerImg(currRetailerLink);  
 			})
 			.catch(error => console.log(error));
     }, []);
@@ -101,8 +109,16 @@ function AffiliateBanner(props) {
             </div>
             <br/>
             <div className="card-flex-content" id="affButton">
-                <Button variant="outline-secondary btn-round" size="lg" href={adRetailer[1]} target="_blank" rel="noopener noreferrer">Shop at {adRetailer[0]} with soulsmile</Button>{' '}
+                <Button variant="outline-secondary btn-round" size="lg" href={adRetailer[1]} target="_blank" rel="noopener noreferrer">Shop at {adRetailer[0]} with soulsmile club</Button>{' '}
             </div>
+
+            {/* <div className="card-flex-content">
+                <img id="affImg" alt="" src={retailerImg}></img>
+            </div>
+            <br/>
+            <div className="card-flex-content" id="affButton">
+                <Button variant="outline-secondary btn-round" size="lg" href={retailerLink} target="_blank" rel="noopener noreferrer">Shop at {retailerCompany} with soulsmile</Button>{' '}
+            </div> */}
         </div>
     </div>
 
