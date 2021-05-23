@@ -14,30 +14,14 @@ var REACT_APP_AIRTABLE_RETAILERS_DOC = process.env.REACT_APP_AIRTABLE_RETAILERS_
 function AffiliateBanner(props) {
 
     const { collab } = props;
-    //URLSearchParams Attempt
-    // //change above: function AffiliateBanner({ location }, props)
-    // function useQuery() {
-    //     return new URLSearchParams(location.search);
-    // }
-
-    // let query = useQuery();
-    // var affiliate = parseFloat(query.get("affiliate"));
-
-    // if(affiliate == 'girlfriend') {
-    //     collab = 'Girlfriend Collective';
-    // }
 
     const [adRetailer, setAdRetailer] = React.useState([]);
-    
     
     useEffect(() => {
         fetch(REACT_APP_AIRTABLE_RETAILERS_DOC)
 			.then(res => res.json())
 			.then(res => {
                 const data = res.records;
-                data.sort(function (a, b) {
-                    return ((a["fields"]["Name"] < b["fields"]["Name"]) ? -1 : (a["fields"]["Name"] > b["fields"]["Name"]) ? 1 : 0);
-                });
 
                 //Set product_img
                 var product_img;
@@ -83,13 +67,15 @@ function AffiliateBanner(props) {
                             url.searchParams.append("murl", decodeURIComponent(secondHalfLink));
                         }
 
+
                         if (company === collab) {
                             currentAdRetailer = [company, url.toString(), product_img];
                         }
                     }
                 }
 
-                setAdRetailer(currentAdRetailer);      
+                setAdRetailer(currentAdRetailer); 
+ 
 			})
 			.catch(error => console.log(error));
     }, []);
@@ -122,7 +108,7 @@ function AffiliateBanner(props) {
             </div>
             <br/>
             <div className="card-flex-content" id="affButton">
-                <Button variant="outline-secondary btn-round" size="lg" href={adRetailer[1]} target="_blank" rel="noopener noreferrer">Shop at {adRetailer[0]} with soulsmile</Button>{' '}
+                <Button variant="outline-secondary btn-round" size="lg" href={adRetailer[1]} target="_blank" rel="noopener noreferrer">Shop at {adRetailer[0]} with soulsmile club</Button>{' '}
             </div>
         </div>
     </div>
