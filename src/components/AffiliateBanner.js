@@ -14,8 +14,24 @@ var REACT_APP_AIRTABLE_RETAILERS_DOC = process.env.REACT_APP_AIRTABLE_RETAILERS_
 function AffiliateBanner(props) {
 
     const { collab } = props;
+    //URLSearchParams Attempt
+    // //change above: function AffiliateBanner({ location }, props)
+    // function useQuery() {
+    //     return new URLSearchParams(location.search);
+    // }
+
+    // let query = useQuery();
+    // var affiliate = parseFloat(query.get("affiliate"));
+
+    // if(affiliate == 'girlfriend') {
+    //     collab = 'Girlfriend Collective';
+    // }
 
     const [adRetailer, setAdRetailer] = React.useState([]);
+
+    // const [retailerCompany, setRetailerCompany] = React.useState([]);
+    // const [retailerLink, setRetailerLink] = React.useState([]);
+    // const [retailerImg, setRetailerImg] = React.useState([]);    
     
     useEffect(() => {
         fetch(REACT_APP_AIRTABLE_RETAILERS_DOC)
@@ -67,15 +83,21 @@ function AffiliateBanner(props) {
                             url.searchParams.append("murl", decodeURIComponent(secondHalfLink));
                         }
 
+                    if (company === collab) {
+                        currentAdRetailer = [company, url.toString(), product_img];
 
-                        if (company === collab) {
-                            currentAdRetailer = [company, url.toString(), product_img];
-                        }
+                        // var currRetailerCompany = company;
+                        // var currRetailerLink = link;
+                        // var currRetailerImg = product_img;
                     }
                 }
+            }
 
                 setAdRetailer(currentAdRetailer); 
- 
+
+                // setRetailerCompany(currRetailerCompany);
+                // setRetailerLink(currRetailerLink);
+                // setRetailerImg(currRetailerLink);  
 			})
 			.catch(error => console.log(error));
     }, []);
@@ -110,6 +132,14 @@ function AffiliateBanner(props) {
             <div className="card-flex-content" id="affButton">
                 <Button variant="outline-secondary btn-round" size="lg" href={adRetailer[1]} target="_blank" rel="noopener noreferrer">Shop at {adRetailer[0]} with soulsmile club</Button>{' '}
             </div>
+
+            {/* <div className="card-flex-content">
+                <img id="affImg" alt="" src={retailerImg}></img>
+            </div>
+            <br/>
+            <div className="card-flex-content" id="affButton">
+                <Button variant="outline-secondary btn-round" size="lg" href={retailerLink} target="_blank" rel="noopener noreferrer">Shop at {retailerCompany} with soulsmile</Button>{' '}
+            </div> */}
         </div>
     </div>
 
