@@ -14,24 +14,8 @@ var REACT_APP_AIRTABLE_RETAILERS_DOC = process.env.REACT_APP_AIRTABLE_RETAILERS_
 function AffiliateBanner(props) {
 
     const { collab } = props;
-    //URLSearchParams Attempt
-    // //change above: function AffiliateBanner({ location }, props)
-    // function useQuery() {
-    //     return new URLSearchParams(location.search);
-    // }
-
-    // let query = useQuery();
-    // var affiliate = parseFloat(query.get("affiliate"));
-
-    // if(affiliate == 'girlfriend') {
-    //     collab = 'Girlfriend Collective';
-    // }
 
     const [adRetailer, setAdRetailer] = React.useState([]);
-
-    // const [retailerCompany, setRetailerCompany] = React.useState([]);
-    // const [retailerLink, setRetailerLink] = React.useState([]);
-    // const [retailerImg, setRetailerImg] = React.useState([]);    
     
     useEffect(() => {
         fetch(REACT_APP_AIRTABLE_RETAILERS_DOC)
@@ -61,22 +45,37 @@ function AffiliateBanner(props) {
                 var currentAdRetailer = [];
                 for (var j = 0; j < data.length; j++) {
                     const company = data[j]["fields"]["Name"];
-                    const link = data[j]["fields"]["Link"] + "?fromTab=true";
+                    const link = data[j]["fields"]["Link"];
+                    const affiliateNetwork = data[j]["fields"]["Affiliate Network"];
+                    if (company && link && affiliateNetwork) {
+                        var url = new URL(link);
+                        if (affiliateNetwork == "Refersion") {
+                            url = new URL(link);
+                            url.searchParams.append("subid", "fromTab");
+                        } else if (affiliateNetwork == "Tapfiliate") {
+                            url = new URL(link);
+                            url.searchParams.append("tm_uid", "fromTab");
+                        } else if (affiliateNetwork == "Impact") {
+                            url = new URL(link);
+                            url.searchParams.append("subid1", "fromTab");
+                        } else if (affiliateNetwork == "Rakuten") {
+                            var fullLink = link.split("murl=");
+                            var firstHalfLink = fullLink[0];
+                            var secondHalfLink = fullLink[1];
+                            url = new URL(firstHalfLink);
+                            url.searchParams.append("u1", "fromTab");
+                            url.searchParams.append("murl", decodeURIComponent(secondHalfLink));
+                        }
 
-                    if (company === collab) {
-                        currentAdRetailer = [company, link, product_img];
 
-                        var currRetailerCompany = company;
-                        var currRetailerLink = link;
-                        var currRetailerImg = product_img;
+                        if (company === collab) {
+                            currentAdRetailer = [company, url.toString(), product_img];
+                        }
                     }
                 }
 
                 setAdRetailer(currentAdRetailer); 
-
-                // setRetailerCompany(currRetailerCompany);
-                // setRetailerLink(currRetailerLink);
-                // setRetailerImg(currRetailerLink);  
+ 
 			})
 			.catch(error => console.log(error));
     }, []);
@@ -111,14 +110,6 @@ function AffiliateBanner(props) {
             <div className="card-flex-content" id="affButton">
                 <Button variant="outline-secondary btn-round" size="lg" href={adRetailer[1]} target="_blank" rel="noopener noreferrer">Shop at {adRetailer[0]} with soulsmile club</Button>{' '}
             </div>
-
-            {/* <div className="card-flex-content">
-                <img id="affImg" alt="" src={retailerImg}></img>
-            </div>
-            <br/>
-            <div className="card-flex-content" id="affButton">
-                <Button variant="outline-secondary btn-round" size="lg" href={retailerLink} target="_blank" rel="noopener noreferrer">Shop at {retailerCompany} with soulsmile</Button>{' '}
-            </div> */}
         </div>
     </div>
 

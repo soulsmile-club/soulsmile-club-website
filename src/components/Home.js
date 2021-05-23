@@ -88,6 +88,7 @@ function Home(props) {
       {`
       .btn-round-header {
         width: 100%;
+        max-width: 400px;
         border-radius: 50px;
         margin: 10px;
         color: #444444;
@@ -99,6 +100,14 @@ function Home(props) {
       }
       .btn-round:hover {
         background-color: #444444;
+      }
+      .btn-middle-blue:hover {
+        color: #444444;
+        background-color: #DCEDFF;
+      }
+      .btn-middle-pink:hover {
+        color: #444444;
+        background-color: #F1DEDE;
       }
       .carousel-image {
         padding-bottom: 125px;
@@ -139,6 +148,7 @@ function Home(props) {
         <div className="feel-impact-description">
           <h3>Feel your impact growing <br/>every single day<br/> as you shop online.</h3>
           <p>Without spending extra, you can support impactful organizations around the world.</p>
+          <Button variant="outline-secondary btn-round btn-middle-blue" size="lg" href="/login">Start Your Journey</Button>{' '}
         </div>
       </div>
       <br/>
@@ -146,6 +156,7 @@ function Home(props) {
         <div className="feel-impact-description">
           <h3>Donation feed, a social <br/>experience that centers<br/> around what you care about. </h3>
           <p>You are not alone in being part of the change you want to see.</p>
+          <Button variant="outline-secondary btn-round btn-middle-pink" size="lg" href="/login">Join the Community</Button>{' '}
         </div>
         <img src={donationFeed}/>
       </div>
