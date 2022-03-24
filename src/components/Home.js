@@ -91,8 +91,6 @@ function Home(props) {
     </style>
     <div class="home-body">
 
-      {/* TFAC Ternary Operator 1 */}
-      {collab ? <div><AffiliateBanner collab={collab}/></div> : null }
 
       {/* TFAC Ternary Operator 2 */}
       {collab ?
