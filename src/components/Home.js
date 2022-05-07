@@ -165,6 +165,7 @@ function Home(props) {
       <header className="App-header-home">
           <img src={extension} className="App-logo-home" alt="logo" />
           <div id="slogan">
+            <div className="subtitle-home">Soulsmile Club is no longer in operation. Thank you so much for your support. Goodbye and see you again.</div>
             <TextLoop>
                 <span>Support <span id="smile">Global Health</span></span>
                 <span>Stand with <span id="smile">Racial Justice</span></span>
