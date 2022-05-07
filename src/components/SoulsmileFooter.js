@@ -42,7 +42,7 @@ function SoulsmileFooter() {
       <div className="container">
         <div className="row">
           <div className="col-md-8 col-sm-6 col-xs-12">
-            <p className="copyright-text">Questions? Contact us at <a href="mailto:hello@soulsmile.club" id="email">hello@soulsmile.club</a>.</p>
+            <p className="copyright-text">Questions? Contact us at <a href="mailto:info@soulsmile.club" id="email">info@soulsmile.club</a>.</p>
             <p className="copyright-text">Copyright &copy; 2020 Soulsmile Club, Inc.
             </p>
           </div>
